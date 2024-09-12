@@ -7,7 +7,7 @@ function HomeBanner() {
     <div className=' w-full bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900'>
     <div className='mx-auto max-w-screen-xl'>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-3 py-10 '>
-            <div className='p-5'>
+            <div className='py-5 lg:pl-24'>
                 <div className='flex flex-col md:flex-row '>
                     <span>Confidential</span>
                     <div className='hidden md:block h-[24px] w-[2px] bg-muted-foreground ml-4 '></div>
@@ -26,7 +26,9 @@ function HomeBanner() {
                     <div className='font-medium text-muted-foreground pt-1'>Prices start at just  <span className='text-black dark:text-white text-sm font-medium'>£11/page</span></div>
             </div>
             <div className=''>
+                <div className='flex justify-center'>
                 <DiscountForm/>
+                </div>
             </div>
         </div>
     </div>

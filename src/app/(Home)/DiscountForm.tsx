@@ -2,7 +2,7 @@ import React from 'react';
 
 const DiscountForm: React.FC = () => {
   return (
-    <div className="max-w-sm mx-auto bg-background rounded-3xl shadow-lg ">
+    <div className="max-w-sm mx-auto bg-background rounded-3xl  shadow-lg ">
       <h2 className="text-3xl font-bold text-center p-5">Avail Flat 45% OFF</h2>
       
       <form className="space-y-3 p-4">
