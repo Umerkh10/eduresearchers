@@ -1,6 +1,7 @@
 import ExpertSection from "./ExpertSection";
 import HomeBanner from "./HomeBanner";
 import HowItWorks from "./HowItWorks";
+import Reviews from "./Reviews";
 import ServiceSection from "./ServiceSection";
 import SupportSection from "./SupportSection";
 import TopExperts from "./TopExperts";
@@ -16,6 +17,7 @@ export default function Home() {
       <HowItWorks/>
       <TopExperts/>
       <SupportSection/>
+      <Reviews/>
     </div>
   );
 }

@@ -81,8 +81,7 @@ export function CarouselSpacing() {
 
       </CarouselContent>
       
-      <CarouselPrevious />
-      <CarouselNext />
+     
     </Carousel>
   )
 }

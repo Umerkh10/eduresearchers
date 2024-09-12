@@ -20,7 +20,7 @@ function Navbar() {
             <div className='text-center text-muted-foreground text-sm '>"Excellent" 9.7/10</div>
         </div>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
           <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Why Us?
           </Link>
@@ -43,7 +43,7 @@ function Navbar() {
         </nav>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden">
+            <Button variant="outline" size="icon" className="lg:hidden">
               <MenuSquareIcon className="h-6 w-6" />
               <span className="sr-only">Toggle navigation</span>
             </Button>
