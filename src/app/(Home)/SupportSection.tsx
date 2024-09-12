@@ -13,7 +13,7 @@ function SupportSection() {
                         <div className=' flex justify-center '>
                             <h2 className='text-xl text-zinc-100 md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10  font-extrabold text-center'>FULFIL ALL THE UNIVERSITY GUIDELINES ACCURATELY TO SAVE YOUR GRADES</h2>
                         </div>
-                        <p className='text-zinc-100 font-medium text-center -translate-y-3'>When your urgent to fulfil all the instructions given by the tutor, buying professional assignment services will best approach.</p>
+                        <p className='text-zinc-100 font-medium text-center -translate-y-3'>When your urgent deadline is approaching, and you don’t know how to fulfil all the instructions given by the tutor, buying professional assignment services will best approach.</p>
                         <h2 className='pt-4 font-semibold text-center text-zinc-100 text-3xl'>Why Your Should Hire {process.env.NEXT_PUBLIC_NAME}</h2>
                         <div className='grid lg:grid-cols-2 grid-cols-1 p-5'>
                             <div className=''>
