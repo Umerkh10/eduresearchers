@@ -6,7 +6,7 @@ import { MessageCircleIcon } from 'lucide-react'
 function SupportSection() {
     return (
         <div className='pt-10'>
-            <div data-aos='fade-down' data-aos-duration="1500" style={{ backgroundImage: "url('/imgs/support_bg.jpg')", backgroundSize: 'cover' }} className='py-10'>
+            <div data-aos='fade-down' data-aos-duration="1500" style={{ backgroundImage: "url('/imgs/support_bg.webp')", backgroundSize: 'cover' }} className='py-10'>
                 <div className='mx-auto max-w-screen-xl'>
                     <div className='pt-10'>
                         <h1 className='text-center text-4xl md:text-7xl  font-extrabold text-white text-opacity-10 '>Support</h1>
