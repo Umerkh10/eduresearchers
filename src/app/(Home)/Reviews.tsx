@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import ReviewCarousel from './ReviewCarousel'
 
 function Reviews() {
   return (
@@ -14,7 +15,9 @@ function Reviews() {
                 </div>
                 <p className='text-muted-foreground font-medium pt-2 -ml-3'>“Excellent” - 9.7/10</p>
             </div>
-            <div className=''></div>
+            <div className='p-10'>
+                <ReviewCarousel/>
+            </div>
             </div>
         </div>
     </div>
