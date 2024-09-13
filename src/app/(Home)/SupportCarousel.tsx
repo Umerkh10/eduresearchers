@@ -79,6 +79,70 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
+            <CarouselItem  className="pl-1 ">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex items-center  px-3 py-3">
+                  <div className="flex items-center w-20 h-20 rounded-full ">
+                    <Image src={'/imgs/1.png'} width={80} height={80} alt="support" ></Image>
+                  </div>
+                  <div className="flex flex-col items-center ml-2">
+                    <p className="font-semibold ">DYLAN BAILEY</p>
+                    <p className="font-medium text-muted-foreground"><span className="text-orange-500">6- years</span> Experience in support </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+
+            <CarouselItem  className="pl-1 ">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex items-center  px-3 py-3">
+                  <div className="flex items-center w-20 h-20 rounded-full ">
+                    <Image src={'/imgs/3.png'} width={80} height={80} alt="support" ></Image>
+                  </div>
+                  <div className="flex flex-col items-center ml-2">
+                    <p className="font-semibold ">FREYA LANEY</p>
+                    <p className="font-medium text-muted-foreground"><span className="text-orange-500">3- years</span> Experience in support </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+
+            <CarouselItem  className="pl-1 ">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex items-center  px-3 py-3">
+                  <div className="flex items-center w-20 h-20 rounded-full ">
+                    <Image src={'/imgs/7 (1).png'} width={80} height={80} alt="support" ></Image>
+                  </div>
+                  <div className="flex flex-col items-center ml-2">
+                    <p className="font-semibold ">SHAWN ELLIOT</p>
+                    <p className="font-medium text-muted-foreground"><span className="text-orange-500">4- years</span> Experience in support </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+
+            <CarouselItem  className="pl-1 ">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex items-center  px-3 py-3">
+                  <div className="flex items-center w-20 h-20 rounded-full ">
+                    <Image src={'/imgs/2.png'} width={80} height={80} alt="support" ></Image>
+                  </div>
+                  <div className="flex flex-col items-center ml-2">
+                    <p className="font-semibold ">JOSHUA ARTHUR</p>
+                    <p className="font-medium text-muted-foreground"><span className="text-orange-500">4- years</span> Experience in support </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+
       </CarouselContent>
       
      
