@@ -55,22 +55,22 @@ function Navbar() {
                 <span className="text-lg font-bold">Eduresearchers</span>
               </Link>
               <nav className="grid gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+              <Link href="#why-us" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Why Us?
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#service" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Our Services
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#howitworks" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             How it Works
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#topexpert" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Top Experts
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#review" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Reviews
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#faq" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Frequently Asked Questions
           </Link>
           <ModeToggle/>
