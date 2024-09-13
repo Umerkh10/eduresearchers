@@ -13,7 +13,7 @@ function SmallDivider() {
                 <div className='grid md:grid-cols-2 grid-cols-1  mt-4'>
                     <div className='mt-2 w-4/5 bg-white rounded-lg md:ml-0 ml-10'><input className='py-4 outline-none w-full rounded-lg px-2' type="email" name='email' placeholder='Enter Your Email' /> </div>
 
-                    <div className='mt-2 ml-0 md:ml-20'><button className='bg-orange-500 py-4 px-6 rounded-lg text-white font-medium w-3/4 md:w-1/2 scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 hover:shadow-xl'> Get a Discount</button> </div>
+                    <div className='mt-2 md:ml-0 ml-20'><button className='bg-orange-500 py-4 px-6 rounded-lg text-white font-medium w-3/4 md:w-1/2 scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 hover:shadow-xl'> Get a Discount</button> </div>
                 </div>
 
                 </div>

@@ -8,22 +8,16 @@ function HomeBanner() {
     <div className='mx-auto max-w-screen-xl'>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-3 py-10 '>
             <div className='py-5 lg:pl-24 px-5 '>
-                <div className='grid md:grid-cols-2 grid-cols-2 gap-2'>
-                    <div>
-                    <span className='font-semibold text-sm text-muted-foreground md:text-base pl-2  '>Confidential</span>
+                <div className='flex items-center justify-center md:justify-start gap-5 mt-2'>
+                    <div className='flex flex-col md:flex-row gap-2'>
+                    <div className='text-muted-foreground font-semibold text-sm md:text-base '>Confidential </div>
+                    <div className='text-muted-foreground font-semibold text-sm md:text-base '>Fast</div>
                     </div>
-
-                    <div>
-                    <span className='font-semibold text-sm text-muted-foreground md:text-base pl-2  '>Fast</span>
+                    <div className='flex justify-center flex-col md:flex-row md:justify-start  gap-2 md:ml-5'>
+                    <div className='text-muted-foreground font-semibold text-sm md:text-base '>Simple Order Form</div>
+                    <div className='text-muted-foreground font-semibold text-sm md:text-base '>No Time Wasting</div>
                     </div>
-
-                    <div>
-                    <span className='font-semibold text-sm text-muted-foreground md:text-base pl-2  '>Simple Order Form</span>
-                    </div>
-                    <div>
-                    <span className='font-semibold text-sm text-muted-foreground md:text-base pl-2  '>No Time Wasting</span>
-                    </div>
-                    </div>
+                </div>
                     <h1 className='font-bold pt-5 text-center md:text-start text-2xl lg:text-4xl '> Best Assignments Essay & Dissertation by PhD Experts</h1>
                     <p className='text-sm md:text-base text-muted-foreground py-2 font-medium text-center md:text-start '>Here we are providing best assignment assistance to help
                     achieve top grades in your academic career.</p>
