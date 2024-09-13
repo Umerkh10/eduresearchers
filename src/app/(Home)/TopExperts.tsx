@@ -8,7 +8,7 @@ function TopExperts() {
 
     return (
         <div className='mx-auto max-w-screen-xl'>
-            <div className='mt-10'>
+            <div data-aos='fade-up' data-aos-duration="1500" className='mt-10'>
                 <h1 className='text-center text-4xl md:text-7xl text-muted font-extrabold '>TOP EXPERTS</h1>
                 <div className=' flex justify-center '>
                     <h2 className='text-xl md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10  font-extrabold text-center'>MEET URGENT DEADLINE WITH PROFESSIONAL ASSISTANCE</h2>
@@ -16,29 +16,29 @@ function TopExperts() {
                 <p className='text-muted-foreground font-medium text-center -translate-y-3 md:-translate-y-7  text-sm lg:px-56 '>WE HAVE WRITERS AND EDITORS FROM DIFFERENT DISCIPLINES TO MEET STUDENTS' UNIQUE REQUIREMENTS. WHETHER IT IS SCIENCE OR ACCOUNTING, OUR EXPERTS WILL DEAL WITH IT.</p>
 
                 <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 p-4'>
-                    <div className='py-3 pr-5'>
+                    <div data-aos='fade-up' className='py-3 pr-5'>
                         <div className='h-[600px] md:h-[800px] bg-sky-50 dark:bg-transparent border-[2px] border-dashed rounded rounded-tr-full rounded-br-full  '>
-                            <div className='rounded-full w-16 h-16 bg-yellow-400 -translate-y-5 translate-x-3'>
+                            <div className='rounded-full w-16 h-16 -translate-y-5 translate-x-3'>
                                 <Image src={'/imgs/10.png'} width={64} height={64} alt='top expert'></Image>
                             </div>
-                            <div className='rounded-full w-20 h-20 bg-yellow-400 translate-y-12 translate-x-60 
+                            <div className='rounded-full w-20 h-20 translate-y-12 translate-x-60 
                              lg:translate-x-60 xl:translate-x-64 md:translate-x-[575px] '>
                                 <Image src={'/imgs/9.png'} width={80} height={80} alt='top expert'></Image>
                             </div>
-                            <div className='rounded-full w-28 h-28 bg-yellow-400 translate-y-32 md:translate-y-40  translate-x-[240px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[635px] '>
+                            <div className='rounded-full w-28 h-28 translate-y-32 md:translate-y-40  translate-x-[240px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[635px] '>
                                 <Image src={'/imgs/8.png'} width={120} height={120} alt='top expert'></Image>
                             </div>
-                            <div className='rounded-full w-20 h-20 bg-yellow-400 translate-y-48 md:translate-y-80 translate-x-60 lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px] '>
+                            <div className='rounded-full w-20 h-20 translate-y-48 md:translate-y-80 translate-x-60 lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px] '>
                                 <Image src={'/imgs/7.png'} width={80} height={80} alt='top expert'></Image>
                             </div>
-                            <div className='rounded-full w-16 h-16 bg-yellow-400 translate-y-[225px] md:translate-y-[420px] translate-x-3'>
+                            <div className='rounded-full w-16 h-16 translate-y-[225px] md:translate-y-[420px] translate-x-3'>
                                 <Image src={'/imgs/6.png'} width={64} height={64} alt='top expert'></Image>
                             </div>
                         </div>
                     </div>
 
                     <div className=''>
-                        <div className='pt-10 lg:pt-64 lg:ml-5 px-5 '>
+                        <div data-aos='fade-down' className='pt-10 lg:pt-64 lg:ml-5 px-5 '>
                             <div className='flex justify-between items-center'>
                                 <span className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100'>JERRY GENTRY</span>
                                 <span className='rounded-full px-3 py-1 bg-sky-100 dark:bg-zinc-800 dark:text-white font-medium'>Master's</span>
@@ -60,7 +60,7 @@ function TopExperts() {
                     </div>
 
                     <div className=''>
-                        <div className='pt-10 lg:pt-64 lg:ml-5 px-5'>
+                        <div data-aos='fade-up' className='pt-10 lg:pt-64 lg:ml-5 px-5'>
                             <div className='bg-sky-50 dark:bg-transparent rounded-lg p-5'>
                             <h2 className='text-center text-xl text-orange-500 font-bold '>IMPORTANT FACTS</h2>
                             <div className='mt-4 flex items-center'>

@@ -7,8 +7,8 @@ import React from 'react'
 function ExpertSection() {
   return (
     <div className='max-w-screen-xl mx-auto mt-10' >
-        <div data-aos='fade-down' data-aos-duration="2000" className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900'>
-            <div className=' '>
+        <div data-aos='fade-down' data-aos-duration="1500" className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900'>
+            <div data-aos='zoom-in' className=' '>
                 <h1 className='text-4xl font-extrabold pt-5'>What Our Experts Can Do</h1>
                 <div className='pt-5'>
                 <Tabs defaultValue="Homework" className="">
@@ -20,7 +20,7 @@ function ExpertSection() {
                     <TabsTrigger value="Other">Other</TabsTrigger>
                 </TabsList>
 
-                <TabsContent className='p-4' value="Homework">
+                <TabsContent data-aos='flip-down' className='p-4' value="Homework">
                     <h1 className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5 '>Homework</h1>
                     <p className=' font-medium text-muted-foreground lg:pr-44'>We understand your academic career will be filled with complex homework tasks, but don't take stress to complete it efficiently.</p>
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
@@ -40,7 +40,7 @@ function ExpertSection() {
                 </TabsContent>
 
 
-                <TabsContent className='p-4' value="Assignment">
+                <TabsContent  className='p-4' value="Assignment">
                 <h1 className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5 '>Assignment</h1>
                     <p className=' font-medium text-muted-foreground lg:pr-44'>We have a team of writers to complete your complex assignment before the deadline with quality, no matter the subject.</p>
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
@@ -60,7 +60,7 @@ function ExpertSection() {
                 </TabsContent>
 
 
-                <TabsContent className='p-4' value="Research papers">
+                <TabsContent  className='p-4' value="Research papers">
                 <h1 className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5 '>Research Papers</h1>
                     <p className=' font-medium text-muted-foreground lg:pr-44'>Looking for a professional writer to deal with scientific research papers? Look, nowhere we are here to provide your best research paper writing.</p>
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
@@ -123,7 +123,7 @@ function ExpertSection() {
             <div className='pt-5'>
                 <div className='rounded-xl mt-5'>
                 <Carousel>
-                <CarouselContent>
+                <CarouselContent >
                     <CarouselItem>
                         <Image src={'/imgs/messenger-slide-1.png'} width={650} height={600} alt='tab'></Image>
                     </CarouselItem>

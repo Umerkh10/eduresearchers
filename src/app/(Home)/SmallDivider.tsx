@@ -3,9 +3,9 @@ import React from 'react'
 
 function SmallDivider() {
   return (
-    <div className='w-full py-5 bg-sky-200'>
+    <div data-aos='fade-down' data-aos-duration="1500" className='w-full py-5 bg-sky-200'>
         <div className='mx-auto max-w-screen-xl'>
-            <div className='grid lg:grid-cols-3 grid-cols-1 p-4'>
+            <div data-aos='fade-up'  className='grid lg:grid-cols-3 grid-cols-1 p-4'>
                 <div className='col-span-2'>
                 <h1 className='font-semibold text-lg md:text-xl text-zinc-800'>Invest Your Money In Quality</h1>
                 <h2 className='pt-2 text-2xl md:text-4xl font-extrabold text-zinc-900'>GET OUTSTANDING DISCOUNT ON YOUR FIRST ORDER</h2>
