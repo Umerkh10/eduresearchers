@@ -97,7 +97,7 @@ const FaqSection: React.FC = () => {
         </div>
       </div>
       <div data-aos='zoom-in' className='mt-10'>
-        <h2 className='text-3xl text-center font-semibold text-zinc-800 dark:text-zinc-200'>Any Issues Or Questions</h2>
+        <h2 className='md:text-3xl text-xl text-center font-semibold text-zinc-800 dark:text-zinc-200'>Any Issues Or Questions</h2>
         <p className='text-muted-foreground font-medium pt-2 text-center'>Send us a message, and we’ll reply within seconds!</p>
         <div className='flex justify-center items-center mt-3'>
           <Link href={'#banner'} className='bg-zinc-900 text-white py-4 px-7 rounded-xl dark:bg-zinc-200 font-medium scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 dark:text-zinc-900'>

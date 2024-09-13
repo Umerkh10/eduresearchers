@@ -9,7 +9,7 @@ function ExpertSection() {
     <div id='service' className='max-w-screen-xl mx-auto mt-10' >
         <div data-aos='fade-down' data-aos-duration="1500" className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900'>
             <div data-aos='zoom-in' className=' '>
-                <h1 className='text-4xl font-extrabold pt-5'>What Our Experts Can Do</h1>
+                <h1 className='md:text-4xl text-2xl text-center md:text-start font-extrabold pt-5'>What Our Experts Can Do</h1>
                 <div className='pt-5'>
                 <Tabs defaultValue="Homework" className="">
                 <TabsList>

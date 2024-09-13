@@ -17,7 +17,7 @@ function HowItWorks() {
                        <Image className='grayscale' src={'/imgs/arrow.svg'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
-                    <h2 className=' mt-8 text-2xl font-bold text-zinc-800 dark:text-zinc-100'>FILL FORM</h2>
+                    <h2 className=' mt-8 text-xl md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>FILL FORM</h2>
                     <p className='mt-2 text-muted-foreground font-medium'>Reach out to us via live chat, give us deadlines and requirements.</p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@ function HowItWorks() {
                        <Image className='grayscale' src={'/imgs/arrow.svg'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
-                    <h2 className=' mt-8 text-2xl font-bold text-zinc-800 dark:text-zinc-100'>GET QUOTATION</h2>
+                    <h2 className=' mt-8 text-xl md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>GET QUOTATION</h2>
                     <p className='mt-2 text-muted-foreground font-medium'>You will receive a quotation from our expert within a few hours according to your requirements.</p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ function HowItWorks() {
                        <Image className='grayscale' src={'/imgs/arrow.svg'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
-                    <h2 className=' mt-8 text-2xl font-bold text-zinc-800 dark:text-zinc-100'>PROCEED WITH PAYMENT</h2>
+                    <h2 className=' mt-8 text-xl md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>PROCEED WITH PAYMENT</h2>
                     <p className='mt-2 text-muted-foreground font-medium'>Pay amount for your services, as we have
                     reasonable packages for every service.</p>
                     </div>
@@ -54,7 +54,7 @@ function HowItWorks() {
                        <Image className='grayscale' src={'/imgs/arrow.svg'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
-                    <h2 className=' mt-8 text-2xl font-bold text-zinc-800 dark:text-zinc-100'>CLICK ON DOWNLOAD</h2>
+                    <h2 className=' mt-8 text-xl md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>CLICK ON DOWNLOAD</h2>
                     <p className='mt-2 text-muted-foreground font-medium'>Receive high-quality work on your mentioned deadline. Ask for amendments in case youfeel.</p>
                     </div>
                 </div>
