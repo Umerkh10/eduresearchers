@@ -139,7 +139,7 @@ function TopExperts() {
                 <Image className="mr-2" src="/imgs/eye.svg" width={20} height={20} alt="thumb" />
                 {currentExpert ? currentExpert.reviews : "714 reviews"}
               </div>
-              <button className="bg-zinc-800 dark:bg-zinc-100 flex items-center justify-center py-4 w-full rounded-lg mt-5 text-white dark:text-zinc-900 font-medium">
+              <button className="bg-zinc-800 dark:bg-zinc-100 hover:scale-105 transition ease-in duration-200 delay-200 flex items-center justify-center py-4 w-full rounded-lg mt-5 text-white dark:text-zinc-900 font-medium">
                 <MessageCircleIcon className="mr-1" /> Get Started
               </button>
               <div className="text-muted-foreground font-medium text-center pt-2">

@@ -32,7 +32,7 @@ function ExpertSection() {
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>Get unlimited revisions
                     </div>
-                    <button className='flex items-center bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
+                    <button className='flex hover:scale-105 transition ease-in duration-200 delay-200 items-center bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
                     dark:text-zinc-800 font-bold rounded-xl py-3 px-10 mt-10'>
                         <MessageCircleIcon className='mr-1'/>GET HELP
                     </button>
@@ -52,7 +52,7 @@ function ExpertSection() {
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>Get unlimited revisions
                     </div>
-                    <button className='flex items-center bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
+                    <button className='flex items-center hover:scale-105 transition ease-in duration-200 delay-200 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
                     dark:text-zinc-800 font-bold rounded-xl py-3 px-10 mt-10'>
                         <MessageCircleIcon className='mr-1'/>GET HELP
                     </button>
@@ -72,7 +72,7 @@ function ExpertSection() {
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>Get unlimited revisions
                     </div>
-                    <button className='flex items-center bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
+                    <button className='flex items-center hover:scale-105 transition ease-in duration-200 delay-200 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
                     dark:text-zinc-800 font-bold rounded-xl py-3 px-10 mt-10'>
                         <MessageCircleIcon className='mr-1'/>GET HELP
                     </button>
@@ -91,7 +91,7 @@ function ExpertSection() {
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>Get unlimited revisions
                     </div>
-                    <button className='flex items-center bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
+                    <button className='flex items-center hover:scale-105 transition ease-in duration-200 delay-200 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
                     dark:text-zinc-800 font-bold rounded-xl py-3 px-10 mt-10'>
                         <MessageCircleIcon className='mr-1'/>GET HELP
                     </button>
@@ -110,7 +110,7 @@ function ExpertSection() {
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>Get unlimited revisions
                     </div>
-                    <button className='flex items-center bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
+                    <button className='flex items-center hover:scale-105 transition ease-in duration-200 delay-200 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 
                     dark:text-zinc-800 font-bold rounded-xl py-3 px-10 mt-10'>
                         <MessageCircleIcon className='mr-1'/>GET HELP
                     </button>

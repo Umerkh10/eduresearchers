@@ -4,13 +4,16 @@ import React from 'react'
 function UniSection() {
   return (
     <div className='mx-auto max-w-screen-xl' data-aos='fade-up' data-aos-duration="1000">
-        <div className='flex flex-col lg:flex-row items-center justify-evenly lg:gap-0 gap-4 py-4'>
-            <p className='w-[250px] font-semibold md:text-base text-sm'>90% Of our experts studied at top-rated Universities </p>
-            <Image src={'/imgs/princeton.png'} width={120} height={100} alt='uni'></Image>
-            <Image src={'/imgs/stanford.png'} width={120} height={100} alt='uni'></Image>
-            <Image src={'/imgs/oxford-univ.png'} width={120} height={100} alt='uni'></Image>
-            <Image src={'/imgs/british.png'} width={120} height={100} alt='uni'></Image>
-            <Image src={'/imgs/alberta.png'} width={120} height={100} alt='uni'></Image>
+        <div className='grid lg:grid-cols-7 grid-cols-2 lg:gap-0 gap-2 py-4 px-3'>
+          <div className='col-span-2'>
+            <p className=' font-semibold md:text-base text-sm'>90% Of our experts studied at top-rated Universities </p>
+            </div>
+            <div><Image src={'/imgs/princeton.png'} width={120} height={100} alt='uni'></Image></div>
+            <div><Image src={'/imgs/stanford.png'} width={120} height={100} alt='uni'></Image></div>
+            <div> <Image src={'/imgs/oxford-univ.png'} width={120} height={100} alt='uni'></Image></div>
+           <div><Image src={'/imgs/british.png'} width={120} height={100} alt='uni'></Image></div>
+            <div className='hidden md:block'><Image src={'/imgs/alberta.png'} width={120} height={100} alt='uni'></Image></div>
+            
         </div>
     </div>
   )

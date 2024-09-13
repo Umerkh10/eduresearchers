@@ -3,7 +3,7 @@ import React from 'react';
 const DiscountForm: React.FC = () => {
   return (
     <div className="max-w-sm mx-auto bg-background rounded-3xl  shadow-lg ">
-      <h2 className="text-3xl font-bold text-center p-5">Avail Flat 45% OFF</h2>
+      <h2 className="text-xl md:text-3xl font-bold text-center p-5">Avail Flat 45% OFF</h2>
       
       <form className="space-y-3 p-4">
         <input
@@ -28,11 +28,11 @@ const DiscountForm: React.FC = () => {
         <div className="pt-4 ">
           <div className="flex justify-between items-center mb-2">
             <span className="font-bold text-sm">PROMO CODE</span>
-            <span className="font-bold text-muted-foreground text-xl">MA-OFF15</span>
+            <span className="font-bold text-muted-foreground md:text-xl">MA-OFF15</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="font-bold text-red-600">DISCOUNT</span>
-            <span className="font-bold text-2xl text-red-600">15%</span>
+            <span className="font-bold text-xl md:text-2xl text-red-600">15%</span>
           </div>
         </div>
         
