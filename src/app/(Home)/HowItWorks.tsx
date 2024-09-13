@@ -3,7 +3,7 @@ import React from 'react'
 
 function HowItWorks() {
   return (
-    <div className='mx-auto max-w-screen-xl'>
+    <div id='howitworks' className='mx-auto max-w-screen-xl'>
         <div data-aos='fade-up' data-aos-duration="1500" className='mt-10'>
         <h1 className='text-center text-4xl md:text-7xl text-muted font-extrabold '>HOW IT WORKS</h1>
             <div className=' flex justify-center '>

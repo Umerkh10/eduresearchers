@@ -3,7 +3,7 @@ import React from 'react'
 
 function ServiceSection() {
   return (
-    <div className='mx-auto max-w-screen-xl'>
+    <div id="why-us" className='mx-auto max-w-screen-xl'>
         <div data-aos='fade-up' data-aos-duration="2000" className='mt-10'>
             <h1 className='text-center text-4xl md:text-7xl text-muted font-extrabold '>WHY US?</h1>
             <div className=' flex justify-center '>

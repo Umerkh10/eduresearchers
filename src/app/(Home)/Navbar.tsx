@@ -9,8 +9,8 @@ import { ModeToggle } from '@/components/ui/ThemeSwitch'
 function Navbar() {
 
   return (
-    <header className="w-full bg-background shadow">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-24">
+    <header className="sticky top-0 z-50 w-full bg-background shadow">
+      <div className=" container mx-auto flex h-16 items-center justify-between px-4 xl:px-24">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
           <MountainSnowIcon className="h-6 w-6" />
           <span className="text-lg font-bold text-orange-500 ">Eduresearchers</span>
@@ -21,22 +21,22 @@ function Navbar() {
         </div>
 
         <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#why-us" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Why Us?
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#service" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Our Services
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#howitworks" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             How it Works
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#topexpert" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Top Experts
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#review" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Reviews
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#faq" className="text-muted-foreground hover:text-foreground" prefetch={false}>
             Frequently Asked Questions
           </Link>
           <ModeToggle/>

@@ -4,7 +4,7 @@ import ReviewCarousel from './ReviewCarousel'
 
 function Reviews() {
   return (
-    <div className='mt-10'>
+    <div id='review' className='mt-10'>
         <div data-aos='fade-down' data-aos-duration="1500" className='mx-auto max-w-screen-xl'>
             <div className='grid lg:grid-cols-2 grid-cols-1 p-5'>
             <div data-aos='flip-down' className='p-10'>
