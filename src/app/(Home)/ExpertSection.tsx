@@ -7,7 +7,7 @@ import React from 'react'
 function ExpertSection() {
   return (
     <div className='max-w-screen-xl mx-auto mt-10' >
-        <div className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900'>
+        <div data-aos='fade-down' data-aos-duration="2000" className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900'>
             <div className=' '>
                 <h1 className='text-4xl font-extrabold pt-5'>What Our Experts Can Do</h1>
                 <div className='pt-5'>
@@ -42,7 +42,7 @@ function ExpertSection() {
 
                 <TabsContent className='p-4' value="Assignment">
                 <h1 className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5 '>Assignment</h1>
-                    <p className=' font-medium text-muted-foreground lg:pr-44'>We understand your academic career will be filled with complex homework tasks, but don't take stress to complete it efficiently.</p>
+                    <p className=' font-medium text-muted-foreground lg:pr-44'>We have a team of writers to complete your complex assignment before the deadline with quality, no matter the subject.</p>
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>More than 50 subjects covered
                     </div>
@@ -62,7 +62,7 @@ function ExpertSection() {
 
                 <TabsContent className='p-4' value="Research papers">
                 <h1 className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5 '>Research Papers</h1>
-                    <p className=' font-medium text-muted-foreground lg:pr-44'>We understand your academic career will be filled with complex homework tasks, but don't take stress to complete it efficiently.</p>
+                    <p className=' font-medium text-muted-foreground lg:pr-44'>Looking for a professional writer to deal with scientific research papers? Look, nowhere we are here to provide your best research paper writing.</p>
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>More than 50 subjects covered
                     </div>
@@ -81,7 +81,7 @@ function ExpertSection() {
 
                 <TabsContent className='p-4' value="Assignment Editing">
                 <h1 className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5 '>Assignment Editing</h1>
-                    <p className=' font-medium text-muted-foreground lg:pr-44'>We understand your academic career will be filled with complex homework tasks, but don't take stress to complete it efficiently.</p>
+                    <p className=' font-medium text-muted-foreground lg:pr-44'>Completed assignment, but not sure if it is perfect or not? Don’t take the stress. We have a quality reviewer to check your assignment work and edit it accordingly.</p>
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>More than 50 subjects covered
                     </div>
@@ -100,7 +100,7 @@ function ExpertSection() {
 
                 <TabsContent className='p-4' value="Other">
                 <h1 className='text-2xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5 '>Other</h1>
-                    <p className=' font-medium text-muted-foreground lg:pr-44'>We understand your academic career will be filled with complex homework tasks, but don't take stress to complete it efficiently.</p>
+                    <p className=' font-medium text-muted-foreground lg:pr-44'>Stuck with your thesis or dissertation work? We at {process.env.NEXT_PUBLIC_NAME} deal with all types of research writing projects gives us the requirement, and get assistance.</p>
                     <div className='flex items-center mt-3 font-medium text-muted-foreground'>
                         <CheckCheckIcon className='mr-2 text-green-500'/>More than 50 subjects covered
                     </div>

@@ -1,3 +1,5 @@
+"use client"
+import { useInView } from "react-intersection-observer";
 import ExpertSection from "./ExpertSection";
 import FaqSection from "./FaqSection";
 import Footer from "./Footer";
@@ -9,10 +11,25 @@ import SmallDivider from "./SmallDivider";
 import SupportSection from "./SupportSection";
 import TopExperts from "./TopExperts";
 import UniSection from "./UniSection";
+import { useEffect } from "react";
+import Aos from 'aos'
+import 'aos/dist/aos.css';
 
 export default function Home() {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    Aos.init({
+      duration: 800,
+      disable: "mobile",
+      offset: 100,
+    });
+  }, [inView]);
   return (
-    <div>
+    <div ref={ref}>
       <HomeBanner/>
       <UniSection/>
       <ServiceSection/>

@@ -3,6 +3,9 @@ import Image from 'next/image'
 import React from 'react'
 
 function TopExperts() {
+
+    
+
     return (
         <div className='mx-auto max-w-screen-xl'>
             <div className='mt-10'>
@@ -22,7 +25,7 @@ function TopExperts() {
                              lg:translate-x-60 xl:translate-x-64 md:translate-x-[575px] '>
                                 <Image src={'/imgs/9.png'} width={80} height={80} alt='top expert'></Image>
                             </div>
-                            <div className='rounded-full w-28 h-28 bg-yellow-400 translate-y-32 md:translate-y-40 translate-x-64 lg:translate-x-64 xl:translate-x-80 md:translate-x-[635px] '>
+                            <div className='rounded-full w-28 h-28 bg-yellow-400 translate-y-32 md:translate-y-40  translate-x-[240px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[635px] '>
                                 <Image src={'/imgs/8.png'} width={120} height={120} alt='top expert'></Image>
                             </div>
                             <div className='rounded-full w-20 h-20 bg-yellow-400 translate-y-48 md:translate-y-80 translate-x-60 lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px] '>
@@ -33,6 +36,7 @@ function TopExperts() {
                             </div>
                         </div>
                     </div>
+
                     <div className=''>
                         <div className='pt-10 lg:pt-64 lg:ml-5 px-5 '>
                             <div className='flex justify-between items-center'>
@@ -54,6 +58,7 @@ function TopExperts() {
                               <div className='text-muted-foreground font-medium text-center pt-2'>Prices start at just <span className='text-bold'>£11/page.</span></div>
                         </div>
                     </div>
+
                     <div className=''>
                         <div className='pt-10 lg:pt-64 lg:ml-5 px-5'>
                             <div className='bg-sky-50 dark:bg-transparent rounded-lg p-5'>

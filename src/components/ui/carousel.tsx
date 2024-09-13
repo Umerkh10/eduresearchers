@@ -21,6 +21,7 @@ type CarouselProps = {
   setApi?: (api: CarouselApi) => void
 }
 
+
 type CarouselContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0]
   api: ReturnType<typeof useEmblaCarousel>[1]
@@ -55,6 +56,7 @@ const Carousel = React.forwardRef<
       className,
       children,
       ...props
+      
     },
     ref
   ) => {
