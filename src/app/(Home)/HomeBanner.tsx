@@ -29,7 +29,7 @@ function HomeBanner() {
                     <div className='font-medium text-muted-foreground text-center md:text-start pt-1'>Prices start at just  <span className='text-black dark:text-white text-sm font-medium'>£11/page</span></div>
             </div>
             <div className=''>
-                <div className='flex justify-center'>
+                <div className='flex justify-center px-3'>
                 <DiscountForm/>
                 </div>
             </div>
