@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Eduresearchers",
   robots: {
     index: false,
-    follow: true,
+    follow: false,
     nocache: true,
     googleBot: {
       index: true,
