@@ -3,6 +3,7 @@ import { Montserrat} from "next/font/google";
 import "./globals.css";
 import Navbar from "./(Home)/Navbar";
 import { ThemeProvider } from "./ThemeProvider";
+import { Toaster } from "sonner";
 
 
 const inter = Montserrat({
@@ -34,6 +35,7 @@ export default function RootLayout({
           >
         <Navbar/>
         {children}
+        <Toaster richColors position="bottom-right"/>
         </ThemeProvider>
       </body>
     </html>

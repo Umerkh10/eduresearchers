@@ -1,6 +1,7 @@
 import { MessageCircleIcon } from 'lucide-react';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
 
 interface ExpertContent {
   name: string;
@@ -52,7 +53,7 @@ const expertData: { [key: number]: ExpertContent } = {
 };
 
 function TopExperts() {
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
+  const [hoveredImage, setHoveredImage] = useState<number | null>(1);
 
   const handleMouseEnter = (imageNumber: number) => {
     setHoveredImage(imageNumber);
@@ -63,6 +64,20 @@ function TopExperts() {
   };
 
   const currentExpert = hoveredImage ? expertData[hoveredImage] : null;
+
+  useEffect(() => {
+
+    const intervalId = setInterval(() => {
+      setHoveredImage(prev => {
+        const next = (prev ?? 0) + 1;
+        return next <= Object.keys(expertData).length ? next : 1;
+      });
+    }, 4000); 
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []); 
 
   return (
     <div id="topexpert" className="mx-auto max-w-screen-xl">
@@ -82,35 +97,36 @@ function TopExperts() {
           <div data-aos="fade-up" className="py-3 pr-5">
             <div className="h-[600px] md:h-[800px] bg-sky-50 dark:bg-transparent border-[2px] border-dashed rounded-tr-full rounded-br-full">
               <div
-                className="rounded-full w-16 h-16 -translate-y-5 translate-x-3"
+               className={`${hoveredImage === 1 ? 'border-[4px] border-sky-500 scale-150 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-16 h-16 -translate-y-5 translate-x-3`}
+
                 onMouseEnter={() => handleMouseEnter(1)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Image src="/imgs/10.png" width={64} height={64} alt="top expert" />
               </div>
               <div
-                className="rounded-full w-20 h-20 translate-y-12 translate-x-60 lg:translate-x-60 xl:translate-x-64 md:translate-x-[575px]"
+                className={`${hoveredImage === 2 ? 'border-[3px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-12 translate-x-60 lg:translate-x-60 xl:translate-x-64 md:translate-x-[575px]`}
                 onMouseEnter={() => handleMouseEnter(2)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Image src="/imgs/9.png" width={80} height={80} alt="top expert" />
               </div>
               <div
-                className="rounded-full w-28 h-28 translate-y-32 md:translate-y-40 translate-x-[240px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[605px]"
+                className={`${hoveredImage === 3 ? 'border-[5px] border-sky-500 scale-105 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-28 h-28 translate-y-32 md:translate-y-40 translate-x-[240px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[605px]`}
                 onMouseEnter={() => handleMouseEnter(3)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Image src="/imgs/8.png" width={120} height={120} alt="top expert" />
               </div>
               <div
-                className="rounded-full w-20 h-20 translate-y-48 md:translate-y-80 translate-x-60 lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px]"
+                className={`${hoveredImage === 4 ? 'border-[4px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-48 md:translate-y-80 translate-x-60 lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px]`}
                 onMouseEnter={() => handleMouseEnter(4)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Image src="/imgs/7.png" width={80} height={80} alt="top expert" />
               </div>
               <div
-                className="rounded-full w-16 h-16 translate-y-[225px] md:translate-y-[420px] translate-x-3"
+                className={`${hoveredImage === 5 ? 'border-[3px] border-sky-500 scale-150 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-16 h-16 translate-y-[225px] md:translate-y-[420px] translate-x-3`}
                 onMouseEnter={() => handleMouseEnter(5)}
                 onMouseLeave={handleMouseLeave}
               >
