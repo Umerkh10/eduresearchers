@@ -3,18 +3,18 @@ import { z } from "zod"
 import nodemailer from "nodemailer"
 
 const formSchema = z.object({
-    name: z.string().min(3).max(15),
+
     email: z.string().email().nonempty(),
-    phone: z.string().min(9).max(15)
+
 });
 
-export default async function EmailAction(state: any, formData: FormData) {
+export default async function EmailAction2(state: any, formData: FormData) {
     try {
-        const name = formData.get("name") 
-        const email = formData.get("email") 
-        const phone = formData.get("phone") 
 
-        const validatedField = formSchema.safeParse({ name, email, phone })
+        const email = formData.get("email") 
+
+
+        const validatedField = formSchema.safeParse({email})
 
         if (validatedField.error) {
             return {info: validatedField.error.flatten().fieldErrors}
@@ -38,9 +38,9 @@ export default async function EmailAction(state: any, formData: FormData) {
             <div style="font-family: Arial, sans-serif; line-height: 1.6;">
                 <p><b> Details:</b></p>
                 <ul>
-                    <li><b>Name:</b> ${validatedField.data.name}</li>
+
                     <li><b>Email Address:</b> ${validatedField.data.email}</li>
-                    <li><b>Phone Number:</b> ${validatedField.data.phone}</li>
+
                 </ul>
             </div>
 `
