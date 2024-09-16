@@ -1,16 +1,9 @@
-import { MessageCircle } from 'lucide-react'
+import {  HelpingHandIcon, MessageCircle } from 'lucide-react'
 import React from 'react'
 import DiscountForm from './DiscountForm'
 import Tawkto from '@/lib/Tawkto';
 
-function HomeBanner() {
-
-    const handleGetStartedClick = () => {
-        // Ensure Tawk_API is loaded and available
-        if (window.Tawk_API) {
-          window.Tawk_API.toggle(); // This will toggle the chat widget
-        }
-      };
+export function HomeBanner() {
 
   return (
     <>
@@ -28,11 +21,11 @@ function HomeBanner() {
                     <h1 className='font-bold pt-5 text-center md:text-start text-2xl lg:text-4xl '> Best Assignments Essay & Dissertation by PhD Experts</h1>
                     <p className='text-sm md:text-base text-muted-foreground py-2 font-medium text-center md:text-start '>Here we are providing best assignment assistance to help
                     achieve top grades in your academic career.</p>
-                    <div className='md:block  flex justify-center items-center scale-90 md:scale-100 '>
-                    <button onClick={handleGetStartedClick} className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 mt-5 py-3 bg-zinc-900 w-[200px] text-white rounded-lg'>
+                    <div className='md:flex-row md:justify-start md:gap-3  flex flex-col justify-center items-center scale-90 md:scale-100 mt-4  '>
+                    <button  className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200  py-3 bg-zinc-900 w-[200px] text-white rounded-lg'>
                         <MessageCircle className='mr-1'/> Get Started
                     </button>
-                    
+                    <HelpDesk/>
                     </div>
                     <div className='font-medium text-muted-foreground text-center md:text-start pt-1'>Prices start at just  <span className='text-black dark:text-white text-sm font-medium'>£11/page</span></div>
             </div>
@@ -48,4 +41,21 @@ function HomeBanner() {
   )
 }
 
-export default HomeBanner
+
+
+
+
+export function HelpDesk() {
+    const handleGetStartedClick = () => {
+        // Ensure Tawk_API is loaded and available
+        if (window.Tawk_API) {
+          window.Tawk_API.toggle(); // This will toggle the chat widget
+        }
+      };
+  return (
+    <button onClick={handleGetStartedClick} className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-orange-500 w-[200px] text-white rounded-lg'>
+    <HelpingHandIcon className='mr-1'/> Help Desk
+</button>
+  )
+}
+

@@ -57,6 +57,6 @@ function DividerButton() {
     return (
         <button
             disabled={pending}
-            className='flex justify-center bg-orange-500 py-4 px-6 rounded-lg text-white font-medium w-3/4 md:w-1/2 scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 hover:shadow-xl'> {pending ? <><Loader className='animate-spin mr-2 h-5 w-5 ' /> <p>Loading...</p></> : "Get A Discount"}</button>
+            className='flex justify-center bg-orange-500 py-4 px-6 rounded-lg text-white font-medium w-3/4 md:w-1/2 md:-ml-5 scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 hover:shadow-xl'> {pending ? <><Loader className='animate-spin mr-2 h-5 w-5 ' /> <p>Loading...</p></> : "Get A Discount"}</button>
     )
 }

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { CarouselSpacing } from './SupportCarousel'
 import { MessageCircleIcon } from 'lucide-react'
+import { HelpDesk } from './HomeBanner'
 
 function SupportSection() {
     return (
@@ -50,10 +51,11 @@ function SupportSection() {
                         <CarouselSpacing/>
                         </div>
                         <h2 className='pt-4 text-zinc-100 font-semibold text-lg md:text-2xl text-center '>NEED ASSISTANCE? WE'RE HERE FOR YOU 24/7!</h2>
-                        <div className='flex justify-center items-center mt-4'>
+                        <div className='md:flex-row  gap-3  flex flex-col justify-center items-center scale-90 md:scale-100 mt-4'>
                         <button className='bg-zinc-900 flex text-white py-3 px-6 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200'>
                             <MessageCircleIcon className='mr-1'/> Get Started
                         </button>
+                        <HelpDesk/>
                         </div>
                     </div>
                 </div>
