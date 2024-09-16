@@ -11,7 +11,7 @@ function Reviews() {
                 <h1 className='font-extrabold lg:text-5xl text-2xl text-center md:text-start '>SAVING YOUR GRADES IS OUR PRIORITY</h1>
                 <p className='pt-5 text-muted-foreground font-medium text-center md:text-start'>We are serving students globally to help all students reach their goals. You can trust our expertise and fulfil your dream.</p>
                 <div className='md:block flex justify-center items-center mt-10'>
-                    <Image src={'/imgs/rating.svg'} width={120} height={120} alt='rating' ></Image>
+                    <Image src={'/imgs/rating.webp'} width={120} height={120} alt='rating' ></Image>
                 </div>
                 <p className='text-muted-foreground font-medium text-center md:text-start pt-2 -ml-3'>“Excellent” - 9.7/10</p>
             </div>

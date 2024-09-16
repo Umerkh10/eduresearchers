@@ -125,19 +125,19 @@ function ExpertSection() {
                 <Carousel>
                 <CarouselContent >
                     <CarouselItem>
-                        <Image src={'/imgs/messenger-slide-1.png'} width={650} height={600} alt='tab'></Image>
+                        <Image src={'/imgs/messenger-slide-1.webp'} width={650} height={600} alt='tab'></Image>
                     </CarouselItem>
                     <CarouselItem>
-                    <Image src={'/imgs/messenger-slide-2.png'} width={650} height={600} alt='tab'></Image>
+                    <Image src={'/imgs/messenger-slide-2.webp'} width={650} height={600} alt='tab'></Image>
                     </CarouselItem>
                     <CarouselItem>
-                    <Image src={'/imgs/messenger-slide-3.png'} width={650} height={600} alt='tab'></Image>
+                    <Image src={'/imgs/messenger-slide-3.webp'} width={650} height={600} alt='tab'></Image>
                     </CarouselItem>
                     <CarouselItem>
-                    <Image src={'/imgs/messenger-slide-4.png'} width={650} height={600} alt='tab'></Image>
+                    <Image src={'/imgs/messenger-slide-4.webp'} width={650} height={600} alt='tab'></Image>
                     </CarouselItem>
                     <CarouselItem>
-                    <Image src={'/imgs/messenger-slide-5.png'} width={650} height={600} alt='tab'></Image>
+                    <Image src={'/imgs/messenger-slide-5.webp'} width={650} height={600} alt='tab'></Image>
                     </CarouselItem>
                 </CarouselContent>
      

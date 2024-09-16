@@ -102,35 +102,35 @@ function TopExperts() {
                 onMouseEnter={() => handleMouseEnter(1)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Image src="/imgs/10.png" width={64} height={64} alt="top expert" />
+                <Image src="/imgs/10.webp" width={64} height={64} alt="top expert" />
               </div>
               <div
                 className={`${hoveredImage === 2 ? 'border-[3px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-12 translate-x-60 lg:translate-x-60 xl:translate-x-64 md:translate-x-[575px]`}
                 onMouseEnter={() => handleMouseEnter(2)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Image src="/imgs/9.png" width={80} height={80} alt="top expert" />
+                <Image src="/imgs/9.webp" width={80} height={80} alt="top expert" />
               </div>
               <div
                 className={`${hoveredImage === 3 ? 'border-[5px] border-sky-500 scale-105 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-28 h-28 translate-y-32 md:translate-y-40 translate-x-[240px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[605px]`}
                 onMouseEnter={() => handleMouseEnter(3)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Image src="/imgs/8.png" width={120} height={120} alt="top expert" />
+                <Image src="/imgs/8.webp" width={120} height={120} alt="top expert" />
               </div>
               <div
                 className={`${hoveredImage === 4 ? 'border-[4px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-48 md:translate-y-80 translate-x-60 lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px]`}
                 onMouseEnter={() => handleMouseEnter(4)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Image src="/imgs/7.png" width={80} height={80} alt="top expert" />
+                <Image src="/imgs/7.webp" width={80} height={80} alt="top expert" />
               </div>
               <div
                 className={`${hoveredImage === 5 ? 'border-[3px] border-sky-500 scale-150 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-16 h-16 translate-y-[225px] md:translate-y-[420px] translate-x-3`}
                 onMouseEnter={() => handleMouseEnter(5)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Image src="/imgs/6.png" width={64} height={64} alt="top expert" />
+                <Image src="/imgs/6.webp" width={64} height={64} alt="top expert" />
               </div>
             </div>
           </div>
@@ -148,11 +148,11 @@ function TopExperts() {
                 {currentExpert ? currentExpert.fields : "Math, Statistics, Engineering"}
               </p>
               <div className="pt-5 flex items-center text-muted-foreground font-medium">
-                <Image className="mr-2" src="/imgs/thumbsup.svg" width={20} height={20} alt="thumb" />
+                <Image className="mr-2" src="/imgs/thumbsup.webp" width={20} height={20} alt="thumb" />
                 {currentExpert ? currentExpert.completedOrders : "809 completed orders"}
               </div>
               <div className="pt-2 flex items-center text-muted-foreground font-medium">
-                <Image className="mr-2" src="/imgs/eye.svg" width={20} height={20} alt="thumb" />
+                <Image className="mr-2" src="/imgs/eye.webp" width={20} height={20} alt="thumb" />
                 {currentExpert ? currentExpert.reviews : "714 reviews"}
               </div>
               <button className="bg-zinc-800 dark:bg-zinc-100 hover:scale-105 transition ease-in duration-200 delay-200 flex items-center justify-center py-4 w-full rounded-lg mt-5 text-white dark:text-zinc-900 font-medium">
@@ -168,19 +168,19 @@ function TopExperts() {
               <div className="bg-sky-50 dark:bg-transparent rounded-lg p-5">
                 <h2 className="text-center text-xl text-orange-500 font-bold">IMPORTANT FACTS</h2>
                 <div className="mt-4 flex items-center">
-                  <Image src="/imgs/fact-1.svg" width={25} height={25} alt="fact" />
+                  <Image src="/imgs/fact-1.webp" width={25} height={25} alt="fact" />
                   <p className="text-muted-foreground font-medium text-sm ml-2">All of our experts hold MAs, MBAs & PhDs</p>
                 </div>
                 <div className="mt-4 flex items-center">
-                  <Image src="/imgs/fact-2.svg" width={25} height={25} alt="fact" />
+                  <Image src="/imgs/fact-2.webp" width={25} height={25} alt="fact" />
                   <p className="text-muted-foreground font-medium text-sm ml-2">We hire only graduates with exceptional records</p>
                 </div>
                 <div className="mt-4 flex items-center">
-                  <Image src="/imgs/fact-3.svg" width={25} height={25} alt="fact" />
+                  <Image src="/imgs/fact-3.webp" width={25} height={25} alt="fact" />
                   <p className="text-muted-foreground font-medium text-sm ml-2">Our youngest expert has 6-year experience</p>
                 </div>
                 <div className="mt-4 flex items-center">
-                  <Image src="/imgs/fact-4.svg" width={25} height={25} alt="fact" />
+                  <Image src="/imgs/fact-4.webp" width={25} height={25} alt="fact" />
                   <p className="text-muted-foreground font-medium text-sm ml-2">We have at least 250 available experts 24/7</p>
                 </div>
               </div>

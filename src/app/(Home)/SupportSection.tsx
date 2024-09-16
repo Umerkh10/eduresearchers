@@ -19,29 +19,29 @@ function SupportSection() {
                             <div className=''>
                                 
                                 <div className='pt-5 flex items-center justify-center '>
-                                 <Image src={'/imgs/support-1.svg'} width={30} height={30} alt='support'></Image>
+                                 <Image src={'/imgs/support-1.webp'} width={30} height={30} alt='support'></Image>
                                  <p className='ml-2 font-medium text-zinc-100'>Get a quick and simple order placing method</p>
                                 </div>
                                 <div className='pt-5 flex items-center justify-center '>
-                                 <Image className='lg:-ml-5' src={'/imgs/support-1.svg'} width={30} height={30} alt='support'></Image>
+                                 <Image className='lg:-ml-5' src={'/imgs/support-1.webp'} width={30} height={30} alt='support'></Image>
                                  <p className='ml-2 font-medium text-zinc-100'>We are providing one-stop-shop solutions</p>
                                 </div>
                                 <div className='pt-5 flex items-center justify-center '>
-                                 <Image src={'/imgs/support-1.svg'} width={30} height={30} alt='support'></Image>
+                                 <Image src={'/imgs/support-1.webp'} width={30} height={30} alt='support'></Image>
                                  <p className='ml-2 font-medium text-zinc-100'>Get unmatched assignment writing services</p>
                                 </div>
                             </div>
                             <div className=''>
                             <div className='pt-5 flex items-center justify-center '>
-                                 <Image className='lg:-ml-5' src={'/imgs/support-1.svg'} width={30} height={30} alt='support'></Image>
+                                 <Image className='lg:-ml-5' src={'/imgs/support-1.webp'} width={30} height={30} alt='support'></Image>
                                  <p className='ml-2 font-medium text-zinc-100'>100% money-back guarantee and support</p>
                                 </div>
                                 <div className='pt-5 flex items-center justify-center '>
-                                 <Image className='' src={'/imgs/support-1.svg'} width={30} height={30} alt='support'></Image>
+                                 <Image className='' src={'/imgs/support-1.webp'} width={30} height={30} alt='support'></Image>
                                  <p className='ml-2 font-medium text-zinc-100'>Covering all disciplines, technical or complex</p>
                                 </div>
                                 <div className='pt-5 flex items-center justify-center '>
-                                 <Image className='lg:ml-5' src={'/imgs/support-1.svg'} width={30} height={30} alt='support'></Image>
+                                 <Image className='lg:ml-5' src={'/imgs/support-1.webp'} width={30} height={30} alt='support'></Image>
                                  <p className='ml-2 font-medium text-zinc-100'>Meeting all the requirements as per guidelines</p>
                                 </div>
                             </div>

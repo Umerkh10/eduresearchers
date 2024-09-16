@@ -16,7 +16,7 @@ function Navbar() {
           <span className="text-lg font-bold text-orange-500 ">Eduresearchers</span>
         </Link>
         <div className='flex flex-col items-center'>
-            <Image src={'/imgs/rating.svg'} width={100} height={100} alt='reviews'></Image>
+            <Image src={'/imgs/rating.webp'} width={100} height={100} alt='reviews'></Image>
             <div className='text-center text-muted-foreground text-sm '>"Excellent" 9.7/10</div>
         </div>
 

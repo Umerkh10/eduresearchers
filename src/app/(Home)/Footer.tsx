@@ -29,20 +29,20 @@ function Footer() {
                     </div>
                     <div className=''>
                         <div className='pt-3 text-muted-foreground font-medium'>Follow Us</div>
-                        <Image className='mt-4' src={'/imgs/footer-1.svg'} width={80} height={80} alt='likes'></Image>
+                        <Image className='mt-4' src={'/imgs/footer-1.webp'} width={80} height={80} alt='likes'></Image>
                         <p className='bg-blue-500 flex w-3/4 text-center py-1 px-2 rounded-full text-white font-medium text-sm mt-2 '> <Twitter className='mr-1'/> Follow {process.env.NEXT_PUBLIC_NAME} </p>
-                        <Image className='mt-4' src={'/imgs/dmca_protected_sml_120m.png'} width={120} height={120} alt='dmca' ></Image>
+                        <Image className='mt-4' src={'/imgs/dmca_protected_sml_120m.webp'} width={120} height={120} alt='dmca' ></Image>
                         <div className='pt-5 text-muted-foreground font-medium'> We accept</div>
-                        <Image className='pt-3' src={'/imgs/pay-cards.png'} width={120} height={100} alt='pay' ></Image>
+                        <Image className='pt-3' src={'/imgs/pay-cards.webp'} width={120} height={100} alt='pay' ></Image>
 
                     </div>
 
 
                     <div className=''>
-                        <Image className='mt-3' src={'/imgs/rating.svg'} width={120} height={120} alt='likes'></Image>
+                        <Image className='mt-3' src={'/imgs/rating.webp'} width={120} height={120} alt='likes'></Image>
                     <div className='pt-3 text-muted-foreground font-medium'>"Excellent" 9.7/10 </div>
                  
-                        <Image className='mt-4' src={'/imgs/a-rating.png'} width={100} height={100} alt='dmca' ></Image>
+                        <Image className='mt-4' src={'/imgs/a-rating.webp'} width={100} height={100} alt='dmca' ></Image>
        
                     </div>
                 </div>
