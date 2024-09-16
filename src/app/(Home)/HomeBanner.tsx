@@ -8,7 +8,7 @@ export function HomeBanner() {
   return (
     <>
     <Tawkto/>
-    <div id='banner' className=' w-full bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900'>
+    <div id='banner' className=' w-full bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:via-orange-950 dark:to-zinc-950'>
     <div className='mx-auto max-w-screen-xl'>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-3 py-10 '>
             <div className='py-5 lg:pl-24 px-5 '>
