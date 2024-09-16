@@ -52,7 +52,7 @@ const DiscountForm: React.FC = () => {
         <div className="pt-4">
           <div className="flex justify-between items-center mb-2">
             <span className="font-bold text-sm">PROMO CODE</span>
-            <span className="font-bold text-muted-foreground md:text-xl">MA-OFF15</span>
+            <span className="font-bold text-muted-foreground md:text-xl">EU-OFF15</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="font-bold text-red-600">DISCOUNT</span>
