@@ -27,7 +27,7 @@ const DiscountForm: React.FC = () => {
           name='name'
           type="text"
           placeholder="Enter Your Full Name"
-          className="w-full px-4 py-1 border border-red-500 rounded-md focus:outline-none focus:border-red-600"
+          className="w-full px-4 py-1 border border-orange-400 rounded-md focus:outline-none focus:border-orange-600"
         />
         {state?.info?.name?.map((item, i) => (
           <p key={i} className='text-red-600 text-sm'>{item}</p>
@@ -35,7 +35,7 @@ const DiscountForm: React.FC = () => {
         <input
           name='email'
           placeholder="Enter Your Email Address"
-          className="w-full px-4 py-1 border border-red-500 rounded-md focus:outline-none focus:border-red-600"
+          className="w-full px-4 py-1 border border-orange-400 rounded-md focus:outline-none focus:border-orange-600"
         />
         {state?.info?.email?.map((item, i) => (
           <p key={i} className='text-red-600 text-sm'>{item}</p>
@@ -44,7 +44,7 @@ const DiscountForm: React.FC = () => {
           name='phone'
           type="number"
           placeholder="Enter Your Phone Number"
-          className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none w-full px-4 py-1 border border-red-500 rounded-md focus:outline-none focus:border-red-600"
+          className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none w-full px-4 py-1 border border-orange-400 rounded-md focus:outline-none focus:border-orange-600"
         />
         {state?.info?.phone?.map((item, i) => (
           <p key={i} className='text-red-600 text-sm'>{item}</p>
@@ -55,8 +55,8 @@ const DiscountForm: React.FC = () => {
             <span className="font-bold text-muted-foreground md:text-xl">EU-OFF15</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="font-bold text-red-600">DISCOUNT</span>
-            <span className="font-bold text-xl md:text-2xl text-red-600">15%</span>
+            <span className="font-bold text-orange-600">DISCOUNT</span>
+            <span className="font-bold text-xl md:text-2xl text-orange-600">15%</span>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ function CustomButton() {
   return (
     <button
       disabled={pending}
-      className="w-full bg-orange-500 text-white flex justify-center items-center py-5 rounded rounded-bl-3xl rounded-br-3xl mt-6 font-semibold hover:bg-orange-600">
+      className="w-full bg-orange-500 text-white flex justify-center items-center py-5 rounded rounded-bl-3xl rounded-br-3xl mt-6 font-semibold hover:bg-orange-600 transition ease-in duration-200 delay-200">
       {pending ? <><Loader2 className='animate-spin mr-2 h-5 w-5 ' /> <p>Loading...</p></> : "ENJOY DISCOUNT NOW"}
     </button>
   )

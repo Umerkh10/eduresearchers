@@ -13,7 +13,7 @@ function Footer() {
                             <MountainSnowIcon className="h-6 w-6" />
                             <span className="md:text-2xl text-lg font-bold text-orange-500 ">{process.env.NEXT_PUBLIC_NAME}</span>
                         </Link>
-                        <p className='pt-4 text-muted-foreground font-medium text-sm'>© 2020 - 2023 {process.env.NEXT_PUBLIC_NAME} All rights reserved.</p>
+                        <p className='pt-4 text-muted-foreground font-medium text-sm'>© 2020 - 2024 {process.env.NEXT_PUBLIC_NAME} All rights reserved.</p>
                         <p className='pt-2 text-muted-foreground font-medium text-sm'>Terms & Condition | Privacy Policy <br /> support@eduresearchers.com </p>
 
                     </div>

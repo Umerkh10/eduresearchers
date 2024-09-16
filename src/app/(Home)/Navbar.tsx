@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
-import { MenuSquareIcon, MountainIcon, MountainSnowIcon } from 'lucide-react'
+import { Menu, MenuSquareIcon, MountainIcon, MountainSnowIcon } from 'lucide-react'
 import { ModeToggle } from '@/components/ui/ThemeSwitch'
 
 function Navbar() {
@@ -44,7 +44,7 @@ function Navbar() {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="lg:hidden">
-              <MenuSquareIcon className="h-6 w-6" />
+              <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation</span>
             </Button>
           </SheetTrigger>
@@ -55,22 +55,22 @@ function Navbar() {
                 <span className="text-lg font-bold">Eduresearchers</span>
               </Link>
               <nav className="grid gap-4">
-              <Link href="#why-us" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+              <Link href="#why-us" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
             Why Us?
           </Link>
-          <Link href="#service" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#service" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
             Our Services
           </Link>
-          <Link href="#howitworks" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#howitworks" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
             How it Works
           </Link>
-          <Link href="#topexpert" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#topexpert" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
             Top Experts
           </Link>
-          <Link href="#review" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#review" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
             Reviews
           </Link>
-          <Link href="#faq" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+          <Link href="#faq" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
             Frequently Asked Questions
           </Link>
           <ModeToggle/>

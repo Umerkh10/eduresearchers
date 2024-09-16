@@ -8,7 +8,7 @@ function UniSection() {
           <div className='col-span-2'>
             <p className=' font-semibold md:text-base text-sm'>90% Of our experts studied at top-rated Universities </p>
             </div>
-            <div><Image src={'/imgs/uni_1.png'} width={120} height={100} alt='uni'></Image></div>
+            <div><Image src={'/imgs/uni_1.png'} width={130} height={100} alt='uni'></Image></div>
             <div><Image src={'/imgs/uni_2.png'} width={120} height={100} alt='uni'></Image></div>
             <div> <Image src={'/imgs/uni_3.png'} width={120} height={100} alt='uni'></Image></div>
            <div><Image src={'/imgs/uni_4.png'} width={120} height={100} alt='uni'></Image></div>
