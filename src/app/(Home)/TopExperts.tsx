@@ -82,11 +82,11 @@ function TopExperts() {
   return (
     <div id="topexpert" className="mx-auto max-w-screen-xl">
       <div data-aos="fade-up" data-aos-duration="1500" className="mt-10">
-        <h1 className="text-center text-4xl md:text-7xl text-muted font-extrabold">
+        <h1 className="text-center text-2xl md:text-7xl text-muted font-extrabold">
           TOP EXPERTS
         </h1>
         <div className="flex justify-center">
-          <h2 className="text-xl md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10 font-extrabold text-center">
+          <h2 className="text-lg md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10 font-extrabold text-center">
             MEET URGENT DEADLINE WITH PROFESSIONAL ASSISTANCE
           </h2>
         </div>
@@ -137,28 +137,28 @@ function TopExperts() {
           <div>
             <div data-aos="fade-down" className="pt-10 lg:pt-64 lg:ml-5 px-5">
               <div className="flex justify-between items-center">
-                <span className="text-2xl font-extrabold text-zinc-800 dark:text-zinc-100">
+                <span className="md:text-2xl text-xl font-extrabold text-zinc-800 dark:text-zinc-100">
                   {currentExpert ? currentExpert.name : "JERRY GENTRY"}
                 </span>
-                <span className="rounded-full px-3 py-1 bg-sky-100 dark:bg-zinc-800 dark:text-white font-medium">
+                <span className="md:text-base text-sm rounded-full px-3 py-1 bg-sky-100 dark:bg-zinc-800 dark:text-white font-medium">
                   {currentExpert ? currentExpert.degree : "Master's"}
                 </span>
               </div>
-              <p className="pt-10 font-medium text-muted-foreground">
+              <p className="pt-10 font-medium text-muted-foreground md:text-base text-sm ">
                 {currentExpert ? currentExpert.fields : "Math, Statistics, Engineering"}
               </p>
-              <div className="pt-5 flex items-center text-muted-foreground font-medium">
+              <div className="pt-5 flex items-center text-muted-foreground font-medium md:text-base text-sm ">
                 <Image className="mr-2" src="/imgs/thumbsup.webp" width={20} height={20} alt="thumb" />
                 {currentExpert ? currentExpert.completedOrders : "809 completed orders"}
               </div>
-              <div className="pt-2 flex items-center text-muted-foreground font-medium">
+              <div className="pt-2 flex items-center text-muted-foreground font-medium md:text-base text-sm">
                 <Image className="mr-2" src="/imgs/eye.webp" width={20} height={20} alt="thumb" />
                 {currentExpert ? currentExpert.reviews : "714 reviews"}
               </div>
-              <button className="bg-zinc-800 dark:bg-zinc-100 hover:scale-105 transition ease-in duration-200 delay-200 flex items-center justify-center py-4 w-full rounded-lg mt-5 text-white dark:text-zinc-900 font-medium">
+              <button className="bg-zinc-800 dark:bg-zinc-100 md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 flex items-center justify-center py-4 w-full rounded-lg mt-5 text-white dark:text-zinc-900 font-medium">
                 <MessageCircleIcon className="mr-1" /> Get Started
               </button>
-              <div className="text-muted-foreground font-medium text-center pt-2">
+              <div className="text-muted-foreground font-medium text-center pt-2 md:text-base text-sm">
                 Prices start at just <span className="font-bold">£11/page.</span>
               </div>
             </div>

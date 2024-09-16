@@ -11,14 +11,14 @@ function Footer() {
                     <div className=''>
                         <Link href="/" className="flex items-center gap-2" prefetch={false}>
                             <MountainSnowIcon className="h-6 w-6" />
-                            <span className="text-2xl font-bold text-orange-500 ">{process.env.NEXT_PUBLIC_NAME}</span>
+                            <span className="md:text-2xl text-lg font-bold text-orange-500 ">{process.env.NEXT_PUBLIC_NAME}</span>
                         </Link>
                         <p className='pt-4 text-muted-foreground font-medium text-sm'>© 2020 - 2023 {process.env.NEXT_PUBLIC_NAME} All rights reserved.</p>
                         <p className='pt-2 text-muted-foreground font-medium text-sm'>Terms & Condition | Privacy Policy <br /> support@eduresearchers.com </p>
 
                     </div>
                     <div className=''>
-                        <ul className='lg:pl-9 gap-2 font-medium  text-muted-foreground '>
+                        <ul className='lg:pl-9 gap-2 font-medium text-sm md:text-base text-muted-foreground '>
                             <li className='p-2 hover:text-zinc-800 dark:hover:text-white ' >Assignment</li>
                             <li className='p-2 hover:text-zinc-800 dark:hover:text-white ' >Homework</li>
                             <li className='p-2 hover:text-zinc-800 dark:hover:text-white ' >Essay</li>
@@ -28,7 +28,7 @@ function Footer() {
                         </ul>
                     </div>
                     <div className=''>
-                        <div className='pt-3 text-muted-foreground font-medium'>Follow Us</div>
+                        <div className='pt-3 text-muted-foreground font-medium '>Follow Us</div>
                         <Image className='mt-4' src={'/imgs/footer-1.webp'} width={80} height={80} alt='likes'></Image>
                         <p className='bg-blue-500 flex w-3/4 text-center py-1 px-2 rounded-full text-white font-medium text-sm mt-2 '> <Twitter className='mr-1'/> Follow {process.env.NEXT_PUBLIC_NAME} </p>
                         <Image className='mt-4' src={'/imgs/dmca_protected_sml_120m.webp'} width={120} height={120} alt='dmca' ></Image>
