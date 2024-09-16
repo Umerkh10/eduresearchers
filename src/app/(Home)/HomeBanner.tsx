@@ -3,6 +3,9 @@ import React from 'react'
 import DiscountForm from './DiscountForm'
 
 function HomeBanner() {
+
+    
+
   return (
     <div id='banner' className=' w-full bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900'>
     <div className='mx-auto max-w-screen-xl'>
