@@ -1,12 +1,20 @@
 import { MessageCircle } from 'lucide-react'
 import React from 'react'
 import DiscountForm from './DiscountForm'
+import Tawkto from '@/lib/Tawkto';
 
 function HomeBanner() {
 
-    
+    const handleGetStartedClick = () => {
+        // Ensure Tawk_API is loaded and available
+        if (window.Tawk_API) {
+          window.Tawk_API.toggle(); // This will toggle the chat widget
+        }
+      };
 
   return (
+    <>
+    <Tawkto/>
     <div id='banner' className=' w-full bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900'>
     <div className='mx-auto max-w-screen-xl'>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-3 py-10 '>
@@ -21,7 +29,7 @@ function HomeBanner() {
                     <p className='text-sm md:text-base text-muted-foreground py-2 font-medium text-center md:text-start '>Here we are providing best assignment assistance to help
                     achieve top grades in your academic career.</p>
                     <div className='md:block  flex justify-center items-center scale-90 md:scale-100 '>
-                    <button className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 mt-5 py-3 bg-zinc-900 w-[200px] text-white rounded-lg'>
+                    <button onClick={handleGetStartedClick} className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 mt-5 py-3 bg-zinc-900 w-[200px] text-white rounded-lg'>
                         <MessageCircle className='mr-1'/> Get Started
                     </button>
                     
@@ -36,6 +44,7 @@ function HomeBanner() {
         </div>
     </div>
     </div>
+    </>
   )
 }
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./(Home)/Navbar";
 import { ThemeProvider } from "./ThemeProvider";
 import { Toaster } from "sonner";
+import Tawkto from "@/lib/Tawkto";
 
 
 const inter = Montserrat({
@@ -37,6 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Tawkto/>
       <body
       
         className={inter.className}

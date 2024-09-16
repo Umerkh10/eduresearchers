@@ -14,7 +14,16 @@ const Tawkto: FC = () => {
     const s0 = document.getElementsByTagName('script')[0];
     s0.parentNode?.insertBefore(script, s0);
 
-    // Cleanup the effect (optional)
+    // Make sure Tawk object is available globally
+    script.onload = () => {
+      if (window.Tawk_API) {
+        window.Tawk_API.onLoad = function () {
+          window.Tawk_API.hideWidget();
+        };
+      }
+    };
+
+    // Cleanup the effect
     return () => {
       if (script.parentNode) {
         script.parentNode.removeChild(script);
