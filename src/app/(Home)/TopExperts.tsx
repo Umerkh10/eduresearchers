@@ -72,7 +72,7 @@ function TopExperts() {
         const next = (prev ?? 0) + 1;
         return next <= Object.keys(expertData).length ? next : 1;
       });
-    }, 3000); 
+    }, 2500); 
 
     return () => {
       clearInterval(intervalId);
