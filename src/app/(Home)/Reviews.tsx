@@ -15,7 +15,7 @@ function Reviews() {
                 </div>
                 <p className='text-muted-foreground md:text-base text-sm font-medium text-center md:text-start pt-2 -ml-3'>“Excellent” - 9.7/10</p>
             </div>
-            <div data-aos='flip-up' className='mt-10 md:mt-0 p-3 lg:p-10'>
+            <div data-aos='flip-up' className='my-10 md:my-0 p-3 lg:p-10'>
                 <ReviewCarousel/>
             </div>
             </div>
