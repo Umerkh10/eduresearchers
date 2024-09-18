@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import Image from 'next/image'
 import React from 'react'
 
@@ -8,11 +8,12 @@ function ReviewCarousel() {
     <Carousel
       opts={{
         align: "start",
+        loop:true
       }}
       orientation="vertical"
       className="w-full max-w-xl"
     >
-      <CarouselContent className="-mt-1 h-[330px] md:h-[300px]">
+      <CarouselContent className="-mt-1 h-[300px] md:h-[230px]">
 
           <CarouselItem  className="pt-1 ">
             <div className="p-1">
@@ -146,7 +147,8 @@ function ReviewCarousel() {
           </CarouselItem>
 
       </CarouselContent>
- 
+      <CarouselPrevious/>
+      <CarouselNext/>
     </Carousel>
 
   )
