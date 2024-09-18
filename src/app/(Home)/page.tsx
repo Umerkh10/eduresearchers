@@ -25,6 +25,7 @@ export default function Home() {
     Aos.init({
       duration: 800,
       offset: 100,
+      disable:"mobile"
     });
   }, [inView]);
   return (
