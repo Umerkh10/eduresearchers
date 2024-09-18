@@ -1,13 +1,7 @@
 import * as React from "react"
 
 import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+import {Carousel,CarouselContent,CarouselItem} from "@/components/ui/carousel"
 import Image from "next/image"
 
 export function CarouselSpacing() {
