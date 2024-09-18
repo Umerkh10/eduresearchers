@@ -13,8 +13,8 @@ function HowItWorks() {
                 <div data-aos='flip-up' className='group'>
                     <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-200 delay-200 lg:h-[350px] rounded-xl shadow-xl bg-gradient-to-t from-orange-200 to-emerald-50 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
-                       <Image src={'/imgs/howitworks-1.webp'} width={80} height={80} alt='howitworks' ></Image>
-                       <Image className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
+                       <Image loading='eager' src={'/imgs/howitworks-1.webp'} width={80} height={80} alt='howitworks' ></Image>
+                       <Image loading='eager' className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
                     <h2 className=' mt-8 text-lg md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>FILL FORM</h2>
@@ -25,8 +25,8 @@ function HowItWorks() {
                 <div data-aos='flip-down' className='group'>
                     <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-200 delay-200 lg:h-[350px] rounded-xl shadow-xl bg-gradient-to-t from-orange-200 to-emerald-50 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
-                       <Image src={'/imgs/howitworks-2.webp'} width={80} height={80} alt='howitworks' ></Image>
-                       <Image className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
+                       <Image loading='eager' src={'/imgs/howitworks-2.webp'} width={80} height={80} alt='howitworks' ></Image>
+                       <Image loading='eager' className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
                     <h2 className=' mt-8 text-lg md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>GET QUOTATION</h2>
@@ -37,8 +37,8 @@ function HowItWorks() {
                 <div data-aos='flip-right' className='group'>
                     <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-200 delay-200 lg:h-[350px] rounded-xl shadow-xl bg-gradient-to-t from-orange-200 to-emerald-50 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
-                       <Image src={'/imgs/howitworks-3.webp'} width={80} height={80} alt='howitworks' ></Image>
-                       <Image className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
+                       <Image loading='eager' src={'/imgs/howitworks-3.webp'} width={80} height={80} alt='howitworks' ></Image>
+                       <Image loading='eager' className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
                     <h2 className=' mt-8 text-lg md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>PROCEED WITH PAYMENT</h2>
@@ -50,8 +50,8 @@ function HowItWorks() {
                 <div data-aos='flip-left' className='group'>
                     <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-200 delay-200 lg:h-[350px] rounded-xl shadow-xl bg-gradient-to-t from-orange-200 to-emerald-50 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
-                       <Image src={'/imgs/howitworks-4.webp'} width={80} height={80} alt='howitworks' ></Image>
-                       <Image className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
+                       <Image loading='eager' src={'/imgs/howitworks-4.webp'} width={80} height={80} alt='howitworks' ></Image>
+                       <Image loading='eager' className='grayscale' src={'/imgs/arrow.webp'} width={20} height={20} alt='arrow'></Image>
                         
                     </div>
                     <h2 className=' mt-8 text-lg md:text-2xl font-bold text-zinc-800 dark:text-zinc-100'>CLICK ON DOWNLOAD</h2>

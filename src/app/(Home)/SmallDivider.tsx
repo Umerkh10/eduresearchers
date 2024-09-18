@@ -42,7 +42,7 @@ function SmallDivider() {
                     </div>
                     <div className='mt-4'>
                         <div className='flex items-center'>
-                            <Image src={'/imgs/collector.webp'} width={500} height={500} alt='collector'></Image>
+                            <Image loading='eager' src={'/imgs/collector.webp'} width={500} height={500} alt='collector'></Image>
                         </div>
                     </div>
                 </div>

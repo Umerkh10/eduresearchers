@@ -73,7 +73,7 @@ function ExpertSection() {
               <CarouselContent>
                 {['1', '2', '3', '4', '5'].map(num => (
                   <CarouselItem key={num}>
-                    <Image src={`/imgs/messenger-slide-${num}.webp`} width={650} height={600} alt='tab' />
+                    <Image loading='eager' src={`/imgs/messenger-slide-${num}.webp`} width={650} height={600} alt='tab' />
                   </CarouselItem>
                 ))}
               </CarouselContent>
