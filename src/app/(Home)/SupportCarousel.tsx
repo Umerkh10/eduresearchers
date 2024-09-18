@@ -12,10 +12,10 @@ import Image from "next/image"
 
 export function CarouselSpacing() {
   return (
-    <Carousel className=" w-full max-w-sm">
+    <Carousel opts={{loop:true}} className=" w-full max-w-screen-xl">
       <CarouselContent className="-ml-1 mt-5">
 
-          <CarouselItem  className="pl-1 ">
+          <CarouselItem  className="pl-1  lg:basis-1/3 ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
@@ -31,7 +31,7 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
-          <CarouselItem  className="pl-1 ">
+          <CarouselItem  className="pl-1  lg:basis-1/3 ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
@@ -47,7 +47,7 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
-          <CarouselItem  className="pl-1 ">
+          <CarouselItem  className="pl-1   lg:basis-1/3">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
@@ -63,7 +63,7 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
-            <CarouselItem  className="pl-1 ">
+            <CarouselItem  className="pl-1  lg:basis-1/3 ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
@@ -79,7 +79,7 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
-            <CarouselItem  className="pl-1 ">
+            <CarouselItem  className="pl-1  lg:basis-1/3 ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
@@ -95,7 +95,7 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
-            <CarouselItem  className="pl-1 ">
+            <CarouselItem  className="pl-1  lg:basis-1/3 ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
@@ -111,7 +111,7 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
-            <CarouselItem  className="pl-1 ">
+            <CarouselItem  className="pl-1  lg:basis-1/3 ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
@@ -127,7 +127,7 @@ export function CarouselSpacing() {
             </div>
           </CarouselItem>
 
-            <CarouselItem  className="pl-1 ">
+            <CarouselItem  className="pl-1  lg:basis-1/3 ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center  px-3 py-3">
