@@ -1,5 +1,6 @@
 import { MessageCircleIcon } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 
@@ -155,9 +156,9 @@ function TopExperts() {
                 <Image className="mr-2" src="/imgs/eye.webp" width={20} height={20} alt="thumb" />
                 {currentExpert ? currentExpert.reviews : "714 reviews"}
               </div>
-              <button className="bg-zinc-800 dark:bg-zinc-100 md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 flex items-center justify-center py-4 w-full rounded-lg mt-5 text-white dark:text-zinc-900 font-medium">
+              <Link href={'#banner'} className="bg-zinc-800 dark:bg-zinc-100 md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 flex items-center justify-center py-4 w-full rounded-lg mt-5 text-white dark:text-zinc-900 font-medium">
                 <MessageCircleIcon className="mr-1" /> Get Started
-              </button>
+              </Link>
               <div className="text-muted-foreground font-medium text-center pt-2 md:text-base text-sm">
                 Prices start at just <span className="font-bold">£11/page.</span>
               </div>

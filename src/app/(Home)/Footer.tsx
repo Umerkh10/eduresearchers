@@ -5,7 +5,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className='mt-5 py-10 bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:via-zinc-900 dark:to-zinc-950'>
+        <div className='mt-5 py-10 bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900  dark:to-zinc-950'>
             <div className='mx-auto max-w-screen-xl'>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-4 pt-10'>
                     <div className=''>
@@ -42,7 +42,7 @@ function Footer() {
                         <Image className='mt-3' src={'/imgs/rating.webp'} width={120} height={120} alt='likes'></Image>
                     <div className='pt-3 text-muted-foreground font-medium'>"Excellent" 9.7/10 </div>
                  
-                        <Image className='mt-4' src={'/imgs/a-rating.webp'} width={100} height={100} alt='dmca' ></Image>
+                        <Image className='mt-4 rounded-xl' src={'/imgs/a-rating.webp'} width={100} height={100} alt='dmca' ></Image>
        
                     </div>
                 </div>
