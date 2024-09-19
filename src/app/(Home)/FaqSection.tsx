@@ -36,7 +36,7 @@ const FaqSection: React.FC = () => {
                 {renderAccordionTrigger('item-2', 'What are your packages for editing services?')}
                 {renderAccordionContent('item-2', 'Our packages depend on your requirements, word count, deadline and the technicalities of the subject. Still, we have reasonable packages, as we believe help students, so we designed extremely affordable editing and proofreading services.')}
                 {renderAccordionTrigger('item-3', 'Can I collaborate with my assignment writer?')}
-                {renderAccordionContent('item-3', 'Yes, you can communicate with your writer any time you want. You can track the progress of your order and send instructions as per the guidelines. We at Mr Assignment appreciate all students sharing details before our writer starts work on your document to maintain accuracy.')}
+                {renderAccordionContent('item-3', 'Yes, you can communicate with your writer any time you want. You can track the progress of your order and send instructions as per the guidelines. We at Eduresearcher appreciate all students sharing details before our writer starts work on your document to maintain accuracy.')}
               </AccordionItem>
             </Accordion>
           </div>
