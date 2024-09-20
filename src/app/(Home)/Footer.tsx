@@ -10,8 +10,7 @@ function Footer() {
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-4 pt-10'>
                     <div className=''>
                         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                        <Image className='dark:hidden' src={'/imgs/edu-logo-gif.gif'} width={100} height={100} alt='edu'></Image>
-                        <Image className='hidden dark:block' src={'/imgs/edu-logo-for-dark.gif'} width={100} height={100} alt='edu'></Image>
+                        <Image src={'/imgs/edu-logo.png'} width={32} height={32} alt='edu'></Image>
                             <span className="md:text-2xl text-lg font-bold text-orange-500 ">{process.env.NEXT_PUBLIC_NAME}</span>
                         </Link>
                         <p className='pt-4 text-muted-foreground font-medium text-sm'>© 2020 - 2024 {process.env.NEXT_PUBLIC_NAME} All rights reserved.</p>
