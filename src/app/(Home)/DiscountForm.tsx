@@ -21,7 +21,7 @@ const DiscountForm: React.FC = () => {
   return (
     <div className="max-w-sm mx-auto bg-background rounded-3xl  shadow-lg ">
       <div className='rounded rounded-tr-3xl rounded-tl-3xl bg-orange-200 dark:bg-orange-500'>
-      <h2 className="text-xl md:text-3xl font-bold text-center typing-animation  p-5">Avail Flat 45% OFF</h2>
+      <h2 className="text-xl md:text-3xl font-bold typing-animation p-5">Avail Flat 45% OFF</h2>
       </div>
       <form ref={formRef} action={dispatch} className="space-y-3 p-4">
         <input
