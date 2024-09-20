@@ -96,7 +96,7 @@ function TopExperts() {
         </p>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 p-4">
           <div data-aos="fade-up" className="py-3 pr-5">
-            <div className="h-[600px] md:h-[800px] bg-sky-50 dark:bg-transparent border-[2px] border-dashed rounded-tr-full rounded-br-full">
+            <div className="-ml-10 md:-ml-0 scale-75 md:scale-100 h-[600px] md:h-[800px] bg-sky-50 dark:bg-transparent border-[2px] border-dashed rounded-tr-full rounded-br-full">
               <div
                className={`${hoveredImage === 1 ? 'border-[4px] border-sky-500 scale-150 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-16 h-16 -translate-y-5 translate-x-3`}
 
@@ -106,21 +106,21 @@ function TopExperts() {
                 <Image src="/imgs/10.webp" width={64} height={64} alt="top expert" />
               </div>
               <div
-                className={`${hoveredImage === 2 ? 'border-[3px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-12 translate-x-60 lg:translate-x-60 xl:translate-x-64 md:translate-x-[575px]`}
+                className={`${hoveredImage === 2 ? 'border-[3px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-12 translate-x-72 lg:translate-x-60 xl:translate-x-64 md:translate-x-[575px]`}
                 onMouseEnter={() => handleMouseEnter(2)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Image src="/imgs/9.webp" width={80} height={80} alt="top expert" />
               </div>
               <div
-                className={`${hoveredImage === 3 ? 'border-[5px] border-sky-500 scale-105 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-28 h-28 translate-y-32 md:translate-y-40 translate-x-[240px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[605px]`}
+                className={`${hoveredImage === 3 ? 'border-[5px] border-sky-500 scale-105 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-28 h-28 translate-y-32 md:translate-y-40 translate-x-[295px] lg:translate-x-64 xl:translate-x-80 md:translate-x-[605px]`}
                 onMouseEnter={() => handleMouseEnter(3)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Image src="/imgs/8.webp" width={120} height={120} alt="top expert" />
               </div>
               <div
-                className={`${hoveredImage === 4 ? 'border-[4px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-48 md:translate-y-80 translate-x-60 lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px]`}
+                className={`${hoveredImage === 4 ? 'border-[4px] border-sky-500 scale-125 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-20 h-20 translate-y-48 md:translate-y-80 translate-x-[260px] lg:translate-x-64 xl:translate-x-72 md:translate-x-[600px]`}
                 onMouseEnter={() => handleMouseEnter(4)}
                 onMouseLeave={handleMouseLeave}
               >
@@ -136,7 +136,7 @@ function TopExperts() {
             </div>
           </div>
           <div>
-            <div data-aos="fade-down" className="pt-10 lg:pt-64 lg:ml-5 px-5">
+            <div data-aos="fade-down" className=" lg:pt-64 lg:ml-5 px-5">
               <div className="flex justify-between items-center">
                 <span className="md:text-2xl text-xl font-extrabold text-zinc-800 dark:text-zinc-100">
                   {currentExpert ? currentExpert.name : "JERRY GENTRY"}

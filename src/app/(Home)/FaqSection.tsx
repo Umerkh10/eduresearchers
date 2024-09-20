@@ -3,7 +3,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 const FaqSection: React.FC = () => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
+  // Initialize openItem to "item-1" to make the first accordion active by default
+  const [openItem, setOpenItem] = useState<string | null>("item-1");
 
   const toggleItem = (value: string) => setOpenItem(openItem === value ? null : value);
 
@@ -27,7 +28,7 @@ const FaqSection: React.FC = () => {
   return (
     <div id='faq' data-aos='fade-down' data-aos-duration="1500" className='mx-auto max-w-screen-xl py-10'>
       <div className='grid lg:grid-cols-2 grid-cols-1'>
-        <div data-aos='flip-up'>
+        <div >
           <div className='flex items-center justify-center pt-10'>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
@@ -42,7 +43,7 @@ const FaqSection: React.FC = () => {
           </div>
         </div>
 
-        <div data-aos='flip-down'>
+        <div >
           <div className='flex items-center justify-center pt-10'>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-4">

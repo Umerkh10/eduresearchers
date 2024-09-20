@@ -10,9 +10,9 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background shadow">
-      <div className=" container mx-auto flex h-16 items-center justify-between px-4 xl:px-24">
+      <div className=" container mx-auto flex h-16 items-center justify-between px-4 xl:px-12">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
-          <MountainSnowIcon className="h-6 w-6" />
+          <Image src={'/imgs/edu-logo-gif.gif'} width={100} height={100} alt='edu'></Image>
           <span className="text-lg font-bold text-orange-500 ">Eduresearchers</span>
         </Link>
         <div className='flex flex-col items-center'>
@@ -51,7 +51,7 @@ function Navbar() {
           <SheetContent side="right" className="w-full max-w-xs bg-white dark:bg-muted p-6">
             <div className="grid gap-6">
               <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                <MountainIcon className="h-6 w-6" />
+              <Image src={'/imgs/edu-logo.png'} width={32} height={32} alt='edu'></Image>
                 <span className="text-lg font-bold">Eduresearchers</span>
               </Link>
               <nav className="grid gap-4">

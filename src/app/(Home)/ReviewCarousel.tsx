@@ -11,9 +11,9 @@ function ReviewCarousel() {
         loop:true
       }}
       orientation="vertical"
-      className="w-full max-w-xl"
+      className="w-full max-w-xl shadow-xl"
     >
-      <CarouselContent className="-mt-1 h-[300px] md:h-[230px]">
+      <CarouselContent className="-mt-1 h-[300px] md:h-[230px] ">
 
           <CarouselItem  className="pt-1 ">
             <div className="p-1">
