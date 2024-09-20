@@ -89,9 +89,8 @@ body {
 .typing-animation {
   overflow: hidden;
   white-space: nowrap;
-  width: 0; /* Start from 0 width */
-  margin: 0 auto; /* Center the text */
-  text-align: center; /* Center the text */
+  margin: 0 auto;
+  text-align: center;
   animation: typing 4s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
 }
 
@@ -102,11 +101,11 @@ body {
   50% {
     width: 100%; /* Full text is visible */
   }
-  75% {
+  70% {
     width: 100%; /* Hold the full text for a moment */
   }
   100% {
-    width: 0; /* Delete text at the end */
+    width: 0; /* Fully delete text */
   }
 }
 

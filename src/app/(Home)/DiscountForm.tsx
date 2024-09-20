@@ -15,7 +15,7 @@ const DiscountForm: React.FC = () => {
   const texts = [
     'Get a Free Quote Now',
     'Our Experts Are Online',
-    'Avail 45% Discount Now',
+    'Avail Flat 45% Discount Now',
     'We Accept All Subjects',
     'Urgent Deadline? Fill This Form',
   ];
