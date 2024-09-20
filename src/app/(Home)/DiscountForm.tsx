@@ -1,27 +1,52 @@
-"use client "
+"use client"
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import EmailAction from '../(backend)/action/formAction';
 import { useFormState, useFormStatus } from 'react-dom';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 
 const DiscountForm: React.FC = () => {
-  const [state, dispatch] = useFormState(EmailAction, null)
-  const formRef = useRef<HTMLFormElement>(null)
+  const [state, dispatch] = useFormState(EmailAction, null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Animation state for the changing text
+  const [currentText, setCurrentText] = useState<string>('Avail 45% OFF');
+  const texts = [
+    'Get a Free Quote Now',
+    'Our Experts Are Online',
+    'Avail 45% Discount Now',
+    'We Accept All Subjects',
+    'Urgent Deadline? Fill This Form',
+  ];
+
   useEffect(() => {
     if (state?.success) {
-      formRef.current?.reset()
-      toast.success(state.success)
+      formRef.current?.reset();
+      toast.success(state.success);
+    } else if (state?.error) {
+      toast.error(state.error);
     }
-    else if (state?.error) {
-      toast.error(state.error)
-    }
-  }, [state])
+  }, [state]);
+
+  // Change text every 2.5 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentText((prevText) => {
+        const currentIndex = texts.indexOf(prevText);
+        return texts[(currentIndex + 1) % texts.length];
+      });
+    }, 4000); // Adjust time interval if needed
+
+    return () => clearInterval(intervalId); // Cleanup the interval on unmount
+  }, []);
+
   return (
-    <div className="max-w-sm mx-auto bg-background rounded-3xl  shadow-lg ">
+    <div className="max-w-sm mx-auto bg-background rounded-3xl shadow-lg">
       <div className='rounded rounded-tr-3xl rounded-tl-3xl bg-orange-200 dark:bg-orange-500'>
-      <h2 className="text-xl md:text-3xl font-bold typing-animation p-5">Avail Flat 45% OFF</h2>
+        <h2 className="text-[21px]  font-bold p-5 typing-animation">
+          {currentText}
+        </h2>
       </div>
       <form ref={formRef} action={dispatch} className="space-y-3 p-4">
         <input
@@ -53,37 +78,38 @@ const DiscountForm: React.FC = () => {
         <div className="pt-4">
           <div className="flex justify-between items-center mb-2">
             <span className="font-bold text-sm">PROMO CODE</span>
-            <span className="font-bold text-muted-foreground md:text-xl">EU-OFF15</span>
+            <span className="font-bold text-muted-foreground md:text-xl">EU-OFF45</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="font-bold text-orange-600">DISCOUNT</span>
-            <span className="font-bold text-xl md:text-2xl text-orange-600">15%</span>
+            <span className="font-bold text-xl md:text-2xl text-orange-600">45%</span>
           </div>
         </div>
 
-        <p className="text-sm text-gray-500 mt-4 italic ">Start a live chat to know about more ongoing discount offers!</p>
-
+        <p className="text-sm text-gray-500 mt-4 italic">Start a live chat to know about more ongoing discount offers!</p>
 
         <CustomButton />
       </form>
-
     </div>
   );
 };
 
 export default DiscountForm;
 
-
-
-
 function CustomButton() {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
   return (
     <button
       disabled={pending}
-      className="w-full bg-orange-500 text-white flex justify-center items-center py-5 rounded rounded-bl-3xl rounded-br-3xl mt-6 font-semibold hover:bg-orange-600 transition ease-in duration-200 delay-200">
-      {pending ? <><Loader2 className='animate-spin mr-2 h-5 w-5 ' /> <p>Loading...</p></> : "ENJOY DISCOUNT NOW"}
+      className="w-full bg-orange-500 text-white flex justify-center items-center py-5 rounded rounded-bl-3xl rounded-br-3xl mt-6 font-semibold hover:bg-orange-600 transition ease-in duration-200 delay-200"
+    >
+      {pending ? (
+        <>
+          <Loader2 className="animate-spin mr-2 h-5 w-5" /> <p>Loading...</p>
+        </>
+      ) : (
+        "ENJOY DISCOUNT NOW"
+      )}
     </button>
-  )
+  );
 }
-
