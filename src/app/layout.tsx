@@ -5,6 +5,7 @@ import Navbar from "./(Home)/Navbar";
 import { ThemeProvider } from "./ThemeProvider";
 import { Toaster } from "sonner";
 import Tawkto from "@/lib/Tawkto";
+import Footer from "./(Home)/Footer";
 
 
 const inter = Montserrat({
@@ -51,6 +52,7 @@ export default function RootLayout({
           >
         <Navbar/>
         {children}
+        <Footer/>
         <Toaster richColors position="bottom-right"/>
         </ThemeProvider>
       </body>

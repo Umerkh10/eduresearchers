@@ -5,7 +5,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className='mt-5 py-10 bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900  dark:to-zinc-950'>
+        <div className=' py-10 bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900  dark:to-zinc-950'>
             <div className='mx-auto max-w-screen-xl'>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-4 pt-10'>
                     <div className=''>

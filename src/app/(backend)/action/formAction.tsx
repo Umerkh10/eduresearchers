@@ -8,11 +8,9 @@ const formSchema = z.object({
     phone: z.string().min(9).max(15)
 });
 
-export default async function EmailAction(state: any, formData: FormData) {
+export default async function EmailAction(name:string,email:string,phone:string) {
     try {
-        const name = formData.get("name") 
-        const email = formData.get("email") 
-        const phone = formData.get("phone") 
+
 
         const validatedField = formSchema.safeParse({ name, email, phone })
 

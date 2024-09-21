@@ -40,7 +40,6 @@ export default function Home() {
       <Reviews/>
       <SmallDivider/>
       <FaqSection/>
-      <Footer/>
     </div>
   );
 }
