@@ -69,8 +69,6 @@ export default Page
 
 
 
-export const description =
-  "A simple login form with email and password. The submit button says 'Sign in'."
 
 
 
