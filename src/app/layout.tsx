@@ -16,19 +16,7 @@ const inter = Montserrat({
 export const metadata: Metadata = {
   title: "Eduresearcher",
   description: "Eduresearchers",
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+
 
 };
 

@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
-import { Menu,MountainIcon, MountainSnowIcon } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { ModeToggle } from '@/components/ui/ThemeSwitch'
 
 function Navbar() {
