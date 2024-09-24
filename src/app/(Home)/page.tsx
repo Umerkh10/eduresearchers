@@ -2,7 +2,6 @@
 import { useInView } from "react-intersection-observer";
 import ExpertSection from "./ExpertSection";
 import FaqSection from "./FaqSection";
-import Footer from "./Footer";
 import {HomeBanner} from "./HomeBanner";
 import HowItWorks from "./HowItWorks";
 import Reviews from "./Reviews";
