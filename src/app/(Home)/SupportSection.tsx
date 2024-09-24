@@ -10,7 +10,7 @@ function SupportSection() {
         <div className='pt-10'>
             <div data-aos='fade-down' data-aos-duration="1500" style={{ backgroundImage: "url('/imgs/support_bg.webp')", backgroundSize: 'cover' }} className='py-10'>
                 <div className='mx-auto max-w-screen-xl'>
-                    <div className='px-3 pt-10 scale-90 md:scale-100'>
+                    <div className='px-3 md:pt-10 scale-[.85] md:scale-100'>
                         <h1 className='text-center text-xl md:text-7xl  font-extrabold text-white text-opacity-10 '>Support</h1>
                         <div className=' flex justify-center '>
                             <h2 className='text-lg text-zinc-100 md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10  font-extrabold text-center'>FULFIL ALL THE UNIVERSITY GUIDELINES ACCURATELY TO SAVE YOUR GRADES</h2>
@@ -52,7 +52,7 @@ function SupportSection() {
                         <CarouselSpacing/>
                         </div>
                         <h2 className='pt-4 text-zinc-100 font-semibold text-lg md:text-2xl text-center '>NEED ASSISTANCE? WE'RE HERE FOR YOU 24/7!</h2>
-                        <div className='md:flex-row  gap-3  flex flex-col justify-center items-center scale-90 md:scale-100 mt-4'>
+                        <div className='md:flex-row  gap-3  flex flex-col justify-center items-center scale-[.85] md:scale-100 mt-4'>
                         <Link href={'#banner'} className='bg-zinc-900 flex text-white py-3 px-6 rounded-lg md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200'>
                             <MessageCircleIcon className='mr-1'/> Get Started
                         </Link>

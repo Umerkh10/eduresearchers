@@ -26,7 +26,7 @@ export function HomeBanner() {
       <div className='mx-auto max-w-screen-xl'>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-3 py-10'>
           {/* Left Section */}
-          <div className='py-5 lg:pl-24 px-5 scale-90 md:scale-100'>
+          <div className='py-5 lg:pl-24 px-5 scale-[.85] md:scale-100'>
             <div className='grid lg:grid-cols-6 grid-cols-2 gap-4 ml-10 md:ml-0'>
               <div className='text-muted-foreground font-semibold md:text-base text-sm'>
                 Confidential
@@ -47,7 +47,7 @@ export function HomeBanner() {
             <p className='text-sm md:text-base text-muted-foreground py-2 font-medium text-center md:text-start'>
               Here we are providing best assignment assistance to help achieve top grades in your academic career.
             </p>
-            <div className='md:flex-row md:justify-start gap-3 flex flex-col justify-center items-center scale-90 md:scale-100 mt-4'>
+            <div className='md:flex-row md:justify-start gap-3 flex flex-col justify-center items-center scale-[.85] md:scale-100 mt-4'>
               <button
                 className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-zinc-900 w-[200px] text-white rounded-lg'
                 onClick={handleGetStartedClick}

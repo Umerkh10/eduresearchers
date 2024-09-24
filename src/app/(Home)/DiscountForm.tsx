@@ -69,7 +69,7 @@ const DiscountForm: React.FC = () => {
 
 
   return (
-    <div className="max-w-sm mx-auto bg-background rounded-3xl shadow-lg scale-90 md:scale-100">
+    <div className="max-w-sm mx-auto bg-background rounded-3xl shadow-lg scale-[.85] md:scale-100">
       <div className='rounded rounded-tr-3xl rounded-tl-3xl bg-orange-200 dark:bg-orange-500'>
         <h2 className="text-[21px]  font-bold p-5 typing-animation">
           {currentText}

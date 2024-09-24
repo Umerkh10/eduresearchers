@@ -10,7 +10,7 @@ const FaqSection: React.FC = () => {
 
   const renderAccordionTrigger = (value: string, text: string) => (
     <AccordionTrigger
-      className='mt-3 scale-90 md:scale-100 bg-gradient-to-l from-emerald-50 to-orange-200 dark:bg-gradient-to-r dark:from-orange-700 dark:to-zinc-600 font-semibold rounded-lg px-4 w-[350px] lg:w-[500px] xl:w-[600px] md:w-[600px]'
+      className='mt-3 scale-[.85] md:scale-100 bg-gradient-to-l from-emerald-50 to-orange-200 dark:bg-gradient-to-r dark:from-orange-700 dark:to-zinc-600 font-semibold rounded-lg px-4 w-[350px] lg:w-[500px] xl:w-[600px] md:w-[600px]'
       onClick={() => toggleItem(value)}
     >
       {text}
@@ -19,7 +19,7 @@ const FaqSection: React.FC = () => {
 
   const renderAccordionContent = (value: string, content: string) => (
     openItem === value && (
-      <AccordionContent className='scale-90 md:scale-100 text-muted-foreground font-semibold pt-3 px-4 w-[350px] md:w-[500px]'>
+      <AccordionContent className='scale-[.85] md:scale-100 text-muted-foreground font-semibold pt-3 px-4 w-[350px] md:w-[500px]'>
         {content}
       </AccordionContent>
     )

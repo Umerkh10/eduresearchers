@@ -83,15 +83,15 @@ function TopExperts() {
   return (
     <div id="topexpert" className="mx-auto max-w-screen-xl">
       <div data-aos="fade-up" data-aos-duration="1500" className="mt-10">
-        <h1 className="text-center text-2xl md:text-7xl text-muted font-extrabold">
+        <h1 className="text-center text-2xl md:text-7xl text-muted font-extrabold scale-[.85] md:scale-100">
           TOP EXPERTS
         </h1>
         <div className="flex justify-center">
-          <h2 className="text-lg md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10 font-extrabold text-center">
+          <h2 className="text-lg md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10 font-extrabold text-center scale-[.85] md:scale-100">
             MEET URGENT DEADLINE WITH PROFESSIONAL ASSISTANCE
           </h2>
         </div>
-        <p className="text-muted-foreground font-medium text-center -translate-y-3 md:-translate-y-7 text-sm lg:px-56">
+        <p className="text-muted-foreground font-medium text-center -translate-y-3 md:-translate-y-7 text-sm scale-[.85] md:scale-100 lg:px-56">
           WE HAVE WRITERS AND EDITORS FROM DIFFERENT DISCIPLINES TO MEET STUDENTS' UNIQUE REQUIREMENTS. WHETHER IT IS SCIENCE OR ACCOUNTING, OUR EXPERTS WILL DEAL WITH IT.
         </p>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 p-4">
@@ -136,7 +136,7 @@ function TopExperts() {
             </div>
           </div>
           <div>
-            <div data-aos="fade-down" className=" lg:pt-64 lg:ml-5 px-5 scale-90 md:scale-100">
+            <div data-aos="fade-down" className=" lg:pt-64 lg:ml-5 px-5 scale-[.85] md:scale-100">
               <div className="flex justify-between items-center">
                 <span className="md:text-2xl text-xl font-extrabold text-zinc-800 dark:text-zinc-100">
                   {currentExpert ? currentExpert.name : "JERRY GENTRY"}
@@ -165,7 +165,7 @@ function TopExperts() {
             </div>
           </div>
           <div>
-            <div data-aos="fade-up" className=" lg:pt-64 lg:ml-5 px-5 scale-90 md:scale-100">
+            <div data-aos="fade-up" className=" lg:pt-64 lg:ml-5 px-5 scale-[.85] md:scale-100">
               <div className="bg-sky-50 dark:bg-transparent rounded-lg p-5">
                 <h2 className="text-center text-xl text-orange-500 font-bold">IMPORTANT FACTS</h2>
                 <div className="mt-4 flex items-center">
