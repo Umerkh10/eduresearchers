@@ -26,7 +26,7 @@ export function HomeBanner() {
       <div className='mx-auto max-w-screen-xl'>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-3 py-10'>
           {/* Left Section */}
-          <div className='py-5 lg:pl-24 px-5'>
+          <div className='py-5 lg:pl-24 px-5 scale-90 md:scale-100'>
             <div className='grid lg:grid-cols-6 grid-cols-2 gap-4 ml-10 md:ml-0'>
               <div className='text-muted-foreground font-semibold md:text-base text-sm'>
                 Confidential

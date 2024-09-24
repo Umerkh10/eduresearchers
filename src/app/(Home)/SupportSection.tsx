@@ -10,7 +10,7 @@ function SupportSection() {
         <div className='pt-10'>
             <div data-aos='fade-down' data-aos-duration="1500" style={{ backgroundImage: "url('/imgs/support_bg.webp')", backgroundSize: 'cover' }} className='py-10'>
                 <div className='mx-auto max-w-screen-xl'>
-                    <div className='px-3 pt-10'>
+                    <div className='px-3 pt-10 scale-90 md:scale-100'>
                         <h1 className='text-center text-xl md:text-7xl  font-extrabold text-white text-opacity-10 '>Support</h1>
                         <div className=' flex justify-center '>
                             <h2 className='text-lg text-zinc-100 md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10  font-extrabold text-center'>FULFIL ALL THE UNIVERSITY GUIDELINES ACCURATELY TO SAVE YOUR GRADES</h2>

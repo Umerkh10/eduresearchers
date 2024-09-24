@@ -21,20 +21,20 @@ function SmallDivider() {
     return (
         <div data-aos='fade-down' data-aos-duration="1500" className='w-full py-5 bg-sky-200'>
             <div className='mx-auto max-w-screen-xl'>
-                <div data-aos='fade-up' className='grid lg:grid-cols-3 grid-cols-1 p-4'>
+                <div data-aos='fade-up' className='grid lg:grid-cols-3 grid-cols-1 scale-90 md:scale-100 p-4'>
                     <div className='col-span-2'>
                         <h1 className='font-semibold text-lg md:text-xl text-center md:text-start text-zinc-800'>Invest Your Money In Quality</h1>
                         <h2 className='pt-2 text-xl md:text-4xl font-extrabold text-zinc-900 text-center md:text-start '>GET OUTSTANDING DISCOUNT ON YOUR FIRST ORDER</h2>
 
                         <form ref={formRef} action={dispatch}>
                             <div className='grid md:grid-cols-2 grid-cols-1  mt-4'>
-                                <div className='mt-2 w-4/5 bg-white rounded-lg md:ml-0 ml-10 scale-75 md:scale-100'>
+                                <div className='mt-2 w-4/5 bg-white rounded-lg md:ml-0 ml-10 '>
                                 <input className='py-4 outline-none w-full rounded-lg px-2' type="email" name='email' placeholder='Enter Your Email' />
                                     {state?.info?.email?.map((item, i) => (
                                         <p key={i} className='text-red-600 text-sm'>{item}</p>
                                     ))} </div>
 
-                                <div className='mt-2 md:ml-0 ml-20 scale-75 md:scale-100'><DividerButton /> </div>
+                                <div className='mt-2 md:ml-0 ml-20 scale-75 md:scale-100 '><DividerButton /> </div>
                             </div>
                         </form>
 

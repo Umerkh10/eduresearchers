@@ -95,7 +95,7 @@ function TopExperts() {
           WE HAVE WRITERS AND EDITORS FROM DIFFERENT DISCIPLINES TO MEET STUDENTS' UNIQUE REQUIREMENTS. WHETHER IT IS SCIENCE OR ACCOUNTING, OUR EXPERTS WILL DEAL WITH IT.
         </p>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 p-4">
-          <div data-aos="fade-up" className="py-3 pr-5">
+          <div data-aos="fade-up" className="md:py-3 pr-5">
             <div className="-ml-10 md:-ml-0 scale-75 md:scale-100 h-[600px] md:h-[800px] bg-sky-50 dark:bg-transparent border-[2px] border-dashed rounded-tr-full rounded-br-full">
               <div
                className={`${hoveredImage === 1 ? 'border-[4px] border-sky-500 scale-150 shadow-xl transition ease-in  duration-200 delay-200 ' : ''} rounded-full w-16 h-16 -translate-y-5 translate-x-3`}
@@ -165,7 +165,7 @@ function TopExperts() {
             </div>
           </div>
           <div>
-            <div data-aos="fade-up" className="pt-10 lg:pt-64 lg:ml-5 px-5 scale-90 md:scale-100">
+            <div data-aos="fade-up" className=" lg:pt-64 lg:ml-5 px-5 scale-90 md:scale-100">
               <div className="bg-sky-50 dark:bg-transparent rounded-lg p-5">
                 <h2 className="text-center text-xl text-orange-500 font-bold">IMPORTANT FACTS</h2>
                 <div className="mt-4 flex items-center">
