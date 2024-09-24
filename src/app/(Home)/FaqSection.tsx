@@ -34,10 +34,14 @@ const FaqSection: React.FC = () => {
               <AccordionItem value="item-1">
                 {renderAccordionTrigger('item-1', 'Why Should I Hire Your Writer?')}
                 {renderAccordionContent('item-1', 'With our writers, you will be able to improve your writing skills. We have professional academic experts do work on your behalf, so you will get help to understand and read assignments efficiently and improve your research and writing skills. As we are covering complex assignments as well so you can also learn to cater to complicated guidelines.')}
+              </AccordionItem>
+              <AccordionItem value="item-2">
                 {renderAccordionTrigger('item-2', 'What are your packages for editing services?')}
                 {renderAccordionContent('item-2', 'Our packages depend on your requirements, word count, deadline and the technicalities of the subject. Still, we have reasonable packages, as we believe help students, so we designed extremely affordable editing and proofreading services.')}
+              </AccordionItem>
+              <AccordionItem value="item-3">
                 {renderAccordionTrigger('item-3', 'Can I collaborate with my assignment writer?')}
-                {renderAccordionContent('item-3', `Yes, you can communicate with your writer any time you want. You can track the progress of your order and send instructions as per the guidelines. We at ${process.env.NEXT_PUBLIC_NAME}  appreciate all students sharing details before our writer starts work on your document to maintain accuracy.`)}
+                {renderAccordionContent('item-3', `Yes, you can communicate with your writer any time you want. You can track the progress of your order and send instructions as per the guidelines. We at ${process.env.NEXT_PUBLIC_NAME} appreciate all students sharing details before our writer starts work on your document to maintain accuracy.`)}
               </AccordionItem>
             </Accordion>
           </div>
@@ -49,8 +53,12 @@ const FaqSection: React.FC = () => {
               <AccordionItem value="item-4">
                 {renderAccordionTrigger('item-4', 'How do you protect students\' privacy?')}
                 {renderAccordionContent('item-4', `We at ${process.env.NEXT_PUBLIC_NAME} never disclose our customer’s details, id or any information. We take all the information to facilitate you with the secure academic services and strictly adhere to the privacy policy. We understand student privacy concerns, so we are committed to upholding the confidentiality of your details when you avail of our academic services.`)}
+              </AccordionItem>
+              <AccordionItem value="item-5">
                 {renderAccordionTrigger('item-5', 'Do you offer guaranteed top results?')}
                 {renderAccordionContent('item-5', 'We are committed to providing you with the highest quality assignment work. We guarantee to give you results perfectly according to the guidelines to achieve good grades in your degree program. You will be assigned a relevant writer to work on your assignment. No matter the subject, we have skilled writers from various disciplines.')}
+              </AccordionItem>
+              <AccordionItem value="item-6">
                 {renderAccordionTrigger('item-6', 'I don’t find my field on your website. Are you still able to do it?')}
                 {renderAccordionContent('item-6', 'If you don’t find your subject or field mentioned on our site, that’s not an issue; as we mentioned before, we cater to all disciplines and subjects. We have the most experienced writers from various fields and all are highly qualified from reputed universities to meet your requirements. Whatever your subject, you can hire us to do it for you.')}
               </AccordionItem>

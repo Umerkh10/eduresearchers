@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import EmailAction from '../(backend)/action/formAction';
-import { useFormState, useFormStatus } from 'react-dom';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
@@ -10,7 +9,6 @@ import { useRouter } from 'next/navigation';
 const DiscountForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Animation state for the changing text
   const [currentText, setCurrentText] = useState<string>('Avail 45% OFF');
   const texts = [
     'Get a Free Quote Now',
@@ -20,16 +18,15 @@ const DiscountForm: React.FC = () => {
     'Urgent Deadline? Fill This Form',
   ];
 
-  // Change text every 2.5 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentText((prevText) => {
         const currentIndex = texts.indexOf(prevText);
         return texts[(currentIndex + 1) % texts.length];
       });
-    }, 4000); // Adjust time interval if needed
+    }, 4000); 
 
-    return () => clearInterval(intervalId); // Cleanup the interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
