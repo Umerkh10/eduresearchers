@@ -10,7 +10,7 @@ const FaqSection: React.FC = () => {
 
   const renderAccordionTrigger = (value: string, text: string) => (
     <AccordionTrigger
-      className='mt-3 bg-gradient-to-l from-emerald-50 to-orange-200 dark:bg-gradient-to-r dark:from-orange-700 dark:to-zinc-600 font-semibold rounded-lg px-4 w-[350px] lg:w-[500px] xl:w-[600px] md:w-[600px]'
+      className='mt-3 scale-75 md:scale-100 bg-gradient-to-l from-emerald-50 to-orange-200 dark:bg-gradient-to-r dark:from-orange-700 dark:to-zinc-600 font-semibold rounded-lg px-4 w-[350px] lg:w-[500px] xl:w-[600px] md:w-[600px]'
       onClick={() => toggleItem(value)}
     >
       {text}
@@ -19,14 +19,14 @@ const FaqSection: React.FC = () => {
 
   const renderAccordionContent = (value: string, content: string) => (
     openItem === value && (
-      <AccordionContent className='text-muted-foreground font-semibold pt-3 px-4 w-[350px] md:w-[500px]'>
+      <AccordionContent className='scale-75 md:scale-100 text-muted-foreground font-semibold pt-3 px-4 w-[350px] md:w-[500px]'>
         {content}
       </AccordionContent>
     )
   );
 
   return (
-    <div id='faq' data-aos='fade-down' data-aos-duration="1500" className='mx-auto max-w-screen-xl py-10'>
+    <div id='faq' data-aos='fade-down' data-aos-duration="1500" className='mx-auto max-w-screen-xl py-10 '>
       <div className='grid lg:grid-cols-2 grid-cols-1'>
         <div >
           <div className='flex items-center justify-center pt-10'>
@@ -66,10 +66,10 @@ const FaqSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div data-aos='zoom-in' className='mt-10'>
-        <h2 className='md:text-3xl text-lg text-center font-semibold text-zinc-800 dark:text-zinc-200'>Any Issues Or Questions</h2>
+      <div data-aos='zoom-in' className='mt-10 '>
+        <h2 className=' md:text-3xl text-lg text-center font-semibold text-zinc-800 dark:text-zinc-200'>Any Issues Or Questions</h2>
         <p className='text-muted-foreground font-medium pt-2 text-center text-sm md:text-base'>Send us a message, and we’ll reply within seconds!</p>
-        <div className='flex justify-center items-center mt-3'>
+        <div className='flex justify-center items-center mt-3 scale-75 md:scale-100'>
           <Link href={'#banner'} className='bg-zinc-900 text-white py-4 px-7 rounded-xl dark:bg-zinc-200 font-medium scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 dark:text-zinc-900'>
             Get A Free Quote
           </Link>

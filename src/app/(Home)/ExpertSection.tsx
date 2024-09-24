@@ -41,10 +41,10 @@ function ExpertSection() {
   };
   return (
     <div id='service' className='max-w-screen-xl mx-auto mt-10'>
-      <div data-aos='fade-down' data-aos-duration="1500" className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900'>
+      <div data-aos='fade-down' data-aos-duration="1500" className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900 '>
         <div data-aos='zoom-in'>
-          <h1 className='md:text-4xl text-xl text-center md:text-start font-extrabold pt-5'>What Our Experts Can Do</h1>
-          <div className='pt-5'>
+          <h1 className='md:text-4xl text-xl text-center md:text-start scale-90 md:scale-100 font-extrabold pt-5'>What Our Experts Can Do</h1>
+          <div className='pt-5 scale-90 md:scale-100'>
             <Tabs defaultValue="Homework">
               <TabsList>
                 {tabContent.map(({ value }) => (
@@ -52,7 +52,7 @@ function ExpertSection() {
                 ))}
               </TabsList>
               {tabContent.map(({ value, title, description }) => (
-                <TabsContent key={value} className='p-4' value={value}>
+                <TabsContent key={value} className='p-4 ' value={value}>
                   <h1 className='text-xl font-extrabold text-zinc-800 dark:text-zinc-100 py-5'>{title}</h1>
                   <p className='font-medium text-muted-foreground lg:pr-44'>{description}</p>
                   <div className='flex items-center text-sm md:text-base mt-3 font-medium text-muted-foreground'>
@@ -74,7 +74,7 @@ function ExpertSection() {
           </div>
         </div>
         <div className='pt-5'>
-          <div className='rounded-xl mt-5'>
+          <div className='rounded-xl mt-5 scale-90 md:scale-100'>
             <Carousel>
               <CarouselContent>
                 {['1', '2', '3', '4', '5'].map(num => (

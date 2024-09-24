@@ -28,13 +28,13 @@ function SmallDivider() {
 
                         <form ref={formRef} action={dispatch}>
                             <div className='grid md:grid-cols-2 grid-cols-1  mt-4'>
-                                <div className='mt-2 w-4/5 bg-white rounded-lg md:ml-0 ml-10'>
+                                <div className='mt-2 w-4/5 bg-white rounded-lg md:ml-0 ml-10 scale-75 md:scale-100'>
                                 <input className='py-4 outline-none w-full rounded-lg px-2' type="email" name='email' placeholder='Enter Your Email' />
                                     {state?.info?.email?.map((item, i) => (
                                         <p key={i} className='text-red-600 text-sm'>{item}</p>
                                     ))} </div>
 
-                                <div className='mt-2 md:ml-0 ml-20'><DividerButton /> </div>
+                                <div className='mt-2 md:ml-0 ml-20 scale-75 md:scale-100'><DividerButton /> </div>
                             </div>
                         </form>
 

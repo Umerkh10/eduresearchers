@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export function CarouselSpacing() {
   return (
-    <Carousel opts={{loop:true}} className=" w-full max-w-screen-xl">
+    <Carousel opts={{loop:true}} className=" w-full max-w-screen-xl scale-75 md:scale-100">
       <CarouselContent className="-ml-1 mt-5">
 
           <CarouselItem  className="pl-1  lg:basis-1/3 ">

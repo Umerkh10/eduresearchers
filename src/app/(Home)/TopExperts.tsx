@@ -136,7 +136,7 @@ function TopExperts() {
             </div>
           </div>
           <div>
-            <div data-aos="fade-down" className=" lg:pt-64 lg:ml-5 px-5">
+            <div data-aos="fade-down" className=" lg:pt-64 lg:ml-5 px-5 scale-90 md:scale-100">
               <div className="flex justify-between items-center">
                 <span className="md:text-2xl text-xl font-extrabold text-zinc-800 dark:text-zinc-100">
                   {currentExpert ? currentExpert.name : "JERRY GENTRY"}
@@ -165,7 +165,7 @@ function TopExperts() {
             </div>
           </div>
           <div>
-            <div data-aos="fade-up" className="pt-10 lg:pt-64 lg:ml-5 px-5">
+            <div data-aos="fade-up" className="pt-10 lg:pt-64 lg:ml-5 px-5 scale-90 md:scale-100">
               <div className="bg-sky-50 dark:bg-transparent rounded-lg p-5">
                 <h2 className="text-center text-xl text-orange-500 font-bold">IMPORTANT FACTS</h2>
                 <div className="mt-4 flex items-center">

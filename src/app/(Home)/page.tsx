@@ -24,6 +24,7 @@ export default function Home() {
   useEffect(() => {
     Aos.init({
       duration: 800,
+      disable:'mobile',
       offset: 100,
     });
   }, [inView]);
