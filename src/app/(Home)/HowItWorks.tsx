@@ -9,7 +9,7 @@ function HowItWorks() {
             <div className=' flex justify-center '>
             <h2 className='text-xl md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10  font-extrabold text-center'>GET 4 STEP EFFICIENT PROCESS</h2>
             </div>
-            <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 p-2 md:p-5 scale-[.85] md:scale-100 '>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 p-2 md:p-5 scale-95 md:scale-100 '>
                 <div data-aos='flip-up' className='group'>
                     <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-200 delay-200 lg:h-[350px] rounded-xl shadow-xl bg-gradient-to-t from-orange-200 to-emerald-50 dark:bg-gradient-to-t dark:from-orange-900 dark:to-zinc-900 p-5'>
                     <div className='pt-5 flex items-center justify-around'>

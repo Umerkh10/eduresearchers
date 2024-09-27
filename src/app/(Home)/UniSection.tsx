@@ -4,7 +4,7 @@ import React from 'react'
 function UniSection() {
   return (
     <div className='mx-auto max-w-screen-xl' data-aos='fade-up' data-aos-duration="1000">
-        <div className='grid lg:grid-cols-6 grid-cols-2 lg:gap-0 gap-2 py-4 px-3  items-center scale-[.85] md:scale-100'>
+        <div className='grid lg:grid-cols-6 grid-cols-2 lg:gap-0 gap-2 py-4 px-3  items-center scale-90 md:scale-100'>
           <div className='col-span-2'>
             <p className=' font-semibold md:text-base text-sm pt-3'>90% Of our experts studied at top-rated Universities </p>
             </div>

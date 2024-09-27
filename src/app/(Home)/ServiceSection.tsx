@@ -4,7 +4,7 @@ import React from 'react'
 function ServiceSection() {
   return (
     <div id="why-us" className='mx-auto max-w-screen-xl'>
-        <div data-aos='fade-up' data-aos-duration="2000" className=' md:mt-10 scale-[.85] md:scale-100 '>
+        <div data-aos='fade-up' data-aos-duration="2000" className=' md:mt-10  md:scale-100 '>
             <h1 className='text-center text-2xl md:text-7xl text-muted font-extrabold '>WHY US?</h1>
             <div className=' flex justify-center '>
             <h2 className='text-xl md:text-4xl w-[500px] -translate-y-6 md:-translate-y-10  font-extrabold text-center'>HERE ARE YOUR BEST ACADEMIC SOLUTIONS COVERING ALL FIELDS</h2>
