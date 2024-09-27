@@ -10,7 +10,7 @@ import SmallDivider from "./SmallDivider";
 import SupportSection from "./SupportSection";
 import TopExperts from "./TopExperts";
 import UniSection from "./UniSection";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import Aos from 'aos'
 import 'aos/dist/aos.css';
 
@@ -29,7 +29,9 @@ export default function Home() {
   }, [inView]);
   return (
     <div ref={ref}>
+      <Suspense>
       <HomeBanner/>
+      </Suspense>
       <UniSection/>
       <ServiceSection/>
       <ExpertSection/>
