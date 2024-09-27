@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run partytown && next build",
+    "build": "next build",
     "start": "next start",
-    "partytown": "partytown copylib public/~partytown",
     "lint": "next lint"
   },
   "dependencies": {

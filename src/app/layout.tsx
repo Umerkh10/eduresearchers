@@ -6,8 +6,7 @@ import { ThemeProvider } from "./ThemeProvider";
 import { Toaster } from "sonner";
 import Tawkto from "@/lib/Tawkto";
 import Footer from "./(Home)/Footer";
-import Head from "next/head";
-import { Partytown } from '@builder.io/partytown/react';
+
 
 
 
@@ -42,11 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-         <Head>
-       
-        <Partytown debug={true} forward={['dataLayer.push']} />
-        <script src="https://example.com/analytics.js" type="text/partytown" />
-      </Head>
+  
       <Tawkto/>
       <body
       
