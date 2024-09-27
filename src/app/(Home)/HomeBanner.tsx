@@ -1,18 +1,28 @@
 import {  HelpingHandIcon, MessageCircle } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import DiscountForm from './DiscountForm'
 import Tawkto from '@/lib/Tawkto';
+import { Modal } from './Modal';
+import { useSearchParams } from 'next/navigation';
+import clsx from 'clsx';
 
-export function HomeBanner() {
+
+export function HomeBanner(){
   const [highlightForm, setHighlightForm] = useState(false);
+  const [isParamMatched, setIsParamMatched] = useState(false);
 
+  const SearchParams=useSearchParams()
+  const coupon=SearchParams.get('coupon')
+  useLayoutEffect(()=>{
+    if(coupon==='off45'){
+      setIsParamMatched(true)
+    }
+  },[coupon])
   const handleGetStartedClick = () => {
     setHighlightForm(true);
-
-    // Remove highlight after a certain duration (optional)
     setTimeout(() => {
       setHighlightForm(false);
-    }, 2000); // highlight for 3 seconds
+    }, 2000); 
   };
 
 
@@ -55,6 +65,7 @@ export function HomeBanner() {
                 <MessageCircle className='mr-1' /> Get Started
               </button>
               <HelpDesk />
+             {isParamMatched &&  <Modal/>}
             </div>
             <div className='font-medium text-muted-foreground text-center md:text-start pt-1'>
               Prices start at just <span className='text-black dark:text-white text-sm font-medium'>£11/page</span>
