@@ -24,10 +24,10 @@ function ThankYou() {
         Thank you for your recent purchase. We hope you enjoy your new product. If you have any questions or concerns,
         please don't hesitate to contact us.
       </p>
-      <div className="mt-6 flex flex-col lg:flex-row justify-center gap-4">
+      <div className="mt-6 flex flex-col items-center md:flex-row justify-center gap-4">
         <Link
           href=""
-          className="inline-flex items-center rounded-lg bg-green-600 px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition ease-in duration-200 delay-200 hover:scale-105  focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-green-500 w-[200px] text-white rounded-lg"
           prefetch={false}
         >
            <PhoneCall className='mr-2'/> Whatsapp Now
