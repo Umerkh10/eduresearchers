@@ -8,8 +8,6 @@ import Tawkto from "@/lib/Tawkto";
 import Footer from "./(Home)/Footer";
 
 
-
-
 const inter = Montserrat({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -41,7 +39,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-  
       <Tawkto/>
       <body
       
