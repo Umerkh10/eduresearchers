@@ -13,8 +13,9 @@ import UniSection from "./UniSection";
 import { Suspense, useEffect } from "react";
 import Aos from 'aos'
 import 'aos/dist/aos.css';
+import { useSearchParams } from "next/navigation";
 
-export default function Home() {
+export default function Home( ) {
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -29,8 +30,8 @@ export default function Home() {
   }, [inView]);
   return (
     <div ref={ref}>
-      <Suspense>
-      <HomeBanner/>
+      <Suspense fallback={<>loading...</>}>
+      <HomeBanner />
       </Suspense>
       <UniSection/>
       <ServiceSection/>
