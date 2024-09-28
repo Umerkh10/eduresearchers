@@ -1,15 +1,14 @@
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+"use client"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import React from 'react'
 import PaperType from './PaperType'
 import PaperInstruction from './PaperInstruction'
 import ContactDetails from './ContactDetails'
 import Image from 'next/image'
+import { useTopic } from '../TopicContext'
 
 function Order() {
+    const { topic,selectedValue ,wordCount} = useTopic(); // Get topic from context
   return (
     <div className='mx-auto max-w-screen-xl'>
     <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps</div>
@@ -34,11 +33,11 @@ function Order() {
         </div>
 
         <div>
-            <div className='py-5 px-2 bg-orange-500 rounded-2xl'>
+            <div className='py-5 px-2 bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:via-orange-950 dark:to-zinc-950 rounded-2xl'>
                 <div className='text-xl md:text-3xl text-center py-3 font-bold '>Order Summary</div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Topic Of Paper</div>
-                    <div>------------------------</div>
+                    <div>{topic || '------------------------'}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Referencing Style</div>
@@ -54,11 +53,11 @@ function Order() {
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>No Of Pages</div>
-                    <div>1</div>
+                    <div>{selectedValue}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Word Count</div>
-                    <div>250</div>
+                    <div>{wordCount}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Price Per Page</div>

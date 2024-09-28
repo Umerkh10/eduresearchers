@@ -1,7 +1,11 @@
+"use client"
 import React from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
+import { useTopic } from '../TopicContext';
+
+
 function PaperType() {
     const totalPages = 200;
     const wordsPerPage = 250;
@@ -20,6 +24,18 @@ function PaperType() {
         return options;
     };
 
+    const { setTopic, selectedValue, setSelectedValue,setLevel } = useTopic(); // Get the update function from context
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setTopic(event.target.value); // Update the topic in context
+    };
+    const handleLevel = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setLevel(event.target.value); // Update the topic in context
+    };
+    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedValue(parseInt(event.target.value)); // Update the state with selected value
+    };
+
     return (
         <div>
             <Card>
@@ -33,14 +49,18 @@ function PaperType() {
 
                     <div className="space-y-1">
                         <Label htmlFor="topic">Your Topic</Label>
-                        <Input id="topic" name='topic' />
+                        <input
+                            id="topic"
+                            name='topic'
+                            onChange={handleChange}
+                            className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
+                        />
                     </div>
-
                     <div className="space-y-1">
                         <Label htmlFor="academic">Academic Level</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="service" required aria-label='service'>
+                            name="academic" onChange={handleLevel} required aria-label='academic'>
                             <option value="undergraduate">Undergraduate</option>
                             <option value="highschool">High School</option>
                             <option value="master">Master</option>
@@ -113,7 +133,7 @@ function PaperType() {
 
                     <div className="space-y-1">
                         <label htmlFor="pageCount">Number Of Pages</label>
-                        <select
+                        <select value={selectedValue} onChange={handleSelectChange}
                             className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
                             name="pageCount"
                             required
@@ -123,9 +143,12 @@ function PaperType() {
                                 const pageCount = index + 1;
                                 const wordCount = pageCount * wordsPerPage;
                                 return (
-                                    <option key={pageCount} value={pageCount}>
-                                        {`${pageCount} Page${pageCount > 1 ? 's' : ''} / ${wordCount} Words`}
-                                    </option>
+                                     
+                                        <option key={pageCount} value={pageCount}>
+                                            {`${pageCount} Page${pageCount > 1 ? 's' : ''} / ${wordCount} Words`}
+                                        </option>
+
+
                                 );
                             })}
                         </select>
