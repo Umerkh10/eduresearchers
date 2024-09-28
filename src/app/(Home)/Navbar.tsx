@@ -37,7 +37,10 @@ function Navbar() {
             Reviews
           </Link>
           <Link href="#faq" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Frequently Asked Questions
+            FAQs
+          </Link>
+          <Link href="/Order" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+            Order Now
           </Link>
           <ModeToggle/>
         </nav>
@@ -72,6 +75,9 @@ function Navbar() {
           </Link>
           <Link href="#faq" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
             Frequently Asked Questions
+          </Link>
+          <Link href="/Order" className="text-muted-foreground hover:text-foreground text-sm font-medium" prefetch={false}>
+          Order Now
           </Link>
           <ModeToggle/>
               </nav>
