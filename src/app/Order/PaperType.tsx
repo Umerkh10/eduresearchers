@@ -17,14 +17,39 @@ function PaperType() {
       
       const generateDeadlineOptions = (): DeadlineOption[] => {
         return [
-          { value: "10 to 30 days", label: "10 to 30 days" },
-          { value: "6 to 9 days", label: "6 to 9 days" },
-          { value: "3 to 5 days", label: "3 to 5 days" },
+          { value: "30 days", label: "30 days" },
+          { value: "29 days", label: "29 days" },
+          { value: "28 days", label: "28 days" },
+          { value: "27 days", label: "27 days" },
+          { value: "26 days", label: "26 days" },
+          { value: "25 days", label: "25 days" },
+          { value: "24 days", label: "24 days" },
+          { value: "23 days", label: "23 days" },
+          { value: "22 days", label: "22 days" },
+          { value: "21 days", label: "21 days" },
+          { value: "20 days", label: "20 days" },
+          { value: "19 days", label: "19 days" },
+          { value: "18 days", label: "18 days" },
+          { value: "17 days", label: "17 days" },
+          { value: "16 days", label: "16 days" },
+          { value: "15 days", label: "15 days" },
+          { value: "14 days", label: "14 days" },
+          { value: "13 days", label: "13 days" },
+          { value: "12 days", label: "12 days" },
+          { value: "11 days", label: "11 days" },
+          { value: "10 days", label: "10 days" },
+          { value: "9 days", label: "9 days" },
+          { value: "8 days", label: "8 days" },
+          { value: "7 days", label: "7 days" },
+          { value: "6 days", label: "6 days" },
+          { value: "5 days", label: "5 days" },
+          { value: "4 days", label: "4 days" },
+          { value: "3 days", label: "3 days" },
           { value: "2 days", label: "2 days" },
           { value: "1 day", label: "1 day" },
-          { value: "12 hours to 24 hours", label: "12 hours to 24 hours" },
-          { value: "5 to 11 hours", label: "5 to 11 hours" },
-          { value: "1 to 4 hours", label: "1 to 4 hours" },
+          { value: "12 hours", label: "12 hours" },
+          { value: "8 hours", label: "8 hours" },
+          { value: "4 hours", label: "4 hours" },
         ];
       };
     
@@ -204,6 +229,7 @@ function PaperType() {
                             onChange={(e) => setDeadline(e.target.value)}
                             required
                             aria-label="Deadline"
+                            defaultValue={'10 days'}
                         >
                             {generateDeadlineOptions().map((option, index) => (
                                 <option key={index} value={option.value}>

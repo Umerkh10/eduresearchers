@@ -41,7 +41,7 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [level, setLevel] = useState<string>("undergraduate");
   const [paper, setPaper] = useState<string>("Dissertation");
   const [quality, setQuality] = useState<string>("Standard Quality");
-  const [deadline, setDeadline] = useState<string>("10 to 30 days");
+  const [deadline, setDeadline] = useState<string>("10 days");
   const [subject, setSubject] = useState<string>("Chemistry");
   const [language, setLanguage] = useState<string>("uk");
   const [source, setSource] = useState<number>(10);
@@ -60,33 +60,74 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
     // Adjust price based on deadline
     switch (deadline) {
-      case "10 to 30 days":
-        basePricePerPage = 8;
-        break;
-      case "6 to 9 days":
-        basePricePerPage = 10;
-        break;
-      case "3 to 5 days":
-        basePricePerPage = 12;
-        break;
-      case "2 days":
-        basePricePerPage = 18;
-        break;
-      case "1 day":
-        basePricePerPage = 20;
-        break;
-      case "12 hours to 24 hours":
-        basePricePerPage = 24;
-        break;
-      case "5 to 11 hours":
-        basePricePerPage = 29;
-        break;
-      case "1 to 4 hours":
-        basePricePerPage = 34;
-        break;
-      default:
-        basePricePerPage = 8;
-    }
+        // Days between 10 to 30 will have a base price of 8
+        case "10 days":
+        case "11 days":
+        case "12 days":
+        case "13 days":
+        case "14 days":
+        case "15 days":
+        case "16 days":
+        case "17 days":
+        case "18 days":
+        case "19 days":
+        case "20 days":
+        case "21 days":
+        case "22 days":
+        case "23 days":
+        case "24 days":
+        case "25 days":
+        case "26 days":
+        case "27 days":
+        case "28 days":
+        case "29 days":
+        case "30 days":
+          basePricePerPage = 8;
+          break;
+      
+        // 6 to 9 days will have a base price of 10
+        case "6 days":
+        case "7 days":
+        case "8 days":
+        case "9 days":
+          basePricePerPage = 10;
+          break;
+      
+        // 3 to 5 days will have a base price of 12
+        case "3 days":
+        case "4 days":
+        case "5 days":
+          basePricePerPage = 12;
+          break;
+      
+        // 2 days will have a base price of 18
+        case "2 days":
+          basePricePerPage = 18;
+          break;
+      
+        // 1 day will have a base price of 20
+        case "1 day":
+          basePricePerPage = 20;
+          break;
+      
+        // 12 hours will have a base price of 24
+        case "12 hours":
+          basePricePerPage = 24;
+          break;
+      
+        // 8 hours will have a base price of 29
+        case "8 hours":
+          basePricePerPage = 29;
+          break;
+      
+        // 4 hours will have a base price of 34
+        case "4 hours":
+          basePricePerPage = 34;
+          break;
+      
+        default:
+          basePricePerPage = 8; // Default base price for any other deadline
+      }
 
     // Adjust price if format is single spaced
     if (format === "Single Spaced") {
