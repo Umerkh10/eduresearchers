@@ -1,10 +1,29 @@
-import { Button } from '@/components/ui/button'
+"use client"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import React from 'react'
+import { useTopic } from '../TopicContext'
 
 function PaperInstruction() {
+    const {setSubject,setLanguage,setSource,setFormat,setReferencing} = useTopic();
+
+    const handleSubject = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSubject(event.target.value); // Update the topic in context
+    };
+    const handleLanguage = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+        setLanguage(event.target.value); // Update the topic in context
+    };
+    const handleSource = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+        setSource(parseInt(event.target.value)); // Update the topic in context
+    };
+    const handleFormat = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+        setFormat(event.target.value); // Update the topic in context
+    };
+    const handleReferencing = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+        setReferencing(event.target.value); // Update the topic in context
+    };
+
     return (
         <div>
             <Card>
@@ -20,7 +39,7 @@ function PaperInstruction() {
                         <Label htmlFor="subjectarea">Subject Area</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="subject" required aria-label='subject'>
+                            name="subject" onChange={handleSubject} required aria-label='subject'>
                             <option value="Chemistry">Chemistry</option>
                             <option value="Mathematics">Mathematics</option>
                             <option value="Sociology">Sociology</option>
@@ -48,7 +67,7 @@ function PaperInstruction() {
                         <Label htmlFor="language">Preferred Language Style</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="language" required aria-label='language'>
+                            name="language" onChange={handleLanguage} required aria-label='language'>
                             <option value="uk">English (U.K)</option>
                             <option value="us">English (U.S)</option>
                         </select>
@@ -58,7 +77,7 @@ function PaperInstruction() {
                         <Label htmlFor="sources">Number Sources</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="subject" defaultValue={10} required aria-label='subject'>
+                            name="source" onChange={handleSource} defaultValue={10} required aria-label='source'>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -85,17 +104,17 @@ function PaperInstruction() {
                         <Label htmlFor="format">Paper Format</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="format" defaultValue={'double'} required aria-label='format'>
-                            <option value="single">Single Spaced</option>
-                            <option value="double">Double Spaced</option>
+                            name="format" onChange={handleFormat} defaultValue={'double'} required aria-label='format'>
+                            <option value="Double Spaced">Double Spaced</option>
+                            <option value="Single Spaced">Single Spaced</option>
                         </select>
                     </div>
 
                     <div className="space-y-1">
-                        <Label htmlFor="format">Referencing Style</Label>
+                        <Label htmlFor="referencing">Referencing Style</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="format" defaultValue={'Harvard Referencing'} required aria-label='format'>
+                            name="referencing" onChange={handleReferencing} defaultValue={'Harvard Referencing'} required aria-label='referencing'>
                             <option value="APA Referencing">APA Referencing</option>
                             <option value="Harvard Referencing">Harvard Referencing</option>
                             <option value="MLA Referencing">MLA Referencing</option>
@@ -107,7 +126,7 @@ function PaperInstruction() {
                         </select>
                     </div>
                     <div className="space-y-1">
-                        <Label htmlFor="format">Select Your File</Label>
+                        <Label htmlFor="file">Select Your File</Label>
                         <Input
                             className='h-12 rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
                             name="file" type='file' required aria-label='file'>

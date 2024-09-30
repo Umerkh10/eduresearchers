@@ -2,35 +2,67 @@
 import React from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
 import { useTopic } from '../TopicContext';
 
 
+
+
+
 function PaperType() {
+
+    interface DeadlineOption {
+        value: string;
+        label: string;
+      }
+      
+      // This function can dynamically generate the options for deadlines
+      const generateDeadlineOptions = (): DeadlineOption[] => {
+        return [
+          { value: "10 to 31 days", label: "10 to 31 days" },
+          { value: "6 to 9 days", label: "6 to 9 days" },
+          { value: "3 to 5 days", label: "3 to 5 days" },
+          { value: "2 days", label: "2 days" },
+          { value: "1 day", label: "1 day" },
+          { value: "12 hours to 24 hours", label: "12 hours to 24 hours" },
+          { value: "5 to 11 hours", label: "5 to 11 hours" },
+          { value: "1 to 4 hours", label: "1 to 4 hours" },
+        ];
+      };
+    
+
     const totalPages = 200;
     const wordsPerPage = 250;
 
-    // Create an array of deadline options (hours and days)
-    const generateDeadlineOptions = () => {
-        const options = [];
-        // Add hourly options from 4 hours to 24 hours
-        for (let i = 4; i <= 24; i++) {
-            options.push(`${i} Hours`);
-        }
-        // Add daily options from 1 day to 31 days
-        for (let i = 1; i <= 31; i++) {
-            options.push(`${i} Days`);
-        }
-        return options;
-    };
+    // // Create an array of deadline options (hours and days)
+    // const generateDeadlineOptions = () => {
+    //     const options = [];
+    //     // Add hourly options from 4 hours to 24 hours
+    //     for (let i = 4; i <= 24; i++) {
+    //         options.push(`${i} Hours`);
+    //     }
+    //     // Add daily options from 1 day to 31 days
+    //     for (let i = 1; i <= 31; i++) {
+    //         options.push(`${i} Days`);
+    //     }
+    //     return options;
+    // };
 
-    const { setTopic, selectedValue, setSelectedValue,setLevel } = useTopic(); // Get the update function from context
+    const { setTopic, selectedValue, setSelectedValue, setLevel, setPaper, setQuality, setDeadline } = useTopic(); // Get the update function from context
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTopic(event.target.value); // Update the topic in context
     };
     const handleLevel = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setLevel(event.target.value); // Update the topic in context
+    };
+    const handlePaper = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setPaper(event.target.value); // Update the topic in context
+    };
+    const handleQuality = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setQuality(event.target.value); // Update the topic in context
+    };
+    const handleDeadline = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setDeadline(event.target.value); // Update the topic in context
     };
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedValue(parseInt(event.target.value)); // Update the state with selected value
@@ -73,7 +105,7 @@ function PaperType() {
                         <Label htmlFor="typeofpaper">Type Of Paper</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="service" required aria-label='service'>
+                            name="service" onChange={handlePaper} required aria-label='service'>
                             <option value="Dissertation">Dissertation</option>
                             <option value="Assignment">Assignment Writing </option>
                             <option value="Essay">Essay</option>
@@ -143,10 +175,10 @@ function PaperType() {
                                 const pageCount = index + 1;
                                 const wordCount = pageCount * wordsPerPage;
                                 return (
-                                     
-                                        <option key={pageCount} value={pageCount}>
-                                            {`${pageCount} Page${pageCount > 1 ? 's' : ''} / ${wordCount} Words`}
-                                        </option>
+
+                                    <option key={pageCount} value={pageCount}>
+                                        {`${pageCount} Page${pageCount > 1 ? 's' : ''} / ${wordCount} Words`}
+                                    </option>
 
 
                                 );
@@ -158,9 +190,9 @@ function PaperType() {
                         <Label htmlFor="Paper Quality">Paper Quality</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="paperquality" required aria-label='PaperQuality'>
-                            <option value="undergraduate">Standard Quality</option>
-                            <option value="highschool">Premium Quality</option>
+                            name="paperquality" onChange={handleQuality} required aria-label='PaperQuality'>
+                            <option value="Standard Quality">Standard Quality</option>
+                            <option value="Premium Quality">Premium Quality</option>
 
                         </select>
                     </div>
@@ -170,12 +202,13 @@ function PaperType() {
                         <select
                             className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
                             name="deadline"
+                            onChange={(e) => setDeadline(e.target.value)}
                             required
                             aria-label="Deadline"
                         >
                             {generateDeadlineOptions().map((option, index) => (
-                                <option key={index} value={option}>
-                                    {option}
+                                <option key={index} value={option.value}>
+                                    {option.label}
                                 </option>
                             ))}
                         </select>

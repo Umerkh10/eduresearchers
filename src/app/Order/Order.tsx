@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { useTopic } from '../TopicContext'
 
 function Order() {
-    const { topic,selectedValue ,wordCount} = useTopic(); // Get topic from context
+    const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice} = useTopic(); // Get topic from context
   return (
     <div className='mx-auto max-w-screen-xl'>
     <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps</div>
@@ -41,15 +41,15 @@ function Order() {
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Referencing Style</div>
-                    <div>Harvard Referencing</div>
+                    <div>{referencing}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Paper Standard</div>
-                    <div>Standard Quality</div>
+                    <div>{quality}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Deadline</div>
-                    <div>12 Hours</div>
+                    <div>{deadline}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>No Of Pages</div>
@@ -61,11 +61,11 @@ function Order() {
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Price Per Page</div>
-                    <div>£ 24.00</div>
+                    <div>£ {pricePerPage}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Total Price</div>
-                    <div>£ 24.00</div>
+                    <div>£ {totalPrice}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Turnitin Report</div>
