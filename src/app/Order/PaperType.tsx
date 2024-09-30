@@ -15,7 +15,6 @@ function PaperType() {
         label: string;
       }
       
-      // This function can dynamically generate the options for deadlines
       const generateDeadlineOptions = (): DeadlineOption[] => {
         return [
           { value: "10 to 30 days", label: "10 to 30 days" },

@@ -4,8 +4,6 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 
-
-
 function ContactDetails() {
     return (
         <div>
@@ -19,7 +17,7 @@ function ContactDetails() {
                 <CardContent  className="space-y-2 ">
 
                     <div className="space-y-1">
-                        <Label htmlFor="topic">Your Name</Label>
+                        <Label htmlFor="name">Your Name</Label>
                         <Input className='outline-orange-500' id="name" name='name' required />
                     </div>
 
@@ -60,9 +58,7 @@ function ContactDetails() {
                     <div className='space-y-2 '>
                         <button className='mt-5 px-8 py-3 bg-orange-500 text-zinc-50 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200 font-medium'>Order Now</button>
                     </div>
-
                 </CardContent>
-
             </Card>
         </div>
     )
