@@ -38,12 +38,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="en">
+      
+      
       <Tawkto/>
       <body
-      
         className={inter.className}
       >
+        
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -55,7 +58,9 @@ export default function RootLayout({
         <Footer/>
         <Toaster richColors position="bottom-right"/>
         </ThemeProvider>
+        
       </body>
+      
     </html>
   );
 }

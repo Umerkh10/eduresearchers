@@ -41,7 +41,7 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [level, setLevel] = useState<string>("undergraduate");
   const [paper, setPaper] = useState<string>("Dissertation");
   const [quality, setQuality] = useState<string>("Standard Quality");
-  const [deadline, setDeadline] = useState<string>("10 to 31 days");
+  const [deadline, setDeadline] = useState<string>("10 to 30 days");
   const [subject, setSubject] = useState<string>("Chemistry");
   const [language, setLanguage] = useState<string>("uk");
   const [source, setSource] = useState<number>(10);
@@ -60,7 +60,7 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
     // Adjust price based on deadline
     switch (deadline) {
-      case "10 to 31 days":
+      case "10 to 30 days":
         basePricePerPage = 8;
         break;
       case "6 to 9 days":

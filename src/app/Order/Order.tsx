@@ -11,7 +11,10 @@ function Order() {
     const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice} = useTopic(); // Get topic from context
   return (
     <div className='mx-auto max-w-screen-xl'>
-    <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps</div>
+    <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps
+      
+    </div>
+    
     <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-4'>
         <div className='col-span-2'>
         <Tabs defaultValue="type" className="">
