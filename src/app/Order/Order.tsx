@@ -1,11 +1,12 @@
 "use client"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import React from 'react'
+
+import Image from 'next/image'
+import { useTopic } from '../TopicContext'
 import PaperType from './PaperType'
 import PaperInstruction from './PaperInstruction'
 import ContactDetails from './ContactDetails'
-import Image from 'next/image'
-import { useTopic } from '../TopicContext'
 
 function Order() {
     const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice} = useTopic(); // Get topic from context

@@ -131,9 +131,7 @@ function ContactDetails() {
                         <Label className='text-base' htmlFor="format">Additional Notes (Instructions)</Label>
                         <Input
                             className='outline-orange-500 pb-36 pt-4 rounded-lg border-[2px] w-full  px-3  text-sm md:text-base'
-                            name="notes" type='text' value={contactDetails.notes} onChange={handleContactDetailsChange} required aria-label='notes'>
-
-                        </Input>
+                            name="notes" type='text' value={contactDetails.notes} onChange={handleContactDetailsChange}  aria-label='notes'></Input>
                     </div>
 
                     <div className='space-y-2 '>

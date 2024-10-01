@@ -19,7 +19,7 @@ const FaqSection: React.FC = () => {
 
   const renderAccordionContent = (value: string, content: string) => (
     openItem === value && (
-      <AccordionContent className='scale-95 md:scale-100 text-muted-foreground font-semibold pt-3 px-4 w-[350px] md:w-[500px]'>
+      <AccordionContent className=' scale-95 md:scale-100 text-muted-foreground font-semibold pt-3 px-4 w-[350px] md:w-[500px]'>
         {content}
       </AccordionContent>
     )
@@ -27,6 +27,10 @@ const FaqSection: React.FC = () => {
 
   return (
     <div id='faq' data-aos='fade-down' data-aos-duration="1500" className='mx-auto max-w-screen-xl py-10 '>
+          <h1 className='text-center text-4xl md:text-7xl text-muted font-extrabold '>FAQ</h1>
+            <div className=' flex justify-center '>
+            <h2 className='text-xl md:text-3xl w-[600px] -translate-y-6 md:-translate-y-10  font-extrabold text-center'>Frequently Asked Questions</h2>
+            </div>
       <div className='grid lg:grid-cols-2 grid-cols-1'>
         <div >
           <div className='flex items-center justify-center pt-10'>
