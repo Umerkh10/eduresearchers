@@ -71,10 +71,10 @@ function ContactDetails() {
           setPending(false);
     
           if (res?.success) {
-            formRef.current?.reset(); // Reset form
-            router.push("/Thank"); // Redirect to thank you page
+            formRef.current?.reset(); 
+            router.push("/Thank"); 
           } else if (res?.error) {
-            toast.error(res.error); // Display error message
+            toast.error(res.error); 
           }
         } catch (error) {
           setPending(false);
