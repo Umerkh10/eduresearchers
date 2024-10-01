@@ -1,6 +1,15 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
+
+interface ContactDetails {
+  name: string;
+  email: string;
+  phone: string;
+  country: string;
+  notes: string;
+}
+
 // Define the type for the context value
 interface TopicContextType {
   topic: string;
@@ -17,6 +26,7 @@ interface TopicContextType {
   referencing: string;
   pricePerPage: number;
   totalPrice: number;
+  contactDetails: ContactDetails; // Contact details
   setTopic: (newTopic: string) => void;
   setSelectedValue: (newSelectedValue: number) => void;
   setLevel: (newLevel: string) => void;
@@ -28,6 +38,7 @@ interface TopicContextType {
   setSource: (newSource: number) => void;
   setFormat: (newFormat: string) => void;
   setReferencing: (newReferencing: string) => void;
+  setContactDetails: (details: ContactDetails) => void; // Function to update contact deta
 }
 
 // Create the context with an initial value of undefined
@@ -50,6 +61,14 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const [pricePerPage, setPricePerPage] = useState<number>(8); // Initial price per page
   const [totalPrice, setTotalPrice] = useState<number>(8 * selectedValue); // Total price
+   // New state for contact details
+   const [contactDetails, setContactDetails] = useState<ContactDetails>({
+    name: "",
+    email: "",
+    phone: "",
+    country: "United States",
+    notes: "",
+  });
 
   // Update word count when selectedValue changes
   useEffect(() => setWordCount(selectedValue * 250), [selectedValue]);
@@ -180,6 +199,8 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         setReferencing,
         pricePerPage, // Price per page
         totalPrice, // Total price
+        contactDetails, // Contact details
+        setContactDetails,
       }}
     >
       {children}

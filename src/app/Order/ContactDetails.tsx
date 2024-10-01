@@ -1,11 +1,88 @@
-import React from 'react'
+"use client"
+import React, { useRef, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useTopic } from '../TopicContext';
+import { toast } from 'sonner';
+import { EmailAction } from '../(backend)/action/EmailAction';
+import { useRouter } from 'next/navigation'
+
 
 
 function ContactDetails() {
+    const { 
+        topic, 
+        selectedValue, 
+        wordCount, 
+        level, 
+        paper, 
+        quality, 
+        deadline, 
+        subject, 
+        language, 
+        source, 
+        format, 
+        referencing, 
+        pricePerPage, 
+        totalPrice, 
+        contactDetails, 
+        setContactDetails 
+      } = useTopic(); // Access the context API
+    
+      const [pending, setPending] = useState(false);
+      const formRef = useRef<HTMLFormElement | null>(null);
+      const router = useRouter();
+    
+      // Handle form input for contact details
+      const handleContactDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setContactDetails({ ...contactDetails, [name]: value });
+      };
+      const handleContactDetailsChangeCountry = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setContactDetails({ ...contactDetails, [name]: value });
+      };
+    
+      const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setPending(true);
+    
+        try {
+          // Submit form data via EmailAction (Nodemailer)
+          const res = await EmailAction({
+            topic,
+            selectedValue,
+            wordCount,
+            level,
+            paper,
+            quality,
+            deadline,
+            subject,
+            language,
+            source,
+            format,
+            referencing,
+            pricePerPage,
+            totalPrice,
+            contactDetails
+          });
+    
+          setPending(false);
+    
+          if (res?.success) {
+            formRef.current?.reset(); // Reset form
+            router.push("/Thank"); // Redirect to thank you page
+          } else if (res?.error) {
+            toast.error(res.error); // Display error message
+          }
+        } catch (error) {
+          setPending(false);
+          toast.error("An error occurred while submitting the form.");
+        }
+      };
     return (
+        <form ref={formRef} onSubmit={handleSubmit}>
         <div>
             <Card>
                 <CardHeader>
@@ -18,23 +95,26 @@ function ContactDetails() {
 
                     <div className="space-y-1">
                         <Label htmlFor="name">Your Name</Label>
-                        <Input className='outline-orange-500' id="name" name='name' required />
+                        <Input className='outline-orange-500' value={contactDetails.name} 
+                        onChange={handleContactDetailsChange} id="name" name='name' required />
                     </div>
 
 
                     <div className="space-y-1">
                         <Label htmlFor="email">Your Email</Label>
-                        <Input className='outline-orange-500' id="name" type='email' name='email' required />
+                        <Input className='outline-orange-500' id="name" value={contactDetails.email} 
+                        onChange={handleContactDetailsChange} type='email' name='email' required />
                     </div>
                     <div className="space-y-1">
                         <Label htmlFor="number">Your Phone Number</Label>
-                        <Input className='outline-orange-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none' id="number" type='number' name='phone' required />
+                        <Input className='outline-orange-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
+                         id="number" value={contactDetails.phone} onChange={handleContactDetailsChange} type='number' name='phone' required />
                     </div>
 
                     <div className="space-y-1">
                         <label htmlFor="countries">Select Country</label>
                         <select className=' rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="countries" defaultValue="United States" required aria-label='countries'>
+                            name="countries" value={contactDetails.country} onChange={handleContactDetailsChangeCountry} defaultValue="United States" required aria-label='countries'>
 
                             {countries.map((country, index) => (
                                 <option key={index} value={country}>
@@ -50,17 +130,18 @@ function ContactDetails() {
                         <Label className='text-base' htmlFor="format">Additional Notes (Instructions)</Label>
                         <Input
                             className='outline-orange-500 pb-36 pt-4 rounded-lg border-[2px] w-full  px-3  text-sm md:text-base'
-                            name="notes" type='text' required aria-label='notes'>
+                            name="notes" type='text' value={contactDetails.notes} onChange={handleContactDetailsChange} required aria-label='notes'>
 
                         </Input>
                     </div>
 
                     <div className='space-y-2 '>
-                        <button className='mt-5 px-8 py-3 bg-orange-500 text-zinc-50 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200 font-medium'>Order Now</button>
+                        <button type="submit" disabled={pending} className='mt-5 px-8 py-3 bg-orange-500 text-zinc-50 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200 font-medium'> {pending ? "Submitting..." : "Order Now"}</button>
                     </div>
                 </CardContent>
             </Card>
         </div>
+        </form>
     )
 }
 

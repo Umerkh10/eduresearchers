@@ -57,19 +57,6 @@ function PaperType() {
     const totalPages = 200;
     const wordsPerPage = 250;
 
-    // // Create an array of deadline options (hours and days)
-    // const generateDeadlineOptions = () => {
-    //     const options = [];
-    //     // Add hourly options from 4 hours to 24 hours
-    //     for (let i = 4; i <= 24; i++) {
-    //         options.push(`${i} Hours`);
-    //     }
-    //     // Add daily options from 1 day to 31 days
-    //     for (let i = 1; i <= 31; i++) {
-    //         options.push(`${i} Days`);
-    //     }
-    //     return options;
-    // };
 
     const { setTopic, selectedValue, setSelectedValue, setLevel, setPaper, setQuality, setDeadline } = useTopic(); // Get the update function from context
 
