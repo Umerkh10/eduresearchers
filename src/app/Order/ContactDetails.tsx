@@ -114,7 +114,8 @@ function ContactDetails() {
                     <div className="space-y-1">
                         <label htmlFor="countries">Select Country</label>
                         <select className=' rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="countries" value={contactDetails.country} onChange={handleContactDetailsChangeCountry} defaultValue="United States" required aria-label='countries'>
+                            name="country" value={contactDetails.country} 
+                            onChange={handleContactDetailsChangeCountry}  required aria-label='countries'>
 
                             {countries.map((country, index) => (
                                 <option key={index} value={country}>
