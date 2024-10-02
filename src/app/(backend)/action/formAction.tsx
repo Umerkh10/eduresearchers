@@ -50,7 +50,7 @@ export default async function EmailAction(name: string, email: string, phone: st
   <div style="padding: 10px 0; text-align: center;">
 <div style="margin: 10px 0;">
 <p style="font-size: x-large; color: whitesmoke; text-align: center; font-weight: 500;">Use this Discount Code To Get Started  </p>
-<a href="https://eduresearchers.com/?coupon=off45">
+<a href="https://eduresearchers.com/Order?coupon=off45">
   <img style="border-radius: 10px;"  height="100" src="https://muhammadumer.sirv.com/promo-code.png"  alt="">
 </a>
 </div>

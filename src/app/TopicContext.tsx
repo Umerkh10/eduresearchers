@@ -54,7 +54,7 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [quality, setQuality] = useState<string>("Standard Quality");
   const [deadline, setDeadline] = useState<string>("10 days");
   const [subject, setSubject] = useState<string>("Chemistry");
-  const [language, setLanguage] = useState<string>("uk");
+  const [language, setLanguage] = useState<string>("English (U.K)");
   const [source, setSource] = useState<number>(10);
   const [format, setFormat] = useState<string>("Double Spaced");
   const [referencing, setReferencing] = useState<string>("Harvard Referencing");
