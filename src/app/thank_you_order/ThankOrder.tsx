@@ -5,6 +5,7 @@ import React from 'react'
 import { HelpDesk } from '../(Home)/HomeBanner'
 
 function ThankOrder() {
+
    const name = localStorage.getItem('name')
    const phone = localStorage.getItem('phone')
   return (
