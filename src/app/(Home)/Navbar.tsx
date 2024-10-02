@@ -28,7 +28,7 @@ const Navbar = () => {
     { href: '/#topexpert', label: 'Top Experts' },
     { href: '/#review', label: 'Reviews' },
     { href: '/#faq', label: 'FAQs' },
-    { href: '/order', label: 'Order Now' },
+    { href: '/Order', label: 'Order Now' },
   ];
 
   return (

@@ -4,10 +4,11 @@ import React from 'react'
 
 import Image from 'next/image'
 import { useTopic } from '../TopicContext'
+
+import dynamic from 'next/dynamic'
 import PaperType from './PaperType'
 import PaperInstruction from './PaperInstruction'
 import ContactDetails from './ContactDetails'
-import dynamic from 'next/dynamic'
 const Modal = dynamic(() => import('./Modal'), {
   ssr: false, 
   loading: () => <p>Loading...</p>,
