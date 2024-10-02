@@ -1,23 +1,19 @@
 "use client"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import React from 'react'
-
 import Image from 'next/image'
 import { useTopic } from '../TopicContext'
 import PaperType from './PaperType'
 import PaperInstruction from './PaperInstruction'
 import ContactDetails from './ContactDetails'
-import dynamic from 'next/dynamic'
-const Modal = dynamic(() => import('@/app/order/Modal'), {
-  ssr: false, 
-  loading: () => <p>Loading...</p>,
-});
+import Modal from './Modal'
+
 
 function Order() {
     const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice} = useTopic(); // Get topic from context
   return (
     <div className='mx-auto max-w-screen-xl'>
-    <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps.</div>
+    <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps</div>
     <Modal/>
     
     <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-4'>
