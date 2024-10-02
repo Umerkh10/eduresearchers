@@ -95,6 +95,7 @@ function PaperType() {
                         <input
                             id="topic"
                             name='topic'
+                            placeholder='Enter Topic'
                             onChange={handleChange}
                             className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
                         />

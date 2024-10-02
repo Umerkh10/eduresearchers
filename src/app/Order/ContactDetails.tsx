@@ -29,6 +29,8 @@ function ContactDetails() {
         contactDetails, 
         setContactDetails 
       } = useTopic(); // Access the context API
+
+      
     
       const [pending, setPending] = useState(false);
       const formRef = useRef<HTMLFormElement | null>(null);
@@ -68,11 +70,13 @@ function ContactDetails() {
             contactDetails
           });
     
+          localStorage.setItem('name',contactDetails.name)
+          localStorage.setItem('phone',contactDetails.phone)
           setPending(false);
     
           if (res?.success) {
             formRef.current?.reset(); 
-            router.push("/Thank"); 
+            router.push("/thank_you_order"); 
           } else if (res?.error) {
             toast.error(res.error); 
           }
@@ -96,19 +100,19 @@ function ContactDetails() {
                     <div className="space-y-1">
                         <Label htmlFor="name">Your Name</Label>
                         <Input className='outline-orange-500' value={contactDetails.name} 
-                        onChange={handleContactDetailsChange} id="name" name='name' required />
+                        onChange={handleContactDetailsChange} placeholder='Enter Your Name' id="name" name='name' required />
                     </div>
 
 
                     <div className="space-y-1">
                         <Label htmlFor="email">Your Email</Label>
                         <Input className='outline-orange-500' id="name" value={contactDetails.email} 
-                        onChange={handleContactDetailsChange} type='email' name='email' required />
+                        onChange={handleContactDetailsChange} placeholder='Enter Your Email' type='email' name='email' required />
                     </div>
                     <div className="space-y-1">
                         <Label htmlFor="number">Your Phone Number</Label>
                         <Input className='outline-orange-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
-                         id="number" value={contactDetails.phone} onChange={handleContactDetailsChange} type='number' name='phone' required />
+                         id="number" value={contactDetails.phone} onChange={handleContactDetailsChange} placeholder='Enter Your Number' type='number' name='phone' required />
                     </div>
 
                     <div className="space-y-1">

@@ -12,7 +12,7 @@ import { useParams, usePathname, useRouter } from 'next/navigation';
 const Navbar = () => {
   const pathname = usePathname();
   const params = useParams();
-  const [hash,setHash] = useState(window.location.hash)
+  const [hash,setHash] = useState(global?.window &&  window.location.hash)
   useEffect(()=>{
     setHash(window.location.hash)
   },[params,pathname])
