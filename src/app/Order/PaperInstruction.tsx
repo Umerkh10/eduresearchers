@@ -68,8 +68,8 @@ function PaperInstruction() {
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
                             name="language" onChange={handleLanguage} required aria-label='language'>
-                            <option value="uk">English (U.K)</option>
-                            <option value="us">English (U.S)</option>
+                            <option value="English (U.K)">English (U.K)</option>
+                            <option value="English (U.S)">English (U.S)</option>
                         </select>
                     </div>
 

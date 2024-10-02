@@ -1,53 +1,15 @@
-"use server"
-import nodemailer from "nodemailer";
-
-interface EmailData {
-  topic: string;
-  selectedValue: number;
-  wordCount: number;
-  level: string;
-  paper: string;
-  quality: string;
-  deadline: string;
-  subject: string;
-  language: string;
-  source: number;
-  format: string;
-  referencing: string;
-  pricePerPage: number;
-  totalPrice: number;
-  contactDetails: {
-    name: string;
-    email: string;
-    phone: string;
-    country: string;
-    notes: string;
-  };
-}
-
-export const EmailAction = async (orderDetails: EmailData) => {
-  const transporter = nodemailer.createTransport({
-    host: process.env.HOST as string,
-    port: process.env.PORTS as unknown as number,
-    secure: false, // true for 465, false for other ports
-    auth: {
-        user: process.env.USER, // your SMTP username
-        pass: process.env.PASSWORD // your SMTP password
-    }
-  });
-
-  const mailOptions = {
-    from: process.env.MAILFROM,
-    to: process.env.MAILTO,
-    subject: `New Order from ${orderDetails.contactDetails.name}`,
-    text: 'Thank You For Order',
-    html: `
-   <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #333; color: white;">
-    <div style="background-image: url('https://muhammadumer.sirv.com/bg-order-temp.jpg');background-position: center;background-size: cover; width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #222222; padding: 20px;">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduresearcher</title>
+  </head>
+  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #333; color: white;">
+    <div style="background-image: url('public/imgs/bg-order-temp.jpg');background-position: center;background-size: cover; width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #222222; padding: 20px;">
     
         <div style="text-align: center;">
             <div style="display: inline-block; padding: 5px;">
-                <img src="https://muhammadumer.sirv.com/edu-logo.png" alt="" style="display: inline-block; vertical-align: middle; height: 50px; width: auto;">
+                <img src="public/imgs/edu-logo.png" alt="" style="display: inline-block; vertical-align: middle; height: 50px; width: auto;">
                 <p style="display: inline-block; vertical-align: middle; margin: 0; font-size: x-large; color: whitesmoke; font-weight: 700; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
                     Eduresearcher
                 </p>
@@ -73,7 +35,7 @@ export const EmailAction = async (orderDetails: EmailData) => {
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
           <div style="float: left;">Email:</div>
-          <div style="text-decoration:none; float: right;">${orderDetails.contactDetails.email}</div>
+          <div style="text-decoration: none; float: right;">${orderDetails.contactDetails.email}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -102,7 +64,7 @@ export const EmailAction = async (orderDetails: EmailData) => {
         <div style="clear: both;"></div>
       </div>
     
-      <!-- Order Summary Section -->
+ 
       <div style="text-align: center;">
         <h2 style="font-size: 24px; color: beige; font-style: italic;">Order Summary</h2>
       </div>
@@ -233,15 +195,4 @@ export const EmailAction = async (orderDetails: EmailData) => {
     
     </div>
     </body>
-    `,
-  };
-
-  try {
-    const info = await transporter.sendMail(mailOptions);
-    return { success: true, info };
-  } catch (error) {
-    return { success: false, error: "error sending order" };
-  }
-};
-
-
+</html>

@@ -19,7 +19,7 @@ function ThankOrder() {
         Dear <span className=' font-bold'>{name || 'user'}</span>.
       </h1>
       <h1 className="mt-6 text-lg font-medium  text-foreground sm:text-xl">
-      Thank you for your order! We appreciate your support and are excited to offer you a special 50% discount. Check your WhatsApp <span className='font-bold'>{phone} </span>for more details!  
+      Thank you for your order! We appreciate your support and are excited to offer you a special 45% discount. Check your WhatsApp <span className='font-bold'>{phone} </span>for more details!  
       </h1>
       <p className="mt-4 text-muted-foreground">
         Thank you for your recent purchase. We hope you enjoy your new product. If you have any questions or concerns,

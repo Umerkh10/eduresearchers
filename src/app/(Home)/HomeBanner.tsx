@@ -5,9 +5,7 @@ import DiscountForm from './DiscountForm'
 import Tawkto from '@/lib/Tawkto';
 import dynamic from 'next/dynamic';
 
-const Modal = dynamic(() => import('./Modal'), {
-  ssr: false, 
-});
+
 
 
 export function HomeBanner(){
@@ -62,7 +60,7 @@ export function HomeBanner(){
                 <MessageCircle className='mr-1' /> Get Started
               </button>
               <HelpDesk />
-             <Modal/>
+            
              
             </div>
             <div className='font-medium text-muted-foreground text-center md:text-start pt-1'>
