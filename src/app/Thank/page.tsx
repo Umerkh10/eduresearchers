@@ -1,6 +1,5 @@
 import { Loader2 } from 'lucide-react'
 import dynamic, { noSSR } from 'next/dynamic'
-import Link from 'next/link'
 import React from 'react'
 const ThankYou = dynamic(() => import('./ThankYou'),{ssr:false,
     loading:()=><Loading/>,

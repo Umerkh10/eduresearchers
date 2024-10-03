@@ -29,13 +29,7 @@ const DiscountForm: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  useEffect(() => {
 
-    return () => {
-      localStorage.removeItem("name");
-      localStorage.removeItem("number")
-    };
-  }, []);
 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
