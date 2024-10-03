@@ -8,19 +8,19 @@ function ThankYou() {
     const name = localStorage.getItem("name")
     const number = localStorage.getItem("number")
   return (
-    <div className="flex  flex-col items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
-    <div className="mx-auto max-w-screen-xl text-center">
+    <div style={{backgroundImage:"url('/imgs/bg-thank-order.webp')",backgroundSize:'cover',backgroundPosition:'center'}} className="flex  flex-col items-center justify-center h-screen bg-background px-4 pb-24 pt-32 md:pt-2 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-xl text-center scale-90 md:scale-100">
       <div className="inline-flex items-center rounded-full bg-orange-500 px-4 py-2 text-primary-foreground">
         <CheckIcon className="mr-2 h-5 w-5" />
         <span>Thank You!</span>
       </div>
-      <h1 className="mt-6 text-xl font-medium tracking-tight text-foreground sm:text-2xl">
+      <h1 className="mt-6 text-xl font-medium tracking-tight text-zinc-100 sm:text-2xl">
         Dear <span className=' font-bold'>{name || "User"} </span>.
       </h1>
-      <h1 className="mt-6 text-lg font-medium  text-foreground sm:text-xl">
+      <h1 className="mt-6 text-lg font-medium  text-zinc-100 sm:text-xl">
         Please Check your whatsapp <span className='font-bold'>{number}</span>  we have sent 50% discount offer
       </h1>
-      <p className="mt-4 text-muted-foreground">
+      <p className="mt-4 text-zinc-100 lg:w-[610px] mx-auto">
         Thank you for your recent purchase. We hope you enjoy your new product. If you have any questions or concerns,
         please don't hesitate to contact us.
       </p>
