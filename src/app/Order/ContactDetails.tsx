@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { SelectHTMLAttributes, useRef, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { EmailAction } from '../(backend)/action/EmailAction';
 import { useRouter } from 'next/navigation'
 import { Loader, Loader2 } from 'lucide-react'
+import { AfterPayment } from '../(backend)/action/AfterPayment'
 
 
 
@@ -27,33 +28,51 @@ function ContactDetails() {
     referencing,
     pricePerPage,
     totalPrice,
-    contactDetails,
-    setContactDetails
-  } = useTopic(); // Access the context API
-
-
+    file,
+    name,
+    email,
+    phone,
+    country,
+    notes,
+    setName,
+    setEmail,
+    setPhone,
+    setCountry,
+    setNotes,
+  } = useTopic();
 
   const [pending, setPending] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
   const router = useRouter();
 
-  // Handle form input for contact details
-  const handleContactDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setContactDetails({ ...contactDetails, [name]: value });
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+    setName(e.target.value);
   };
-  const handleContactDetailsChangeCountry = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setContactDetails({ ...contactDetails, [name]: value });
+    setEmail(e.target.value);
   };
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setPhone(e.target.value);
+  };
+  const handleCountry = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setCountry(event.target.value); // Update the topic in context
+};
+const handleNotesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = e.target;
+  setNotes(e.target.value);
+};
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setPending(true);
 
     try {
-      // Submit form data via EmailAction (Nodemailer)
-      const res = await EmailAction({
+      const data = {
         topic,
         selectedValue,
         wordCount,
@@ -68,24 +87,34 @@ function ContactDetails() {
         referencing,
         pricePerPage,
         totalPrice,
-        contactDetails
-      });
+        file,
+        name,
+        email,
+        phone,
+        country,
+        notes,
+      }
+      const res = await EmailAction(convertToFormData(data));
+      const res2:any = await AfterPayment(convertToFormData(data));
 
-      localStorage.setItem('name', contactDetails.name)
-      localStorage.setItem('phone', contactDetails.phone)
+      localStorage.setItem('name', name)
+      localStorage.setItem('phone', phone)
       setPending(false);
 
-      if (res?.success) {
+      if (res2?.success) {
         formRef.current?.reset();
         router.push("/thank_you_order");
-      } else if (res?.error) {
-        toast.error(res.error);
+      } else if (res2?.error) {
+        toast.error(res2.error);
       }
     } catch (error) {
       setPending(false);
+      console.log(error);
       toast.error("An error occurred while submitting the form.");
     }
   };
+
+
   return (
     <form ref={formRef} onSubmit={handleSubmit}>
       <div>
@@ -100,43 +129,41 @@ function ContactDetails() {
 
             <div className="space-y-1">
               <Label htmlFor="name">Your Name</Label>
-              <Input className='outline-orange-500' value={contactDetails.name}
-                onChange={handleContactDetailsChange} placeholder='Enter Your Name' id="name" name='name' required />
+              <Input className='outline-orange-500' value={name}
+                onChange={handleNameChange} placeholder='Enter Your Name' id="name" name='name' required />
             </div>
 
 
             <div className="space-y-1">
               <Label htmlFor="email">Your Email</Label>
-              <Input className='outline-orange-500' id="name" value={contactDetails.email}
-                onChange={handleContactDetailsChange} placeholder='Enter Your Email' type='email' name='email' required />
+              <Input className='outline-orange-500' id="name" value={email}
+                onChange={handleEmailChange} placeholder='Enter Your Email' type='email' name='email' required />
             </div>
             <div className="space-y-1">
               <Label htmlFor="number">Your Phone Number</Label>
               <Input className='outline-orange-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
-                id="number" value={contactDetails.phone} onChange={handleContactDetailsChange} placeholder='Enter Your Number' type='number' name='phone' required />
+                id="number" value={phone} onChange={handlePhoneChange} placeholder='Enter Your Number' type='number' name='phone' required />
             </div>
 
             <div className="space-y-1">
               <label htmlFor="countries">Select Country</label>
               <select className=' rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                name="country" value={contactDetails.country}
-                onChange={handleContactDetailsChangeCountry} required aria-label='countries'>
+                name="country" value={country}
+                onChange={handleCountry} required aria-label='countries'>
 
                 {countries.map((country, index) => (
                   <option key={index} value={country}>
                     {country}
                   </option>
-                ))}
+                ))} 
               </select>
             </div>
-
-
 
             <div className="space-y-2 pt-2">
               <Label className='text-base' htmlFor="format">Additional Notes (Instructions)</Label>
               <Input
                 className='outline-orange-500 pb-36 pt-4 rounded-lg border-[2px] w-full  px-3  text-sm md:text-base'
-                name="notes" type='text' value={contactDetails.notes} onChange={handleContactDetailsChange} aria-label='notes'></Input>
+                name="notes" type='text' value={notes} onChange={handleNotesChange} aria-label='notes'></Input>
             </div>
 
             <div className='space-y-2 '>
@@ -211,3 +238,31 @@ const countries = [
   "Venezuela", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna",
   "Western Sahara", "Yemen", "Zambia", "Zimbabwe"
 ];
+
+function convertToFormData(data: any) {
+  const formData = new FormData();
+
+  // Iterate over each property in the object
+  for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+      // Check if the property is 'file' and it is a FileList
+      if (key === 'file' && data[key] instanceof FileList && data[key].length > 0) {
+        // Append all files from the FileList
+        for (let i = 0; i < data[key].length; i++) {
+          formData.append(key, data[key][i]); // Append each file
+        }
+      } else if (data[key] !== null) {
+        // Append other data (strings, numbers, etc.)
+        formData.append(key, data[key]);
+      }
+    }
+  }
+
+  // Log all files associated with 'file'
+  console.log("Files from contact details", formData.getAll('file'));
+  
+  return formData;
+}
+
+
+

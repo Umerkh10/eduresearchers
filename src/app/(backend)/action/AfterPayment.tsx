@@ -28,7 +28,7 @@ interface EmailData {
 
 }
 
-export const EmailAction = async (formData: FormData) => {
+export const AfterPayment = async (formData: FormData) => {
 
     // Extracting variables separately
     const topic = formData.get("topic") as string;
@@ -105,7 +105,7 @@ export const EmailAction = async (formData: FormData) => {
     }
   });
 
-  const clientMailOptions = {
+  const clientPaymentMailOptions = {
     from: process.env.MAILFROM,
     to: process.env.MAILTO,
     subject: `New Order from ${name}`,
@@ -128,7 +128,7 @@ export const EmailAction = async (formData: FormData) => {
 
         <div style="text-align: center;">
           <a href="#" style="display: inline-block; padding: 12px; background-color: #ff8615; color: whitesmoke; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 25px; margin: 5px 0; text-align: center; vertical-align: middle;">
-            Pay Now
+            Payment Recieved
           </a>
         </div>
     
@@ -333,42 +333,10 @@ export const EmailAction = async (formData: FormData) => {
     `,
   };
 
-
-  const orderDetails = formData.get('orderDetails') as any; // Assuming orderDetails is also a part of formData
-  
-  const supportMailOptions = {
-    from: process.env.MAILFROM,
-    to: process.env.MAILTO, // send to support email
-    subject: `New Order from ${name}`,
-    text: 'New order details',
-    html: `
-      <body>
-        <h2>New Order Summary</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Country:</strong> ${country}</p>
-        <h3>Order Details</h3>
-        <ul>
-          <li><strong>Topic:</strong> ${topic}</li>
-          <li><strong>Pages:</strong> ${selectedValue}</li>
-          <li><strong>Word Count:</strong> ${wordCount}</li>
-          <li><strong>Academic Level:</strong> ${level}</li>
-          <li><strong>Paper Type:</strong> ${paper}</li>
-          <li><strong>Deadline:</strong> ${deadline}</li>
-          <li><strong>Total Price:</strong> £${totalPrice}</li>
-          <li><strong>Notes:</strong> ${notes}</li>
-        </ul>
-      </body>
-    `
-    ,attachments
-  };
   try {
-    const info = await transporter.sendMail(supportMailOptions);
-    const info2 = await transporter.sendMail(clientMailOptions);
-    console.log("support Email sent:", info);
+    const info2 = await transporter.sendMail(clientPaymentMailOptions);
     console.log("client Email sent:", info2);
-    return { success: true, info: info }; 
+    return { success: true, info: info2 }; 
   } catch (error) {
     console.error("Error sending email:", error);
     return { success: false, error: "Error sending order" };

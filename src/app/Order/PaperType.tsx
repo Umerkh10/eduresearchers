@@ -60,6 +60,7 @@ function PaperType() {
 
     const { setTopic, selectedValue, setSelectedValue, setLevel, setPaper, setQuality, setDeadline } = useTopic(); // Get the update function from context
 
+    
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTopic(event.target.value); // Update the topic in context
     };
@@ -97,6 +98,7 @@ function PaperType() {
                             name='topic'
                             placeholder='Enter Topic'
                             onChange={handleChange}
+                            required
                             className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
                         />
                     </div>
@@ -105,11 +107,11 @@ function PaperType() {
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
                             name="academic" onChange={handleLevel} required aria-label='academic'>
-                            <option value="undergraduate">Undergraduate</option>
-                            <option value="highschool">High School</option>
-                            <option value="master">Master</option>
-                            <option value="doctoral">Doctoral</option>
-                            <option value="others">Others</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Highschool">High School</option>
+                            <option value="Master">Master</option>
+                            <option value="Doctoral">Doctoral</option>
+                            <option value="Others">Others</option>
                         </select>
                     </div>
 

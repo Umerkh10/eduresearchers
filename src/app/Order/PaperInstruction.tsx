@@ -6,7 +6,7 @@ import React from 'react'
 import { useTopic } from '../TopicContext'
 
 function PaperInstruction() {
-    const {setSubject,setLanguage,setSource,setFormat,setReferencing} = useTopic();
+    const {setSubject,setLanguage,setSource,setFormat,setReferencing,setFile} = useTopic();
 
     const handleSubject = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSubject(event.target.value); // Update the topic in context
@@ -22,6 +22,12 @@ function PaperInstruction() {
     };
     const handleReferencing = (event: React.ChangeEvent<HTMLSelectElement>) =>{
         setReferencing(event.target.value); // Update the topic in context
+    };
+    const handleFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files // File input se pehla file le raha hai
+        if ( file !== null) {
+            setFile(file); // File ko context ya state mein set karna
+        }
     };
 
     return (
@@ -128,6 +134,8 @@ function PaperInstruction() {
                     <div className="space-y-1">
                         <Label htmlFor="file">Select Your File</Label>
                         <Input
+                        multiple
+                        onChange={handleFile}
                             className='h-12 rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
                             name="file" type='file' required aria-label='file'>
                          

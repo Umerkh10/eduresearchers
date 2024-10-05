@@ -2,13 +2,7 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 
-interface ContactDetails {
-  name: string;
-  email: string;
-  phone: string;
-  country: string;
-  notes: string;
-}
+
 
 // Define the type for the context value
 interface TopicContextType {
@@ -26,7 +20,12 @@ interface TopicContextType {
   referencing: string;
   pricePerPage: number;
   totalPrice: number;
-  contactDetails: ContactDetails; // Contact details
+  file: FileList|null;
+  name: string;
+  email: string;
+  phone: string;
+  country: string;
+  notes: string;
   setTopic: (newTopic: string) => void;
   setSelectedValue: (newSelectedValue: number) => void;
   setLevel: (newLevel: string) => void;
@@ -38,7 +37,12 @@ interface TopicContextType {
   setSource: (newSource: number) => void;
   setFormat: (newFormat: string) => void;
   setReferencing: (newReferencing: string) => void;
-  setContactDetails: (details: ContactDetails) => void; // Function to update contact deta
+  setFile: (newFile: FileList) => void;
+  setName: (newName: string) => void;
+  setEmail: (newEmail: string) => void;
+  setPhone: (newPhone: string) => void;
+  setCountry: (newCountry: string) => void;
+  setNotes: (newNotes: string) => void;
 }
 
 // Create the context with an initial value of undefined
@@ -58,20 +62,27 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [source, setSource] = useState<number>(10);
   const [format, setFormat] = useState<string>("Double Spaced");
   const [referencing, setReferencing] = useState<string>("Harvard Referencing");
-
+  const [file , setFile] = useState<FileList|null>(null)
+  console.log("file from client",file);
   const [pricePerPage, setPricePerPage] = useState<number>(8); // Initial price per page
   const [totalPrice, setTotalPrice] = useState<number>(8 * selectedValue); // Total price
-   // New state for contact details
-   const [contactDetails, setContactDetails] = useState<ContactDetails>({
-    name: "",
-    email: "",
-    phone: "",
-    country: "United States",
-    notes: "",
-  });
+  const [name,setName] = useState<string>('');
+  const [email,setEmail] = useState<string>('');
+  const [phone,setPhone] = useState<string>('');
+  const [country,setCountry] = useState<string>('');
+  const [notes,setNotes] = useState<string>('');
 
-  // Update word count when selectedValue changes
-  useEffect(() => setWordCount(selectedValue * 250), [selectedValue]);
+
+// Update word count when selectedValue changes
+useEffect(() => {
+  if (selectedValue === 1) {
+    setWordCount(300); // Initial value for 1 page
+  } else if (selectedValue === 2) {
+    setWordCount(500); // Exact value for 2 pages
+  } else {
+    setWordCount(500 + (selectedValue - 2) * 250); // Increment by 250 starting from 500 for 2 pages
+  }
+}, [selectedValue]);
 
   // Function to calculate price based on wordCount, deadline, format, and quality
   const calculatePrice = () => {
@@ -197,10 +208,20 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         setFormat,
         referencing,
         setReferencing,
+        file,
+        setFile,
         pricePerPage, // Price per page
         totalPrice, // Total price
-        contactDetails, // Contact details
-        setContactDetails,
+        name,
+        setName,
+        email,
+        setEmail,
+        phone,
+        setPhone,
+        country,
+        setCountry,
+        notes,
+        setNotes,
       }}
     >
       {children}
