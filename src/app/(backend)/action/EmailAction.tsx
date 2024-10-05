@@ -1,62 +1,62 @@
-"use server"
+"use server";
 import nodemailer from "nodemailer";
-import fs from 'fs'
-import * as fsPromises from 'fs/promises';
+import fs from "fs";
+import * as fsPromises from "fs/promises";
 import { join } from "path";
-
-interface EmailData {
-  topic: string;
-  selectedValue: number;
-  wordCount: number;
-  level: string;
-  paper: string;
-  quality: string;
-  deadline: string;
-  subject: string;
-  language: string;
-  source: number;
-  format: string;
-  referencing: string;
-  pricePerPage: number;
-  totalPrice: number;
-  file: FileList|null
-  name: string;
-  email: string;
-  phone: string;
-  country: string;
-  notes: string;
-
-}
+import generateOrderId from "./generateOrderId";
+import saveFormDataToJson from "./saveDataToJson";
 
 export const EmailAction = async (formData: FormData) => {
+  // **************Extracting variables separately*******************
+  const orderId = generateOrderId();
+  const topic = formData.get("topic") as string;
+  const selectedValue = formData.get("selectedValue");
+  const wordCount = formData.get("wordCount") as string;
+  const level = formData.get("level") as string;
+  const paper = formData.get("paper") as string;
+  const quality = formData.get("quality") as string;
+  const deadline = formData.get("deadline") as string;
+  const subject = formData.get("subject") as string;
+  const language = formData.get("language") as string;
+  const source = formData.get("source") as string;
+  const format = formData.get("format") as string;
+  const referencing = formData.get("referencing") as string;
+  const pricePerPage = formData.get("pricePerPage") as string;
+  const totalPrice = formData.get("totalPrice") as string;
+  const file = formData.get("file") as FileList | null;
+  const name = formData.get("name") as string;
+  const phone = formData.get("phone") as string;
+  const country = formData.get("country") as string;
+  const email = formData.get("email") as string;
+  const notes = formData.get("notes") as string;
 
-    // Extracting variables separately
-    const topic = formData.get("topic") as string;
-    const selectedValue = Number(formData.get("selectedValue"));
-    const wordCount = Number(formData.get("wordCount"));
-    const level = formData.get("level") as string;
-    const paper = formData.get("paper") as string;
-    const quality = formData.get("quality") as string;
-    const deadline = formData.get("deadline") as string;
-    const subject = formData.get("subject") as string;
-    const language = formData.get("language") as string;
-    const source = Number(formData.get("source"));
-    const format = formData.get("format") as string;
-    const referencing = formData.get("referencing") as string;
-    const pricePerPage = Number(formData.get("pricePerPage"));
-    const totalPrice = Number(formData.get("totalPrice"));
-    const file = formData.get("file") as FileList | null;
-    const name = formData.get("name") as string;
-    const phone= formData.get("phone") as string;
-    const country= formData.get("country") as string;
-    const email= formData.get("email") as string;
-    const notes= formData.get("notes") as string;
+  // **************Saving FormData in to Json*******************
+  saveFormDataToJson({
+    orderId,
+    name,
+    phone,
+    country,
+    email,
+    notes,
+    topic,
+    selectedValue,
+    wordCount,
+    level,
+    paper,
+    quality,
+    deadline,
+    subject,
+    source,
+    format,
+    referencing,
+    pricePerPage,
+    totalPrice,
+  });
 
+  // **************Attactment Saving FormData in to Json*******************
 
-  ///// Check for an Attachment folder /////
   const path = "./Attachments";
 
-  // Check if the "Attachment" folder exists; if not, create one
   if (!fs.existsSync(path)) {
     fs.mkdirSync(path);
     console.log("Folder created: Attachments");
@@ -65,9 +65,10 @@ export const EmailAction = async (formData: FormData) => {
   }
 
   // Parse form data
-  const filer: any = file
+  const filer: any = file;
   console.log("Files received:", filer);
 
+  // TODO: change this logic
   const attachments = [];
   if (filer?.length > 0) {
     for (let i = 0; i < filer.length; i++) {
@@ -93,23 +94,41 @@ export const EmailAction = async (formData: FormData) => {
     console.log("No files to upload.");
   }
 
-  console.log("Attachments prepared:", attachments);
+  // TODO: change this logic end
+
+  // ************** Redirect user to stripe*******************
+
+  const finalPaymentUnit = Buffer.from("usd").toString("base64");
+  const finalTotalAmount = Buffer.from(totalPrice).toString("base64");
+  const finalProductName = Buffer.from("Digital Service").toString("base64");
+  const orderToken = Buffer.from(orderId).toString("base64");
+
+  const finalUrl = Buffer.from(
+    `http://localhost:3000/api/afterPaymentReceived` // for dev environment
+    // `https://gogrades.com/api/afterPaymentReceived` // for prod environment
+  ).toString("base64");
+
+  const paymentLinkStripe = `https://eduresearchers.com/test-payment/secure-pay-external-2.php?cevpr_havg=${finalPaymentUnit}&cevpr_nzbhag=${finalTotalAmount}&cebqhpg_anzr=${finalProductName}&gbxra_rkgreany=${orderToken}&url=${finalUrl}`;
+
+  // const paymentLinkStripe = `https://mastermindsenterprises.com/stripe-version-2/secure-pay-external-2.php?cevpr_havg=${finalPaymentUnit}&cevpr_nzbhag=${finalTotalAmount}&cebqhpg_anzr=${finalProductName}&gbxra_rkgreany=${orderToken}&url=${finalUrl}`;
+
+  /////////////////// end stirp////////////
 
   const transporter = nodemailer.createTransport({
     host: process.env.HOST as string,
     port: process.env.PORTS as unknown as number,
     secure: false, // true for 465, false for other ports
     auth: {
-        user: process.env.USER, // your SMTP username
-        pass: process.env.PASSWORD // your SMTP password
-    }
+      user: process.env.USER, // your SMTP username
+      pass: process.env.PASSWORD, // your SMTP password
+    },
   });
 
   const clientMailOptions = {
     from: process.env.MAILFROM,
     to: process.env.MAILTO,
     subject: `New Order from ${name}`,
-    text: 'Thank You For Order',
+    text: "Thank You For Order",
     html: `
   <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #333; color: white;">
     <div style="background-image: url('https://muhammadumer.sirv.com/bg-order-temp.webp');background-position: center;background-size: cover; width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #222222; padding: 20px;">
@@ -135,7 +154,13 @@ export const EmailAction = async (formData: FormData) => {
       <div style="text-align: center;">
         <h2 style="font-size: 24px; color: beige; font-style: italic;">Personal Details</h2>
       </div>
-    
+         <div style="text-align: center;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+          <div style="float: left;">OrderId:</div>
+          <div style="float: right;">${orderId}</div>
+        </div>
+        <div style="clear: both;"></div>
+      </div>
 
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
@@ -333,14 +358,11 @@ export const EmailAction = async (formData: FormData) => {
     `,
   };
 
-
-  const orderDetails = formData.get('orderDetails') as any; // Assuming orderDetails is also a part of formData
-  
   const supportMailOptions = {
     from: process.env.MAILFROM,
     to: process.env.MAILTO, // send to support email
     subject: `New Order from ${name}`,
-    text: 'New order details',
+    text: "New order details",
     html: `
       <body>
         <h2>New Order Summary</h2>
@@ -360,19 +382,20 @@ export const EmailAction = async (formData: FormData) => {
           <li><strong>Notes:</strong> ${notes}</li>
         </ul>
       </body>
-    `
-    ,attachments
+    `,
+    attachments,
   };
   try {
-    const info = await transporter.sendMail(supportMailOptions);
-    const info2 = await transporter.sendMail(clientMailOptions);
-    console.log("support Email sent:", info);
-    console.log("client Email sent:", info2);
-    return { success: true, info: info }; 
+    // const info = await transporter.sendMail(supportMailOptions);
+    // const info2 = await transporter.sendMail(clientMailOptions);
+    // console.log("support Email sent:", info);
+    // console.log("client Email sent:", info2);
+    return { success: paymentLinkStripe };
   } catch (error) {
     console.error("Error sending email:", error);
-    return { success: false, error: "Error sending order" };
+    return { error: "Error sending order" };
   }
 };
+
 
 
