@@ -5,6 +5,7 @@ import * as fsPromises from "fs/promises";
 import { join } from "path";
 import generateOrderId from "./generateOrderId";
 import saveFormDataToJson from "./saveDataToJson";
+import { transporter } from "./Transporter";
 
 export const EmailAction = async (formData: FormData) => {
   // **************Extracting variables separately*******************
@@ -104,7 +105,7 @@ export const EmailAction = async (formData: FormData) => {
   const orderToken = Buffer.from(orderId).toString("base64");
 
   const finalUrl = Buffer.from(
-    `http://localhost:3000/api/afterPaymentReceived` // for dev environment
+    `http://localhost:3000/api` // for dev environment
     // `https://gogrades.com/api/afterPaymentReceived` // for prod environment
   ).toString("base64");
 
@@ -113,16 +114,6 @@ export const EmailAction = async (formData: FormData) => {
   // const paymentLinkStripe = `https://mastermindsenterprises.com/stripe-version-2/secure-pay-external-2.php?cevpr_havg=${finalPaymentUnit}&cevpr_nzbhag=${finalTotalAmount}&cebqhpg_anzr=${finalProductName}&gbxra_rkgreany=${orderToken}&url=${finalUrl}`;
 
   /////////////////// end stirp////////////
-
-  const transporter = nodemailer.createTransport({
-    host: process.env.HOST as string,
-    port: process.env.PORTS as unknown as number,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: process.env.USER, // your SMTP username
-      pass: process.env.PASSWORD, // your SMTP password
-    },
-  });
 
   const clientMailOptions = {
     from: process.env.MAILFROM,
@@ -386,16 +377,13 @@ export const EmailAction = async (formData: FormData) => {
     attachments,
   };
   try {
-    // const info = await transporter.sendMail(supportMailOptions);
-    // const info2 = await transporter.sendMail(clientMailOptions);
-    // console.log("support Email sent:", info);
-    // console.log("client Email sent:", info2);
+    const info = await transporter.sendMail(supportMailOptions);
+    const info2 = await transporter.sendMail(clientMailOptions);
+    console.log("support Email sent:", info);
+    console.log("client Email sent:", info2);
     return { success: paymentLinkStripe };
   } catch (error) {
     console.error("Error sending email:", error);
     return { error: "Error sending order" };
   }
 };
-
-
-

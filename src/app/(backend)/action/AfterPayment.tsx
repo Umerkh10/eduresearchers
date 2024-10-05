@@ -66,7 +66,6 @@ export const AfterPayment = async (formData: FormData) => {
 
   // Parse form data
   const filer: any = file
-  console.log("Files received:", filer);
 
   const attachments = [];
   if (filer?.length > 0) {
@@ -93,7 +92,6 @@ export const AfterPayment = async (formData: FormData) => {
     console.log("No files to upload.");
   }
 
-  console.log("Attachments prepared:", attachments);
 
   const transporter = nodemailer.createTransport({
     host: process.env.HOST as string,

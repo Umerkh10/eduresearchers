@@ -63,7 +63,6 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [format, setFormat] = useState<string>("Double Spaced");
   const [referencing, setReferencing] = useState<string>("Harvard Referencing");
   const [file , setFile] = useState<FileList|null>(null)
-  console.log("file from client",file);
   const [pricePerPage, setPricePerPage] = useState<number>(8); // Initial price per page
   const [totalPrice, setTotalPrice] = useState<number>(8 * selectedValue); // Total price
   const [name,setName] = useState<string>('');
