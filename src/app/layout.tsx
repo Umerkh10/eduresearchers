@@ -40,8 +40,7 @@ export default function RootLayout({
   return (
     
     <html lang="en">
-      
-      
+      <script data-host="https://mmeanalytics.designstime.com/" data-dnt="false" src="https://mmeanalytics.designstime.com/js/script.js" id="ZwSg9rf6GA" async defer></script>
       <Tawkto/>
       <body
         className={inter.className}

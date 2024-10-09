@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 import { transporter } from "../(backend)/action/Transporter";
 
 export async function GET(req: NextRequest, res: NextResponse) {
-  //**********Read Search params and set the value to variable  ********* */
+  //**********Read Search params and set the value to variable  **********/
   const searchParams = req.nextUrl.searchParams;
   const afterPaymentToken = searchParams.get("after_payment_token") as string;
   const paymentStatus = searchParams.get("xxxpayment_status") as string;
@@ -20,7 +20,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
   );
   const fileData = await fsPromises.readFile(filePath, "utf8");
   const orderData = JSON.parse(fileData);
-
+console.log("orderData",orderData);
 
   //**********Sending  Email to support ********* */
   const supportMailOptions = {
@@ -304,5 +304,5 @@ export async function GET(req: NextRequest, res: NextResponse) {
   });
 
   //**********Redirect the user to thankyou page**********//
-  return NextResponse.redirect("http://localhost:3000/thank_you_order");
+  return NextResponse.redirect("https://eduresearchers.com/thank_you_order");
 }
