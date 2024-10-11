@@ -8,7 +8,7 @@ import { useTopic } from '../TopicContext';
 
 
 
-function PaperType() {
+function PaperType({ onNext }: { onNext: () => void }) {
 
     interface DeadlineOption {
         value: string;
@@ -58,7 +58,7 @@ function PaperType() {
     const wordsPerPage = 250;
 
 
-    const { setTopic, selectedValue, setSelectedValue, setLevel, setPaper, setQuality, setDeadline } = useTopic(); // Get the update function from context
+    const { topic,level,paper,quality,deadline,setTopic, selectedValue, setSelectedValue, setLevel, setPaper, setQuality, setDeadline } = useTopic(); // Get the update function from context
 
     
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -96,6 +96,7 @@ function PaperType() {
                         <input
                             id="topic"
                             name='topic'
+                            defaultValue={topic}
                             placeholder='Enter Topic'
                             onChange={handleChange}
                             required
@@ -106,7 +107,7 @@ function PaperType() {
                         <Label htmlFor="academic">Academic Level</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="academic" onChange={handleLevel} required aria-label='academic'>
+                            name="academic" defaultValue={level} onChange={handleLevel} required aria-label='academic'>
                             <option value="Undergraduate">Undergraduate</option>
                             <option value="Highschool">High School</option>
                             <option value="Master">Master</option>
@@ -119,7 +120,7 @@ function PaperType() {
                         <Label htmlFor="typeofpaper">Type Of Paper</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="service" onChange={handlePaper} required aria-label='service'>
+                            name="service" defaultValue={paper} onChange={handlePaper} required aria-label='service'>
                             <option value="Dissertation">Dissertation</option>
                             <option value="Assignment">Assignment Writing </option>
                             <option value="Essay">Essay</option>
@@ -204,7 +205,7 @@ function PaperType() {
                         <Label htmlFor="Paper Quality">Paper Quality</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="paperquality" onChange={handleQuality} required aria-label='PaperQuality'>
+                            name="paperquality" defaultValue={quality} onChange={handleQuality} required aria-label='PaperQuality'>
                             <option value="Standard Quality">Standard Quality</option>
                             <option value="Premium Quality">Premium Quality</option>
 
@@ -219,7 +220,7 @@ function PaperType() {
                             onChange={(e) => setDeadline(e.target.value)}
                             required
                             aria-label="Deadline"
-                            defaultValue={'10 days'}
+                            defaultValue={deadline}
                         >
                             {generateDeadlineOptions().map((option, index) => (
                                 <option key={index} value={option.value}>
@@ -230,7 +231,11 @@ function PaperType() {
                     </div>
 
                 </CardContent>
+                <div className='flex justify-end '>
+                    <button onClick={onNext} className='py-3 rounded-lg bg-orange-500 text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-semibold'>NEXT</button>
+                    </div>
             </Card>
+      
         </div>
     )
 }

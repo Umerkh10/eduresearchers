@@ -106,34 +106,31 @@ export const AfterPayment = async (formData: FormData) => {
   const clientPaymentMailOptions = {
     from: process.env.MAILFROM,
     to: process.env.MAILTO,
-    subject: `New Order from ${name}`,
+    subject: `New Order from ${process.env.NEXT_PUBLIC_NAME}`,
     text: 'Thank You For Order',
     html: `
-  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #333; color: white;">
-    <div style="background-image: url('https://muhammadumer.sirv.com/bg-order-temp.webp');background-position: center;background-size: cover; width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #222222; padding: 20px;">
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f0f0f0; ">
+    <div style="background-position: center;background-size: cover; width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #fffdfa; padding: 20px;">
     
         <div style="text-align: center;">
             <div style="display: inline-block; padding: 5px;">
            <img src="https://muhammadumer.sirv.com/edu-logo.png" alt="" style="display: inline-block; vertical-align: middle; height: 50px; width: auto;">
-         <p style="display: inline-block; vertical-align: middle; margin: 0; font-size: x-large; color: whitesmoke; font-weight: 700; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+         <p style="display: inline-block; vertical-align: middle; margin: 0; font-size: x-large;  font-weight: 700; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
                  Eduresearcher
                 </p>
             </div>
         </div>
     
-      <p style="font-size: 22px; color: white; line-height: 1.5; text-align: center; font-weight: 700;">
+      <p style="font-size: 22px;  line-height: 1.5; text-align: center; font-weight: 700;">
         Thank You For Your Order ${name} <br></p>
 
         <div style="text-align: center;">
-          <a href="#" style="display: inline-block; padding: 12px; background-color: #ff8615; color: whitesmoke; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 25px; margin: 5px 0; text-align: center; vertical-align: middle;">
+          <a href="" style="display: inline-block; padding: 12px; background-color: #ff8615; color: whitesmoke;  text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 25px; margin: 5px 0; text-align: center; vertical-align: middle;">
             Payment Recieved
           </a>
         </div>
     
-      <div style="text-align: center;">
-        <h2 style="font-size: 24px; color: beige; font-style: italic;">Personal Details</h2>
-      </div>
-    
+     
 
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
@@ -177,7 +174,7 @@ export const AfterPayment = async (formData: FormData) => {
     
  
       <div style="text-align: center;">
-        <h2 style="font-size: 24px; color: beige; font-style: italic;">Order Summary</h2>
+        <h2 style="font-size: 24px;  font-style: italic;">Order Summary</h2>
       </div>
     
       <div style="text-align: center;">
@@ -278,7 +275,7 @@ export const AfterPayment = async (formData: FormData) => {
       </div>
 
         <div style="text-align: center;">
-        <h2 style="font-size: 24px; color: beige; font-style: italic;">Order Pricing</h2>
+        <h2 style="font-size: 24px;  font-style: italic;">Order Pricing</h2>
       </div>
     
 
@@ -293,7 +290,7 @@ export const AfterPayment = async (formData: FormData) => {
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
           <div style="float: left;">Turnitin Report:</div>
-          <div style="float: right; background-color: orange; border: 2px solid #FFA500; border-radius: 15px; width: 100px; padding: 2px; color: white; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">Free</div>
+          <div style="float: right; background-color: orange; border: 2px solid #FFA500; border-radius: 15px; width: 100px; padding: 2px; color:white ; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">Free</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -316,13 +313,13 @@ export const AfterPayment = async (formData: FormData) => {
     
 
       <div style="text-align: center;">
-        <p style="font-size: x-large; color: whitesmoke; font-weight: 500;">You Can Contact Our Support Team 24/7.</p>
-        <a href="#" style="display: inline-block; padding: 15px 30px; background-color: #15ff00; color: whitesmoke; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center; vertical-align: middle;">
+        <p style="font-size: x-large;  font-weight: 500;">You Can Contact Our Support Team 24/7.</p>
+        <a href="#" style="display: inline-block; padding: 15px 30px; background-color: #15ff00; color: black;  text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center; vertical-align: middle;">
           Whatsapp Now
         </a>
       </div>
     
-      <div style="text-align: center; padding-top: 10px; font-size: 12px; color: white;">
+      <div style="text-align: center; padding-top: 10px; font-size: 12px; ">
         <p>Eduresearcher is a registered trademark of Eduresearcher, Inc. All rights reserved.</p>
       </div>
     

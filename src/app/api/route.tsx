@@ -26,27 +26,34 @@ console.log("orderData",orderData);
   const supportMailOptions = {
     from: process.env.MAILFROM,
     to: process.env.MAILTO, // send to support email
-    subject: `New Order from ${orderData.name}`,
-    text: "New order details",
+    subject: `Payment Notification`,
     html: `
-      <body>
-        <h2>New Order Summary</h2>
-        <p><strong>Name:</strong> ${orderData.name}</p>
-        <p><strong>Email:</strong> ${orderData.email}</p>
-        <p><strong>Phone:</strong> ${orderData.phone}</p>
-        <p><strong>Country:</strong> ${orderData.country}</p>
-        <h3>Order Details</h3>
-        <ul>
-          <li><strong>Topic:</strong> ${orderData.topic}</li>
-          <li><strong>Pages:</strong> ${orderData.selectedValue}</li>
-          <li><strong>Word Count:</strong> ${orderData.wordCount}</li>
-          <li><strong>Academic Level:</strong> ${orderData.level}</li>
-          <li><strong>Paper Type:</strong> ${orderData.paper}</li>
-          <li><strong>Deadline:</strong> ${orderData.deadline}</li>
-          <li><strong>Total Price:</strong> £${orderData.totalPrice}</li>
-          <li><strong>Notes:</strong> ${orderData.notes}</li>
-        </ul>
-      </body>
+  <body>
+    <h2>New Order Summary</h2>
+    <p><strong>OrderID:</strong> ${orderData.orderId}</p>
+    <p><strong>Name:</strong> ${orderData.name}</p>
+    <p><strong>Email:</strong> ${orderData.email}</p>
+    <p><strong>Phone:</strong> ${orderData.phone}</p>
+    <p><strong>Country:</strong> ${orderData.country}</p>
+    <h3>Order Details</h3>
+    <ul>
+      <li><strong>Topic:</strong> ${orderData.topic}</li>
+      <li><strong>Pages:</strong> ${orderData.selectedValue}</li>
+      <li><strong>Word Count:</strong> ${orderData.wordCount}</li>
+      <li><strong>Academic Level:</strong> ${orderData.level}</li>
+      <li><strong>Paper Quality:</strong> ${orderData.quality}</li>
+      <li><strong>Subject:</strong> ${orderData.subject}</li>
+      <li><strong>Language:</strong> ${orderData.language}</li>
+      <li><strong>Paper Format:</strong> ${orderData.format}</li>
+      <li><strong>Paper Type:</strong> ${orderData.paper}</li>
+      <li><strong>No Of Sources:</strong> ${orderData.source}</li>
+      <li><strong>Referencing:</strong> ${orderData.referencing}</li>
+      <li><strong>Deadline:</strong> ${orderData.deadline}</li>
+      <li><strong>Price Per Page:</strong> ${orderData.pricePerPage}</li>
+      <li><strong>Total Price:</strong> £${orderData.totalPrice}</li>
+      <li><strong>Notes:</strong> ${orderData.notes}</li>
+    </ul>
+</body>
     `,
   };
   transporter.sendMail(supportMailOptions, (error: any, info: any) => {
@@ -59,36 +66,37 @@ console.log("orderData",orderData);
   //**********Sending  Email to client **********/
 
   const clientPaymentMailOptions = {
-    from: process.env.MAILFROM,
+    from: `Order Confirmed | ${process.env.NEXT_PUBLIC_NAME} ${process.env.MAILFROM}`,
     to: orderData.email,
-    subject: `New Order from ${orderData.name}`,
-    text: "Thank You For Order",
+    subject: `Your Order # ${orderData.orderId} is Confirmed - Thank You For Your Order! | ${process.env.NEXT_PUBLIC_NAME}`,
     html: `
-  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #333; color: white;">
-    <div style="background-image: url('https://muhammadumer.sirv.com/bg-order-temp.webp');background-position: center;background-size: cover; width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #222222; padding: 20px;">
+  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f0f0f0; ">
+    <div style="background-position: center;background-size: cover; width: 100%;  font-family: Arial, Helvetica, sans-serif; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #fffdfa; padding: 20px;">
     
         <div style="text-align: center;">
             <div style="display: inline-block; padding: 5px;">
            <img src="https://muhammadumer.sirv.com/edu-logo.png" alt="" style="display: inline-block; vertical-align: middle; height: 50px; width: auto;">
-         <p style="display: inline-block; vertical-align: middle; margin: 0; font-size: x-large; color: whitesmoke; font-weight: 700; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+         <p style="display: inline-block; vertical-align: middle; margin: 0; font-size: x-large;  font-weight: 700; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
                  Eduresearcher
                 </p>
             </div>
         </div>
     
-      <p style="font-size: 22px; color: white; line-height: 1.5; text-align: center; font-weight: 700;">
+      <p style="font-size: 22px;  line-height: 1.5; text-align: center; font-weight: 700;">
         Thank You For Your Order ${orderData.name} <br></p>
 
         <div style="text-align: center;">
-          <a href="#" style="display: inline-block; padding: 12px; background-color: #ff8615; color: whitesmoke; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 25px; margin: 5px 0; text-align: center; vertical-align: middle;">
+          <a href="#" style="display: inline-block; color: whitesmoke; padding: 12px; background-color: #ff8615;  text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 25px; margin: 5px 0; text-align: center; vertical-align: middle;">
             Payment Recieved
           </a>
         </div>
     
       <div style="text-align: center;">
-        <h2 style="font-size: 24px; color: beige; font-style: italic;">Personal Details</h2>
+        <h2 style="font-size: 24px;   ">Personal Details</h2>
       </div>
     
+      <div style="width:100%; height: 3px; background-color: #ffd17e; margin-bottom: 20px;"></div>
+
 
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
@@ -132,8 +140,10 @@ console.log("orderData",orderData);
     
  
       <div style="text-align: center;">
-        <h2 style="font-size: 24px; color: beige; font-style: italic;">Order Summary</h2>
+        <h2 style="font-size: 24px;  ">Order Summary</h2>
       </div>
+
+      <div style="width:100%; height: 3px; background-color: #ffd17e; margin-bottom: 20px;"></div>
     
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
@@ -233,9 +243,10 @@ console.log("orderData",orderData);
       </div>
 
         <div style="text-align: center;">
-        <h2 style="font-size: 24px; color: beige; font-style: italic;">Order Pricing</h2>
+        <h2 style="font-size: 24px;  ">Order Pricing</h2>
       </div>
-    
+      
+    <div style="width:100%; height: 3px; background-color: #ffd17e; margin-bottom: 20px;"></div>
 
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
@@ -248,7 +259,7 @@ console.log("orderData",orderData);
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
           <div style="float: left;">Turnitin Report:</div>
-          <div style="float: right; background-color: orange; border: 2px solid #FFA500; border-radius: 15px; width: 100px; padding: 2px; color: white; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">Free</div>
+          <div style="float: right; background-color: orange; border: 2px solid #FFA500; border-radius: 15px; color: whitesmoke; width: 100px; padding: 2px;  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">Free</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -271,13 +282,13 @@ console.log("orderData",orderData);
     
 
       <div style="text-align: center;">
-        <p style="font-size: x-large; color: whitesmoke; font-weight: 500;">You Can Contact Our Support Team 24/7.</p>
-        <a href="#" style="display: inline-block; padding: 15px 30px; background-color: #15ff00; color: whitesmoke; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center; vertical-align: middle;">
+        <p style="font-size: x-large;  font-weight: 500;">You Can Contact Our Support Team 24/7.</p>
+        <a href="#" style="display: inline-block; color: whitesmoke; padding: 15px 30px; background-color: #15d704;  text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center; vertical-align: middle;">
           Whatsapp Now
         </a>
       </div>
     
-      <div style="text-align: center; padding-top: 10px; font-size: 12px; color: white;">
+      <div style="text-align: center; padding-top: 10px; font-size: 12px; ">
         <p>Eduresearcher is a registered trademark of Eduresearcher, Inc. All rights reserved.</p>
       </div>
     
@@ -304,5 +315,6 @@ console.log("orderData",orderData);
   });
 
   //**********Redirect the user to thankyou page**********//
-  return NextResponse.redirect("https://eduresearchers.com/thank_you_order");
+  return NextResponse.redirect("http://localhost:3000/thank_you_order");
 }
+// https://eduresearchers.com/thank_you_order

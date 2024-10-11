@@ -1,6 +1,6 @@
 "use client"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import React from 'react'
+import React, { useState } from 'react'
 
 import Image from 'next/image'
 import { useTopic } from '../TopicContext'
@@ -16,27 +16,44 @@ const Modal = dynamic(() => import('./Modal'), {
 
 function Order() {
     const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice} = useTopic(); // Get topic from context
-  return (
+    const [activeTab, setActiveTab] = useState('type');  
+
+    const handleNext = () => {
+      setActiveTab('instruction');  
+    };
+  
+    const handleNextToDetails = () => {
+      setActiveTab('details');  
+    };
+  
+    const handlePreviousToInstruction = () => {
+      setActiveTab('instruction');  
+    };
+  
+    const handlePreviousToType = () => {
+      setActiveTab('type');  
+    };
+    return (
     <div className='mx-auto max-w-screen-xl'>
     <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps</div>
     <Modal/>
     
     <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-4'>
         <div className='col-span-2'>
-        <Tabs defaultValue="type" className="">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="">
       <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3">
         <TabsTrigger value="type">Paper Type</TabsTrigger>
         <TabsTrigger value="instruction">Paper Instruction</TabsTrigger>
         <TabsTrigger value="details">Contact Details</TabsTrigger>
       </TabsList>
       <TabsContent value="type">
-        <PaperType/>
+        <PaperType onNext={handleNext}/>
       </TabsContent>
       <TabsContent value="instruction">
-        <PaperInstruction/>
+        <PaperInstruction onNext={handleNextToDetails} onPrevious={handlePreviousToType}/>
       </TabsContent>
       <TabsContent value='details'>
-        <ContactDetails/>
+        <ContactDetails  onPrevious={handlePreviousToInstruction}/>
       </TabsContent>
     </Tabs>
         </div>

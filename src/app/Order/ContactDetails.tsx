@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 import { Loader, Loader2 } from "lucide-react";
 import { AfterPayment } from "../(backend)/action/AfterPayment";
 
-function ContactDetails() {
+function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
   const {
     topic,
     selectedValue,
@@ -61,7 +61,7 @@ function ContactDetails() {
     setPhone(e.target.value);
   };
   const handleCountry = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setCountry(event.target.value); // Update the topic in context
+    setCountry(event.target.value);
   };
   const handleNotesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -95,11 +95,15 @@ function ContactDetails() {
         country,
         notes,
       };
-      const res = await EmailAction(convertToFormData(data));
 
+      
+      const convertedData = convertToFormData(data)
+
+      const res = await EmailAction(convertedData);
       localStorage.setItem("name", name);
       localStorage.setItem("phone", phone);
       setPending(false);
+
 
       if (res?.success) {
         console.log(res.success);
@@ -199,11 +203,14 @@ function ContactDetails() {
               ></Input>
             </div>
 
-            <div className="space-y-2 ">
+            <div className="flex justify-between  ">
+            <button onClick={onPrevious} className='py-1 rounded-lg bg-orange-500 text-white text-center m-4 w-[120px] hover:scale-105 transition ease-in duration-200 font-medium'>
+                PREVIOUS
+              </button>
               <button
                 type="submit"
                 disabled={pending}
-                className="flex mt-5 px-8 py-3 bg-orange-500 text-zinc-50 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200 font-medium"
+                className="flex m-5 py-2 px-5 bg-orange-500 text-zinc-50 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200 font-medium"
               >
                 {pending ? (
                   <>
@@ -214,6 +221,7 @@ function ContactDetails() {
                   "Order Now"
                 )}
               </button>
+         
             </div>
           </CardContent>
         </Card>
@@ -473,19 +481,16 @@ const countries = [
 
 function convertToFormData(data: any) {
   const formData = new FormData();
+  const fileArray: File[] = [];
 
   // Iterate over each property in the object
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       // Check if the property is 'file' and it is a FileList
-      if (
-        key === "file" &&
-        data[key] instanceof FileList &&
-        data[key].length > 0
-      ) {
-        // Append all files from the FileList
+      if (key === "file" && data[key] instanceof FileList && data[key].length > 0) {
+        // Append all files from the FileList into an array
         for (let i = 0; i < data[key].length; i++) {
-          formData.append(key, data[key][i]); // Append each file
+          fileArray.push(data[key][i]); // Add each file to the array
         }
       } else if (data[key] !== null) {
         // Append other data (strings, numbers, etc.)
@@ -494,8 +499,12 @@ function convertToFormData(data: any) {
     }
   }
 
-  // Log all files associated with 'file'
-  console.log("Files from contact details", formData.getAll("file"));
+  // Append the file array to 'files' key in formData
+  fileArray.forEach((file, index) => {
+    formData.append('file', file); // Append all files under 'files[]'
+  });
+
 
   return formData;
 }
+

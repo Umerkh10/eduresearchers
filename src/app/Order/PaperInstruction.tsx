@@ -4,32 +4,37 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import React from 'react'
 import { useTopic } from '../TopicContext'
+import { Trash2 } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
-function PaperInstruction() {
-    const {setSubject,setLanguage,setSource,setFormat,setReferencing,setFile} = useTopic();
+
+
+function PaperInstruction({ onNext, onPrevious }: { onNext: () => void, onPrevious: () => void }) {
+    const { subject, setSubject, language, setLanguage, source, setSource, format, setFormat, referencing, setReferencing, file, addFiles, deleteFile,  } = useTopic();
 
     const handleSubject = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSubject(event.target.value); // Update the topic in context
+        setSubject(event.target.value);
     };
-    const handleLanguage = (event: React.ChangeEvent<HTMLSelectElement>) =>{
-        setLanguage(event.target.value); // Update the topic in context
+    const handleLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setLanguage(event.target.value);
     };
-    const handleSource = (event: React.ChangeEvent<HTMLSelectElement>) =>{
-        setSource(parseInt(event.target.value)); // Update the topic in context
+    const handleSource = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSource(parseInt(event.target.value));
     };
-    const handleFormat = (event: React.ChangeEvent<HTMLSelectElement>) =>{
-        setFormat(event.target.value); // Update the topic in context
+    const handleFormat = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setFormat(event.target.value);
     };
-    const handleReferencing = (event: React.ChangeEvent<HTMLSelectElement>) =>{
-        setReferencing(event.target.value); // Update the topic in context
+    const handleReferencing = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setReferencing(event.target.value);
     };
     const handleFile = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files // File input se pehla file le raha hai
-        if ( file !== null) {
-            setFile(file); // File ko context ya state mein set karna
+        if (file !== null) {
+            addFiles(file); // File ko context ya state mein set karna
         }
     };
 
+ 
     return (
         <div>
             <Card>
@@ -45,7 +50,7 @@ function PaperInstruction() {
                         <Label htmlFor="subjectarea">Subject Area</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="subject" onChange={handleSubject} required aria-label='subject'>
+                            name="subject" defaultValue={subject} onChange={handleSubject} required aria-label='subject'>
                             <option value="Chemistry">Chemistry</option>
                             <option value="Mathematics">Mathematics</option>
                             <option value="Sociology">Sociology</option>
@@ -73,7 +78,7 @@ function PaperInstruction() {
                         <Label htmlFor="language">Preferred Language Style</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="language" onChange={handleLanguage} required aria-label='language'>
+                            name="language" defaultValue={language} onChange={handleLanguage} required aria-label='language'>
                             <option value="English (U.K)">English (U.K)</option>
                             <option value="English (U.S)">English (U.S)</option>
                         </select>
@@ -83,7 +88,7 @@ function PaperInstruction() {
                         <Label htmlFor="sources">Number Sources</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="source" onChange={handleSource} defaultValue={10} required aria-label='source'>
+                            name="source" onChange={handleSource} defaultValue={source} required aria-label='source'>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -110,7 +115,7 @@ function PaperInstruction() {
                         <Label htmlFor="format">Paper Format</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="format" onChange={handleFormat} defaultValue={'double'} required aria-label='format'>
+                            name="format" onChange={handleFormat} defaultValue={format} required aria-label='format'>
                             <option value="Double Spaced">Double Spaced</option>
                             <option value="Single Spaced">Single Spaced</option>
                         </select>
@@ -120,7 +125,7 @@ function PaperInstruction() {
                         <Label htmlFor="referencing">Referencing Style</Label>
                         <select
                             className='rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
-                            name="referencing" onChange={handleReferencing} defaultValue={'Harvard Referencing'} required aria-label='referencing'>
+                            name="referencing" onChange={handleReferencing} defaultValue={referencing} required aria-label='referencing'>
                             <option value="APA Referencing">APA Referencing</option>
                             <option value="Harvard Referencing">Harvard Referencing</option>
                             <option value="MLA Referencing">MLA Referencing</option>
@@ -131,19 +136,33 @@ function PaperInstruction() {
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-4">
                         <Label htmlFor="file">Select Your File</Label>
                         <Input
-                        multiple
-                        onChange={handleFile}
-                            className='h-12 rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
+                            multiple
+                            onChange={handleFile}
+                            className=' h-12 rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base'
                             name="file" type='file' required aria-label='file'>
-                         
                         </Input>
+                        {file.length > 0 && file.map((fileObj: File, index: number) => (
+                            <div className='p-3 border-2 border-secondary flex justify-between rounded-xl' key={index}>
+                                {fileObj.name} {/* Access the name directly from the File object */}
+                                <Button variant={"ghost"} size={"icon"} onClick={() => deleteFile(index)}>
+                                    <Trash2 className='w-5 h-5 hover:text-red-500 transition ease-in duration-200' />
+                                </Button>
+                            </div>
+                        ))}
                     </div>
 
                 </CardContent>
-             
+                <div className='flex justify-between'>
+                    <button onClick={onPrevious} className='py-3 rounded-lg bg-orange-500 text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-medium'>
+                        PREVIOUS
+                    </button>
+                    <button onClick={onNext} className='py-3 rounded-lg bg-orange-500 text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-medium'>
+                        NEXT
+                    </button>
+                </div>
             </Card>
         </div>
     )

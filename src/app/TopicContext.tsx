@@ -1,5 +1,6 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
+
+import React, { createContext, useContext, useState, ReactNode, useEffect, Dispatch, SetStateAction } from "react";
 
 
 
@@ -20,7 +21,7 @@ interface TopicContextType {
   referencing: string;
   pricePerPage: number;
   totalPrice: number;
-  file: FileList|null;
+  file: File[];
   name: string;
   email: string;
   phone: string;
@@ -37,7 +38,10 @@ interface TopicContextType {
   setSource: (newSource: number) => void;
   setFormat: (newFormat: string) => void;
   setReferencing: (newReferencing: string) => void;
-  setFile: (newFile: FileList) => void;
+ addFiles: (prevFiles:FileList)=> void;
+ deleteFile: (index:number)=> void
+ 
+setFile: ( newFiles : any)=> void
   setName: (newName: string) => void;
   setEmail: (newEmail: string) => void;
   setPhone: (newPhone: string) => void;
@@ -62,7 +66,7 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [source, setSource] = useState<number>(10);
   const [format, setFormat] = useState<string>("Double Spaced");
   const [referencing, setReferencing] = useState<string>("Harvard Referencing");
-  const [file , setFile] = useState<FileList|null>(null)
+
   const [pricePerPage, setPricePerPage] = useState<number>(8); // Initial price per page
   const [totalPrice, setTotalPrice] = useState<number>(8 * selectedValue); // Total price
   const [name,setName] = useState<string>('');
@@ -70,6 +74,24 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [phone,setPhone] = useState<string>('');
   const [country,setCountry] = useState<string>('');
   const [notes,setNotes] = useState<string>('');
+  const [file, setFile] = useState<File[]>([]); 
+
+  const addFiles = (newFiles: FileList) => {
+    setFile((prevFiles: File[]) => {
+      return [...prevFiles, ...Array.from(newFiles)]; // Convert FileList to array and add to existing files
+    });
+  };
+  
+  // Delete a file by index
+  const deleteFile = (index: number) => {
+    setFile((prevFiles: File[]) => {
+      // Check if prevFiles is undefined or empty
+      if (!prevFiles || prevFiles.length === 0) return prevFiles; 
+      // Filter out the file at the given index
+      return prevFiles.filter((_, i: number) => i !== index); 
+    });
+  };
+
 
 
 // Update word count when selectedValue changes
@@ -209,6 +231,8 @@ useEffect(() => {
         setReferencing,
         file,
         setFile,
+        addFiles,
+        deleteFile,
         pricePerPage, // Price per page
         totalPrice, // Total price
         name,
