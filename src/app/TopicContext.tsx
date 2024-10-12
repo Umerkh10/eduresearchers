@@ -27,6 +27,7 @@ interface TopicContextType {
   phone: string;
   country: string;
   notes: string;
+  currency: string;
   setTopic: (newTopic: string) => void;
   setSelectedValue: (newSelectedValue: number) => void;
   setLevel: (newLevel: string) => void;
@@ -40,13 +41,13 @@ interface TopicContextType {
   setReferencing: (newReferencing: string) => void;
  addFiles: (prevFiles:FileList)=> void;
  deleteFile: (index:number)=> void
- 
-setFile: ( newFiles : any)=> void
+  setFile: ( newFiles : any)=> void
   setName: (newName: string) => void;
   setEmail: (newEmail: string) => void;
   setPhone: (newPhone: string) => void;
   setCountry: (newCountry: string) => void;
   setNotes: (newNotes: string) => void;
+  setCurrency: (newCurrency: string) => void;
 }
 
 // Create the context with an initial value of undefined
@@ -66,7 +67,6 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [source, setSource] = useState<number>(10);
   const [format, setFormat] = useState<string>("Double Spaced");
   const [referencing, setReferencing] = useState<string>("Harvard Referencing");
-
   const [pricePerPage, setPricePerPage] = useState<number>(8); // Initial price per page
   const [totalPrice, setTotalPrice] = useState<number>(8 * selectedValue); // Total price
   const [name,setName] = useState<string>('');
@@ -74,6 +74,7 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [phone,setPhone] = useState<string>('');
   const [country,setCountry] = useState<string>('');
   const [notes,setNotes] = useState<string>('');
+  const [currency,setCurrency]= useState<string>('eur')
   const [file, setFile] = useState<File[]>([]); 
 
   const addFiles = (newFiles: FileList) => {
@@ -245,6 +246,8 @@ useEffect(() => {
         setCountry,
         notes,
         setNotes,
+        currency,
+        setCurrency,
       }}
     >
       {children}

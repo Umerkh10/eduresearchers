@@ -15,7 +15,7 @@ const Modal = dynamic(() => import('./Modal'), {
 });
 
 function Order() {
-    const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice} = useTopic(); // Get topic from context
+    const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice,currency} = useTopic(); // Get topic from context
     const [activeTab, setActiveTab] = useState('type');  
 
     const handleNext = () => {
@@ -87,11 +87,11 @@ function Order() {
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Price Per Page</div>
-                    <div>£ {pricePerPage}</div>
+                    <div>{currency} {pricePerPage}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Total Price</div>
-                    <div>£ {totalPrice}</div>
+                    <div>{currency} {totalPrice}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Turnitin Report</div>

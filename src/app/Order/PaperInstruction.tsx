@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button'
 
 
 function PaperInstruction({ onNext, onPrevious }: { onNext: () => void, onPrevious: () => void }) {
-    const { subject, setSubject, language, setLanguage, source, setSource, format, setFormat, referencing, setReferencing, file, addFiles, deleteFile,  } = useTopic();
+    const { subject, setSubject, language, setLanguage, source, setSource, format, setFormat, referencing, setReferencing, file, addFiles, deleteFile, } = useTopic();
 
     const handleSubject = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSubject(event.target.value);
@@ -146,7 +146,7 @@ function PaperInstruction({ onNext, onPrevious }: { onNext: () => void, onPrevio
                         </Input>
                         {file.length > 0 && file.map((fileObj: File, index: number) => (
                             <div className='p-3 border-2 border-secondary flex justify-between rounded-xl' key={index}>
-                                {fileObj.name} {/* Access the name directly from the File object */}
+                                {fileObj.name} 
                                 <Button variant={"ghost"} size={"icon"} onClick={() => deleteFile(index)}>
                                     <Trash2 className='w-5 h-5 hover:text-red-500 transition ease-in duration-200' />
                                 </Button>

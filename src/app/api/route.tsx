@@ -70,13 +70,14 @@ console.log("orderData",orderData);
     to: orderData.email,
     subject: `Your Order # ${orderData.orderId} is Confirmed - Thank You For Your Order! | ${process.env.NEXT_PUBLIC_NAME}`,
     html: `
-  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f0f0f0; ">
-    <div style="background-position: center;background-size: cover; width: 100%;  font-family: Arial, Helvetica, sans-serif; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #fffdfa; padding: 20px;">
+     <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f0f0f0; ">
+    <div style="background-position: center;background-size: cover; width: 100%; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #fffdfa; padding: 20px;">
     
         <div style="text-align: center;">
             <div style="display: inline-block; padding: 5px;">
            <img src="https://muhammadumer.sirv.com/edu-logo.png" alt="" style="display: inline-block; vertical-align: middle; height: 50px; width: auto;">
-         <p style="display: inline-block; vertical-align: middle; margin: 0; font-size: x-large;  font-weight: 700; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+         <p style="display: inline-block; vertical-align: middle; margin: 0; font-size: x-large;  font-weight: 700; ">
                  Eduresearcher
                 </p>
             </div>
@@ -91,15 +92,15 @@ console.log("orderData",orderData);
           </a>
         </div>
     
-      <div style="text-align: center;">
-        <h2 style="font-size: 24px;   ">Personal Details</h2>
+      <div style="text-align: start;">
+        <h2 style="font-size: 26px; font-weight: 600;  ">Personal Details</h2>
       </div>
     
       <div style="width:100%; height: 3px; background-color: #ffd17e; margin-bottom: 20px;"></div>
 
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Name:</div>
           <div style="float: right;">${orderData.name}</div>
         </div>
@@ -107,7 +108,7 @@ console.log("orderData",orderData);
       </div>
     
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Email:</div>
           <div style="text-decoration: none; float: right;">${orderData.email}</div>
         </div>
@@ -115,7 +116,7 @@ console.log("orderData",orderData);
       </div>
     
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Phone:</div>
           <div style="float: right;">${orderData.phone}</div>
         </div>
@@ -123,7 +124,7 @@ console.log("orderData",orderData);
       </div>
     
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Country:</div>
           <div style="float: right;">${orderData.country}</div>
         </div>
@@ -131,7 +132,7 @@ console.log("orderData",orderData);
       </div>
     
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Notes:</div>
           <div style="float: right;">${orderData.notes}</div>
         </div>
@@ -139,14 +140,14 @@ console.log("orderData",orderData);
       </div>
     
  
-      <div style="text-align: center;">
-        <h2 style="font-size: 24px;  ">Order Summary</h2>
+      <div style="text-align: start;">
+        <h2 style="font-size: 26px; font-weight: 600;  ">Order Summary</h2>
       </div>
 
       <div style="width:100%; height: 3px; background-color: #ffd17e; margin-bottom: 20px;"></div>
     
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Topic:</div>
           <div style="float: right;">${orderData.topic}</div>
         </div>
@@ -155,7 +156,7 @@ console.log("orderData",orderData);
 
     
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">No Of Pages:</div>
           <div style="float: right;">${orderData.selectedValue}</div>
         </div>
@@ -163,7 +164,7 @@ console.log("orderData",orderData);
       </div>
     
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Word Count:</div>
           <div style="float: right;">${orderData.wordCount}</div>
         </div>
@@ -171,7 +172,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Academic Level:</div>
           <div style="float: right;">${orderData.level}</div>
         </div>
@@ -179,7 +180,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Paper Type:</div>
           <div style="float: right;">${orderData.paper}</div>
         </div>
@@ -187,7 +188,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Paper Quality:</div>
           <div style="float: right;">${orderData.quality}</div>
         </div>
@@ -195,7 +196,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Deadline:</div>
           <div style="float: right;">${orderData.deadline}</div>
         </div>
@@ -203,7 +204,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Subject:</div>
           <div style="float: right;">${orderData.subject}</div>
         </div>
@@ -211,7 +212,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Language:</div>
           <div style="float: right;">${orderData.language}</div>
         </div>
@@ -219,7 +220,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">No Of Sources:</div>
           <div style="float: right;">${orderData.source}</div>
         </div>
@@ -227,7 +228,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Paper Format:</div>
           <div style="float: right;">${orderData.format}</div>
         </div>
@@ -235,21 +236,21 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Referencing:</div>
           <div style="float: right;">${orderData.referencing}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
 
-        <div style="text-align: center;">
-        <h2 style="font-size: 24px;  ">Order Pricing</h2>
+        <div style="text-align: start;">
+        <h2 style="font-size: 26px; font-weight: 600;  ">Order Pricing</h2>
       </div>
       
     <div style="width:100%; height: 3px; background-color: #ffd17e; margin-bottom: 20px;"></div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Discount:</div>
           <div style="float: right;">45% OFF</div>
         </div>
@@ -257,7 +258,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Turnitin Report:</div>
           <div style="float: right; background-color: orange; border: 2px solid #FFA500; border-radius: 15px; color: whitesmoke; width: 100px; padding: 2px;  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">Free</div>
         </div>
@@ -265,7 +266,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Price Per Page:</div>
           <div style="float: right;">£${orderData.pricePerPage}</div>
         </div>
@@ -273,7 +274,7 @@ console.log("orderData",orderData);
       </div>
 
       <div style="text-align: center;">
-        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Total Price:</div>
           <div style="float: right;">£${orderData.totalPrice}</div>
         </div>
@@ -315,6 +316,7 @@ console.log("orderData",orderData);
   });
 
   //**********Redirect the user to thankyou page**********//
-  return NextResponse.redirect("http://localhost:3000/thank_you_order");
+  return NextResponse.redirect("https://eduresearchers.com/thank_you_order");
 }
-// https://eduresearchers.com/thank_you_order
+// http://localhost:3000/thank_you_order
+

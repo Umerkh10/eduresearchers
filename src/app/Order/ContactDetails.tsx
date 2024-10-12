@@ -1,5 +1,5 @@
 "use client";
-import React, { SelectHTMLAttributes, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -13,8 +13,7 @@ import { useTopic } from "../TopicContext";
 import { toast } from "sonner";
 import { EmailAction } from "../(backend)/action/EmailAction";
 import { useRouter } from "next/navigation";
-import { Loader, Loader2 } from "lucide-react";
-import { AfterPayment } from "../(backend)/action/AfterPayment";
+import { Loader2 } from "lucide-react";
 
 function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
   const {
@@ -38,11 +37,13 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
     phone,
     country,
     notes,
+    currency,
     setName,
     setEmail,
     setPhone,
     setCountry,
     setNotes,
+    setCurrency,
   } = useTopic();
 
   const [pending, setPending] = useState(false);
@@ -62,6 +63,9 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
   };
   const handleCountry = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setCountry(event.target.value);
+  };
+  const handleCurrency = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setCurrency(event.target.value);
   };
   const handleNotesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -94,9 +98,10 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
         phone,
         country,
         notes,
+        currency,
       };
 
-      
+
       const convertedData = convertToFormData(data)
 
       const res = await EmailAction(convertedData);
@@ -189,6 +194,24 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
               </select>
             </div>
 
+            <div className="space-y-1">
+              <label htmlFor="currencies">Select Currency</label>
+              <select
+                className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
+                name="currency"
+                value={currency}
+                onChange={handleCurrency}
+                required
+                aria-label="currencies"
+              >
+                {currencySymbols.map((currencyItem, index) => (
+                  <option key={index} value={currencyItem.code}>
+                    {currencyItem.code}  
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <div className="space-y-2 pt-2">
               <Label className="text-base" htmlFor="format">
                 Additional Notes (Instructions)
@@ -204,7 +227,7 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
             </div>
 
             <div className="flex justify-between  ">
-            <button onClick={onPrevious} className='py-1 rounded-lg bg-orange-500 text-white text-center m-4 w-[120px] hover:scale-105 transition ease-in duration-200 font-medium'>
+              <button onClick={onPrevious} className='py-1 rounded-lg bg-orange-500 text-white text-center m-4 w-[120px] hover:scale-105 transition ease-in duration-200 font-medium'>
                 PREVIOUS
               </button>
               <button
@@ -221,7 +244,7 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
                   "Order Now"
                 )}
               </button>
-         
+
             </div>
           </CardContent>
         </Card>
@@ -231,6 +254,15 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
 }
 
 export default ContactDetails;
+
+
+const currencySymbols = [
+  { code: "aud",  }, // Australian Dollar
+  { code: "nzd", }, // New Zealand Dollar
+  { code: "eur", },   // Euro
+  { code: "gbp", },   // British Pound
+  { code: "usd", }     // US Dollar
+];
 
 const countries = [
   "Afghanistan",
@@ -478,33 +510,32 @@ const countries = [
   "Zambia",
   "Zimbabwe",
 ];
-
-function convertToFormData(data: any) {
+function convertToFormData(data: Record<string, any>): FormData {
   const formData = new FormData();
-  const fileArray: File[] = [];
 
   // Iterate over each property in the object
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
+      const value = data[key];
+
       // Check if the property is 'file' and it is a FileList
-      if (key === "file" && data[key] instanceof FileList && data[key].length > 0) {
-        // Append all files from the FileList into an array
-        for (let i = 0; i < data[key].length; i++) {
-          fileArray.push(data[key][i]); // Add each file to the array
-        }
-      } else if (data[key] !== null) {
+      if (key === "file" && value instanceof FileList && value.length > 0) {
+        // Append all files from the FileList into formData
+        Array.from(value).forEach(file => {
+          console.log('Appending file to FormData:', file); // Log each file being appended
+          formData.append('file', file);
+        });
+      } else if (Array.isArray(value)) {
+        // If it's an array, append each item
+        value.forEach(item => {
+          formData.append(key, item);
+        });
+      } else if (value !== null) {
         // Append other data (strings, numbers, etc.)
-        formData.append(key, data[key]);
+        formData.append(key, value);
       }
     }
   }
 
-  // Append the file array to 'files' key in formData
-  fileArray.forEach((file, index) => {
-    formData.append('file', file); // Append all files under 'files[]'
-  });
-
-
   return formData;
 }
-
