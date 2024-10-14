@@ -111,12 +111,7 @@ function Order() {
     <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps</div>
     <Modal/>
     <div>
-    <h1>Your Currency:</h1>
-       <div>
-      <p>Symbol: {symbol}</p>
-      <p>PPP: {ppp}</p>
-      <p>Unit: {unit}</p>
-    </div>
+
     </div>
     
     <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-4'>
