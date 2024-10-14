@@ -37,13 +37,14 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
     phone,
     country,
     notes,
-    currency,
+    symbol,
+    ppp,
+    unit,
     setName,
     setEmail,
     setPhone,
     setCountry,
     setNotes,
-    setCurrency,
   } = useTopic();
 
   const [pending, setPending] = useState(false);
@@ -64,9 +65,7 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
   const handleCountry = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setCountry(event.target.value);
   };
-  const handleCurrency = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setCurrency(event.target.value);
-  };
+
   const handleNotesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setNotes(e.target.value);
@@ -98,7 +97,9 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
         phone,
         country,
         notes,
-        currency,
+        symbol,
+        ppp,
+        unit
       };
 
 
@@ -194,7 +195,7 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
               </select>
             </div>
 
-            <div className="space-y-1">
+            {/* <div className="space-y-1">
               <label htmlFor="currencies">Select Currency</label>
               <select
                 className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
@@ -210,7 +211,7 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
 
             <div className="space-y-2 pt-2">
               <Label className="text-base" htmlFor="format">
@@ -256,13 +257,13 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
 export default ContactDetails;
 
 
-const currencySymbols = [
-  { code: "aud",  }, // Australian Dollar
-  { code: "nzd", }, // New Zealand Dollar
-  { code: "eur", },   // Euro
-  { code: "gbp", },   // British Pound
-  { code: "usd", }     // US Dollar
-];
+// const currencySymbols = [
+//   { code: "aud",  }, // Australian Dollar
+//   { code: "nzd", }, // New Zealand Dollar
+//   { code: "eur", },   // Euro
+//   { code: "gbp", },   // British Pound
+//   { code: "usd", }     // US Dollar
+// ];
 
 const countries = [
   "Afghanistan",

@@ -33,8 +33,10 @@ export const EmailAction = async (formData: FormData) => {
   const country = formData.get("country") as string;
   const email = formData.get("email") as string;
   const notes = formData.get("notes") as string;
-  const currency = formData.get("currency") as string;
-console.log(currency);
+  const symbol = formData.get("symbol") as string;
+  const ppp = formData.get("ppp") as string;
+  const unit = formData.get("unit") as string;
+
 
 file?.map((i: { name: any; })=>{
   console.log(i.name);
@@ -63,12 +65,14 @@ file?.map((i: { name: any; })=>{
     totalPrice,
     file,
     language,
-    currency,
+    symbol,
+    ppp,
+    unit,
   }
 
   // ************** Redirect user to stripe*******************
 
-  const paymentLinkStripe = generateStripeLink(currency,orderId, totalPrice)
+  const paymentLinkStripe = generateStripeLink(unit,orderId, totalPrice)
 
   try {
     saveFormDataToJson(data);
@@ -150,7 +154,9 @@ async function sendEmailClient(data: any) {
     totalPrice,
     paymentLinkStripe,
     language,
-    currency,
+    symbol,
+    ppp,
+    unit,
     file
   } = data
   const clientMailOptions = {
@@ -369,7 +375,7 @@ async function sendEmailClient(data: any) {
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 400; ">
           <div style="float: left;">Price Per Page:</div>
-          <div style="float: right;">${currency}${pricePerPage}</div>
+          <div style="float: right;">${symbol}${pricePerPage}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -377,7 +383,7 @@ async function sendEmailClient(data: any) {
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Total Price:</div>
-          <div style="float: right;">${currency}${totalPrice}</div>
+          <div style="float: right;">${symbol}${totalPrice}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -430,7 +436,9 @@ async function sendEmailSupport(data: any) {
     totalPrice,
     language,
     file,
-    currency,
+    symbol,
+    ppp,
+    unit,
   } = data
   
   // const attachments = await Promise.all(
@@ -474,7 +482,7 @@ async function sendEmailSupport(data: any) {
           <li><strong>Referencing:</strong> ${referencing}</li>
           <li><strong>Deadline:</strong> ${deadline}</li>
           <li><strong>Price Per Page:</strong> ${pricePerPage}</li>
-          <li><strong>Total Price:</strong> ${currency}${totalPrice}</li>
+          <li><strong>Total Price:</strong> ${symbol}${totalPrice}</li>
           <li><strong>Notes:</strong> ${notes}</li>
         </ul>
       </body>
@@ -490,18 +498,18 @@ async function sendEmailSupport(data: any) {
   }
 }
 
-function generateStripeLink(currency: string, orderId: string, totalPrice: string) {
-  const finalPaymentUnit = Buffer.from(currency).toString("base64");
+function generateStripeLink(unit: string, orderId: string, totalPrice: string) {
+  const finalPaymentUnit = Buffer.from(unit).toString("base64");
   const finalTotalAmount = Buffer.from(totalPrice).toString("base64");
   const finalProductName = Buffer.from("Digital Service").toString("base64");
   const orderToken = Buffer.from(orderId).toString("base64");
 
   const finalUrl = Buffer.from(
-    // `http://localhost:3000/api` // for dev environment
-    `https://eduresearchers.com/api` // for prod environment
+    `http://localhost:3000/api` // for dev environment
+    // `https://eduresearchers.com/api` // for prod environment
   ).toString("base64");
 
-  // const paymentLinkStripe = `https://eduresearchers.com/test-payment/secure-pay-external-2.php?cevpr_havg=${finalPaymentUnit}&cevpr_nzbhag=${finalTotalAmount}&cebqhpg_anzr=${finalProductName}&gbxra_rkgreany=${orderToken}&url=${finalUrl}`;
-  const paymentLinkStripe = `https://mastermindsenterprises.com/stripe-version-2/secure-pay-external-2.php?cevpr_havg=${finalPaymentUnit}&cevpr_nzbhag=${finalTotalAmount}&cebqhpg_anzr=${finalProductName}&gbxra_rkgreany=${orderToken}&url=${finalUrl}`;
+  const paymentLinkStripe = `https://eduresearchers.com/test-payment/secure-pay-external-2.php?cevpr_havg=${finalPaymentUnit}&cevpr_nzbhag=${finalTotalAmount}&cebqhpg_anzr=${finalProductName}&gbxra_rkgreany=${orderToken}&url=${finalUrl}`;
+  // const paymentLinkStripe = `https://mastermindsenterprises.com/stripe-version-2/secure-pay-external-2.php?cevpr_havg=${finalPaymentUnit}&cevpr_nzbhag=${finalTotalAmount}&cebqhpg_anzr=${finalProductName}&gbxra_rkgreany=${orderToken}&url=${finalUrl}`;
   return paymentLinkStripe
 }

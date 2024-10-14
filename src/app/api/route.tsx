@@ -50,7 +50,7 @@ console.log("orderData",orderData);
       <li><strong>Referencing:</strong> ${orderData.referencing}</li>
       <li><strong>Deadline:</strong> ${orderData.deadline}</li>
       <li><strong>Price Per Page:</strong> ${orderData.pricePerPage}</li>
-      <li><strong>Total Price:</strong> £${orderData.totalPrice}</li>
+      <li><strong>Total Price:</strong> ${orderData.symbol}${orderData.totalPrice}</li>
       <li><strong>Notes:</strong> ${orderData.notes}</li>
     </ul>
 </body>
@@ -268,7 +268,7 @@ console.log("orderData",orderData);
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Price Per Page:</div>
-          <div style="float: right;">£${orderData.pricePerPage}</div>
+          <div style="float: right;">${orderData.symbol}${orderData.pricePerPage}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -276,7 +276,7 @@ console.log("orderData",orderData);
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; ">
           <div style="float: left;">Total Price:</div>
-          <div style="float: right;">£${orderData.totalPrice}</div>
+          <div style="float: right;">${orderData.symbol}${orderData.totalPrice}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -316,7 +316,9 @@ console.log("orderData",orderData);
   });
 
   //**********Redirect the user to thankyou page**********//
-  return NextResponse.redirect("https://eduresearchers.com/thank_you_order");
+  return NextResponse.redirect("http://localhost:3000/thank_you_order");
 }
 // http://localhost:3000/thank_you_order
+
+// https://eduresearchers.com/thank_you_order
 

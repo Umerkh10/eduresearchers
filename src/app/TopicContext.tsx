@@ -3,8 +3,6 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect, Dispatch, SetStateAction } from "react";
 
 
-
-
 // Define the type for the context value
 interface TopicContextType {
   topic: string;
@@ -27,7 +25,9 @@ interface TopicContextType {
   phone: string;
   country: string;
   notes: string;
-  currency: string;
+  symbol: string;
+  ppp: number;
+  unit: string;
   setTopic: (newTopic: string) => void;
   setSelectedValue: (newSelectedValue: number) => void;
   setLevel: (newLevel: string) => void;
@@ -47,7 +47,9 @@ interface TopicContextType {
   setPhone: (newPhone: string) => void;
   setCountry: (newCountry: string) => void;
   setNotes: (newNotes: string) => void;
-  setCurrency: (newCurrency: string) => void;
+  setSymbol: (newSymbol: string) => void;
+  setPpp: (newPpp: number) => void;
+  setUnit: (newUnit: string) => void;
 }
 
 // Create the context with an initial value of undefined
@@ -74,7 +76,9 @@ export const TopicProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [phone,setPhone] = useState<string>('');
   const [country,setCountry] = useState<string>('');
   const [notes,setNotes] = useState<string>('');
-  const [currency,setCurrency]= useState<string>('eur')
+  const [symbol, setSymbol] = useState<string>('');
+  const [ppp, setPpp] = useState<number>(0);
+  const [unit, setUnit] = useState<string>('');
   const [file, setFile] = useState<File[]>([]); 
 
   const addFiles = (newFiles: FileList) => {
@@ -246,8 +250,12 @@ useEffect(() => {
         setCountry,
         notes,
         setNotes,
-        currency,
-        setCurrency,
+        symbol,
+        setSymbol,
+        ppp,
+        setPpp,
+        unit,
+        setUnit
       }}
     >
       {children}

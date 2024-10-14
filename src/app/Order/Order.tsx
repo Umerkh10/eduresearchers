@@ -1,21 +1,26 @@
 "use client"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useTopic } from '../TopicContext'
-
 import dynamic from 'next/dynamic'
 import PaperType from './PaperType'
 import PaperInstruction from './PaperInstruction'
 import ContactDetails from './ContactDetails'
+
 const Modal = dynamic(() => import('./Modal'), {
   ssr: false, 
   loading: () => <p>Loading...</p>,
 });
 
+interface CurrencyData {
+  symbol: string;
+  ppp: number;
+  unit: string;
+}
+
 function Order() {
-    const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice,currency} = useTopic(); // Get topic from context
+    const { topic,selectedValue ,wordCount,quality,deadline,referencing,pricePerPage,totalPrice,symbol,setSymbol,ppp,setPpp,unit,setUnit} = useTopic(); // Get topic from context
     const [activeTab, setActiveTab] = useState('type');  
 
     const handleNext = () => {
@@ -33,10 +38,86 @@ function Order() {
     const handlePreviousToType = () => {
       setActiveTab('type');  
     };
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+    
+    // Separate state variables for symbol, ppp, and unit
+
+    useEffect(() => {
+      const fetchCurrencyByIP = async () => {
+        try {
+          // Fetch IP from the internal API route
+          const response = await fetch('/api/ip/');
+          if (!response.ok) {
+            throw new Error('Failed to fetch IP data');
+          }
+          const { ip } = await response.json();
+  
+          // Fetch location data using the IP
+          const locationResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+          if (!locationResponse.ok) {
+            throw new Error('Failed to fetch location data');
+          }
+          const locationData = await locationResponse.json();
+          
+          // Extract country code to map to currency and ppp
+          const currencyDetails = getCurrencyDetails(locationData.country_code);
+          
+          // Set state for symbol, ppp, and unit separately
+          setSymbol(currencyDetails.symbol);
+          setPpp(currencyDetails.ppp);
+          setUnit(currencyDetails.unit);
+        } catch (err: unknown) {
+          if (err instanceof Error) {
+            setError(err.message);
+          } else {
+            setError('An unknown error occurred');
+          }
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchCurrencyByIP();
+    }, []);
+  
+    const getCurrencyDetails = (countryCode: string): CurrencyData => {
+      switch (countryCode) {
+        case 'IE':
+          return { symbol: '€', ppp: 23.83, unit: 'eur' };
+        case 'AU':
+          return { symbol: '$', ppp: 35.93, unit: 'aud' };
+        case 'GB':
+          return { symbol: '£', ppp: 20.00, unit: 'gbp' };
+        case 'NL':
+        case 'NO':
+          return { symbol: '€', ppp: 23.83, unit: 'eur' };
+        case 'NZ':
+          return { symbol: '$', ppp: 39.17, unit: 'nzd' };
+        case 'OM':
+        case 'AE':
+        case 'US':
+          return { symbol: '$', ppp: 28.51, unit: 'usd' };
+        default:
+          return { symbol: '£', ppp: 20.00, unit: 'gbp' };
+      }
+    };
+  
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+
     return (
     <div className='mx-auto max-w-screen-xl'>
     <div className='my-10 text-4xl font-bold text-center'>Place Your Order In Simple Steps</div>
     <Modal/>
+    <div>
+    <h1>Your Currency:</h1>
+       <div>
+      <p>Symbol: {symbol}</p>
+      <p>PPP: {ppp}</p>
+      <p>Unit: {unit}</p>
+    </div>
+    </div>
     
     <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-4'>
         <div className='col-span-2'>
@@ -87,11 +168,11 @@ function Order() {
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Price Per Page</div>
-                    <div>{currency} {pricePerPage}</div>
+                    <div>{symbol} {pricePerPage}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Total Price</div>
-                    <div>{currency} {totalPrice}</div>
+                    <div>{symbol} {totalPrice}</div>
                 </div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Turnitin Report</div>

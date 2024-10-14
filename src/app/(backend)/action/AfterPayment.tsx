@@ -51,6 +51,9 @@ export const AfterPayment = async (formData: FormData) => {
     const country= formData.get("country") as string;
     const email= formData.get("email") as string;
     const notes= formData.get("notes") as string;
+    const symbol = formData.get("symbol") as string;
+    const ppp = formData.get("ppp") as string;
+    const unit = formData.get("unit") as string;
 
 
   ///// Check for an Attachment folder /////
@@ -298,7 +301,7 @@ export const AfterPayment = async (formData: FormData) => {
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
           <div style="float: left;">Price Per Page:</div>
-          <div style="float: right;">£${pricePerPage}</div>
+          <div style="float: right;">${symbol}${pricePerPage}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
@@ -306,7 +309,7 @@ export const AfterPayment = async (formData: FormData) => {
       <div style="text-align: center;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: large; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
           <div style="float: left;">Total Price:</div>
-          <div style="float: right;">£${totalPrice}</div>
+          <div style="float: right;">${symbol}${totalPrice}</div>
         </div>
         <div style="clear: both;"></div>
       </div>
