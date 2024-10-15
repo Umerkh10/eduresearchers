@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import PaperType from './PaperType'
 import PaperInstruction from './PaperInstruction'
 import ContactDetails from './ContactDetails'
+import { Loader2 } from 'lucide-react'
 
 const Modal = dynamic(() => import('./Modal'), {
   ssr: false, 
@@ -103,7 +104,7 @@ function Order() {
       }
     };
   
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div className='h-screen  text-2xl font-semibold flex justify-center items-center gap-2'><Loader2 className='animate-spin w-5 h-5' /> Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
     return (
