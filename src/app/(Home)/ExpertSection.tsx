@@ -2,6 +2,7 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CheckCheckIcon, MessageCircleIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const tabContent = [
@@ -33,12 +34,12 @@ const tabContent = [
 ]
 
 function ExpertSection() {
-  const handleGetStartedClick = () => {
-    // Ensure Tawk_API is loaded and available
-    if (window.Tawk_API) {
-      window.Tawk_API.toggle(); // This will toggle the chat widget
-    }
-  };
+  // const handleGetStartedClick = () => {
+  //   // Ensure Tawk_API is loaded and available
+  //   if (window.Tawk_API) {
+  //     window.Tawk_API.toggle(); // This will toggle the chat widget
+  //   }
+  // };
   return (
     <div id='service' className='max-w-screen-xl mx-auto mt-4 md:mt-10'>
       <div data-aos='fade-down' data-aos-duration="1500" className='grid lg:grid-cols-2 grid-cols-1 p-5 rounded-xl bg-slate-100 dark:bg-zinc-900 '>
@@ -64,9 +65,10 @@ function ExpertSection() {
                   <div className='flex items-center text-sm md:text-base mt-3 font-medium text-muted-foreground'>
                     <CheckCheckIcon className='mr-2 text-green-500' /> Get unlimited revisions
                   </div>
-                  <button onClick={handleGetStartedClick} className='flex items-center md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-800 font-bold rounded-xl py-3 px-10 mt-10'>
+                  <Link href={'https://wa.me/3197005034911'}  
+                  className='flex items-center md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-800 font-bold rounded-xl w-[170px] px-5 py-3 mt-10'>
                     <MessageCircleIcon className='mr-1' /> GET HELP
-                  </button>
+                  </Link>
                   <div className='text-muted-foreground text-sm ml-4 pt-2'>It's <span className='font-bold'>100%</span> Confidential</div>
                 </TabsContent>
               ))}

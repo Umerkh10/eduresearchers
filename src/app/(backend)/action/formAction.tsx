@@ -28,10 +28,9 @@ export default async function EmailAction(name: string, email: string, phone: st
             });
 
             let mailOptions = {
-                from: process.env.MAILFROM,
-                to: process.env.MAILTO,
-                subject: 'Service Form',
-                text: 'Hello world?',
+                from: `Eduresearcher® Alert - <${process.env.MAILFROM}>`,
+                to: validatedField.data.email,
+                subject: `New DLF Form Entry | ${process.env.NEXT_PUBLIC_NAME}`,
                 html: `
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #333; color: white;">
 <div style="width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #222222; padding: 20px;">
@@ -68,7 +67,7 @@ export default async function EmailAction(name: string, email: string, phone: st
 
   <div style="text-align: center;">
     <p style="font-size: x-large; color: whitesmoke; font-weight: 500;">You Can Contact Our Support Team 24/7.</p>
-    <a href="#" style="display: inline-block; padding: 15px 30px; background-color: #2ea710; color: whitesmoke; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center;">
+    <a href="https://wa.me/3197005034911" style="display: inline-block; padding: 15px 30px; background-color: #2ea710; color: whitesmoke; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center;">
       Whatsapp Now
     </a>
   </div>

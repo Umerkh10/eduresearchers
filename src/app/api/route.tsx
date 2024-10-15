@@ -284,7 +284,7 @@ console.log("orderData",orderData);
 
       <div style="text-align: center;">
         <p style="font-size: x-large;  font-weight: 500;">You Can Contact Our Support Team 24/7.</p>
-        <a href="https://eduresearchers.com" style="display: inline-block; color: whitesmoke; padding: 15px 30px; background-color: #15d704;  text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center; vertical-align: middle;">
+        <a href="https://wa.me/3197005034911" style="display: inline-block; color: whitesmoke; padding: 15px 30px; background-color: #15d704;  text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px; margin: 10px 0; text-align: center; vertical-align: middle;">
           Whatsapp Now
         </a>
       </div>
@@ -316,7 +316,7 @@ console.log("orderData",orderData);
   });
 
   //**********Redirect the user to thankyou page**********//
-  return NextResponse.redirect("https://eduresearchers.com/thank_you_order");
+  return NextResponse.redirect("http://localhost:3000/thank_you_order");
 }
 // http://localhost:3000/thank_you_order
 

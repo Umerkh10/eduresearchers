@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "./(Home)/Navbar";
 import { ThemeProvider } from "./ThemeProvider";
 import { Toaster } from "sonner";
-import Tawkto from "@/lib/Tawkto";
 import Footer from "./(Home)/Footer";
 
 
@@ -41,7 +40,7 @@ export default function RootLayout({
     
     <html lang="en">
       <script data-host="https://mmeanalytics.designstime.com/" data-dnt="false" src="https://mmeanalytics.designstime.com/js/script.js" id="ZwSg9rf6GA" async defer></script>
-      <Tawkto/>
+      {/* <Tawkto/> */}
       <body
         className={inter.className}
       >

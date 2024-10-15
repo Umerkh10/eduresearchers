@@ -2,8 +2,8 @@
 import {  HelpingHandIcon, MessageCircle } from 'lucide-react'
 import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react'
 import DiscountForm from './DiscountForm'
-import Tawkto from '@/lib/Tawkto';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 
 
@@ -23,7 +23,7 @@ export function HomeBanner(){
 
   return (
     <>
-    <Tawkto/>
+    {/* <Tawkto/> */}
     <div
       id='banner'
       className='w-full bg-gradient-to-b from-emerald-50 to-orange-200 dark:bg-gradient-to-t dark:from-orange-900 dark:via-orange-950 dark:to-zinc-950'
@@ -93,16 +93,16 @@ export function HomeBanner(){
 
 
 export function HelpDesk() {
-    const handleGetStartedClick = () => {
-        // Ensure Tawk_API is loaded and available
-        if (window.Tawk_API) {
-          window.Tawk_API.toggle(); // This will toggle the chat widget
-        }
-      };
+    // const handleGetStartedClick = () => {
+    //     // Ensure Tawk_API is loaded and available
+    //     if (window.Tawk_API) {
+    //       window.Tawk_API.toggle(); // This will toggle the chat widget
+    //     }
+    //   };
   return (
-    <button onClick={handleGetStartedClick} className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-orange-500 w-[200px] text-white rounded-lg'>
-    <HelpingHandIcon className='mr-1'/> Chat Now
-</button>
+    <Link href={'https://wa.me/3197005034911'} className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-orange-500 w-[200px] text-white rounded-lg'>
+    <HelpingHandIcon className='mr-1' /> Chat Now
+</Link>
   )
 }
 

@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import { CarouselSpacing } from './SupportCarousel'
 import { MessageCircleIcon } from 'lucide-react'
-import { HelpDesk } from './HomeBanner'
 import Link from 'next/link'
 
 function SupportSection() {
@@ -53,10 +52,13 @@ function SupportSection() {
                         </div>
                         <h2 className='pt-4 text-zinc-100 font-semibold text-lg md:text-2xl text-center '>NEED ASSISTANCE? WE'RE HERE FOR YOU 24/7!</h2>
                         <div className='md:flex-row  gap-3  flex flex-col justify-center items-center scale-[.85] md:scale-100 mt-4'>
-                        <Link href={'#banner'} className='bg-zinc-900 flex text-white py-3 px-6 rounded-lg md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200'>
+                        <Link href={'/Order'} className='bg-background flex font-medium py-[13px] px-8 rounded-lg md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 border-[2px] border-zinc-900 dark:border-zinc-300'>
                             <MessageCircleIcon className='mr-1'/> Get Started
                         </Link>
-                        <HelpDesk/>
+                        <Link href={'https://wa.me/3197005034911'} className='bg-background flex font-medium items-center py-[13px] px-6 rounded-lg md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 border-[2px] border-green-600'>
+                            <Image className='mr-2' src={'/imgs/whatsapp.png'} width={25} height={25} alt='whatsapp'></Image> Whatsapp Now
+                        </Link>
+                        
                         </div>
                     </div>
                 </div>
