@@ -316,7 +316,7 @@ console.log("orderData",orderData);
   });
 
   //**********Redirect the user to thankyou page**********//
-  return NextResponse.redirect("http://localhost:3000/thank_you_order");
+  return NextResponse.redirect("https://eduresearchers.com/thank_you_order");
 }
 // http://localhost:3000/thank_you_order
 

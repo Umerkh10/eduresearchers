@@ -1,9 +1,10 @@
 "use client"
-import {  HelpingHandIcon, MessageCircle } from 'lucide-react'
+import {  HelpingHandIcon, MessageCircle, RocketIcon } from 'lucide-react'
 import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react'
 import DiscountForm from './DiscountForm'
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 
@@ -54,10 +55,10 @@ export function HomeBanner(){
             </p>
             <div className='md:flex-row md:justify-start gap-3 flex flex-col justify-center items-center scale-[.85] md:scale-100 mt-4'>
               <button
-                className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-zinc-900 w-[200px] text-white rounded-lg'
+                className='flex items-center justify-center py-[13px] px-6 rounded-lg bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 border-[2px] border-orange-500'
                 onClick={handleGetStartedClick}
               >
-                <MessageCircle className='mr-1' /> Get Started
+                <RocketIcon className='mr-1' /> Get Started
               </button>
               <HelpDesk />
             
@@ -100,8 +101,8 @@ export function HelpDesk() {
     //     }
     //   };
   return (
-    <Link href={'https://wa.me/3197005034911'} className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-orange-500 w-[200px] text-white rounded-lg'>
-    <HelpingHandIcon className='mr-1' /> Chat Now
+    <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank" rel="noopener noreferrer" className='bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-200 flex font-medium items-center py-[13px] px-6 rounded-lg md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 border-[2px] border-green-600'>
+    <Image className='mr-2' src={'/imgs/whatsapp.png'} width={25} height={25} alt='whatsapp'></Image> Whatsapp Now
 </Link>
   )
 }

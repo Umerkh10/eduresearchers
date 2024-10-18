@@ -74,7 +74,7 @@ const FaqSection: React.FC = () => {
         <h2 className=' md:text-3xl text-lg text-center font-semibold text-zinc-800 dark:text-zinc-200'>Any Issues Or Questions</h2>
         <p className='text-muted-foreground font-medium pt-2 text-center text-sm md:text-base'>Send us a message, and we’ll reply within seconds!</p>
         <div className='flex justify-center items-center mt-3 scale-90 md:scale-100'>
-          <Link href={'https://wa.me/3197005034911'} className='bg-zinc-900 text-white py-4 px-7 rounded-xl dark:bg-zinc-200 font-medium scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 dark:text-zinc-900'>
+          <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank" rel="noopener noreferrer" className='dark:bg-zinc-900 dark:text-white py-4 px-7 rounded-xl bg-zinc-100 font-medium scale-90 hover:scale-95 lg:scale-95 lg:hover:scale-100 transition ease-in duration-200 delay-200 text-zinc-900 border-[2px] border-black dark:border-white'>
             Get A Free Quote
           </Link>
         </div>

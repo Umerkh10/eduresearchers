@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { HelpDesk } from '../(Home)/HomeBanner'
-import { PhoneCall } from 'lucide-react'
+import { Package2 } from 'lucide-react'
 
 function ThankYou() {
     const name = localStorage.getItem("name")
@@ -26,11 +26,11 @@ function ThankYou() {
       </p>
       <div className="mt-6 flex flex-col items-center md:flex-row justify-center gap-4">
         <Link
-          href=""
-          className="flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-green-500 w-[200px] text-white rounded-lg"
+          href="/Order"
+          className="flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-zinc-200 dark:bg-zinc-900 w-[200px] text-black dark:text-zinc-100 border-[2px] border-black dark:border-white rounded-lg"
           prefetch={false}
         >
-           <PhoneCall className='mr-2'/> Whatsapp Now
+           <Package2 className='mr-2'/> Order Now
         </Link>
         <HelpDesk/>
       </div>

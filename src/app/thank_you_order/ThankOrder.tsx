@@ -1,5 +1,5 @@
 "use client"
-import { CheckCheckIcon, PhoneCall } from 'lucide-react'
+import { CheckCheckIcon, HomeIcon, Package2, PhoneCall } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { HelpDesk } from '../(Home)/HomeBanner'
@@ -24,12 +24,12 @@ function ThankOrder() {
       <p className="md:mt-4 mt-2 text-zinc-100">
       Thank you for your purchase! Feel free to reach out with any questions. </p>
       <div className="mt-6 flex flex-col items-center md:flex-row justify-center gap-4">
-        <Link
-          href=""
-          className="flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-green-500 w-[200px] text-white rounded-lg"
+      <Link
+          href="/"
+          className="flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-zinc-200 dark:bg-zinc-900 w-[200px] text-black dark:text-zinc-100 border-[2px] border-black dark:border-white rounded-lg"
           prefetch={false}
         >
-           <PhoneCall className='mr-2'/> Whatsapp Now
+           <HomeIcon className='mr-2'/> Return To Home
         </Link>
         <HelpDesk/>
       </div>

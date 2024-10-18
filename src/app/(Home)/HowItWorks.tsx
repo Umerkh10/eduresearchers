@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
+import { HelpDesk } from './HomeBanner'
+import Link from 'next/link'
+import { Package2 } from 'lucide-react'
 
 function HowItWorks() {
   return (
@@ -59,6 +62,13 @@ function HowItWorks() {
                     </div>
                 </div>
 
+            </div>
+            <div className='flex items-center justify-center mt-4'>
+            <Link href={'/Order'}
+                      className='flex items-center md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-200
+                       font-semibold rounded-xl w-[170px] px-5 py-3 border-[2px] border-zinc-900 dark:border-zinc-100 '>
+                      <Package2 className='mr-1' /> Order Now
+                    </Link>
             </div>
         </div>
     </div>

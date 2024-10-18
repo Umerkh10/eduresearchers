@@ -1,6 +1,6 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { CheckCheckIcon, MessageCircleIcon } from 'lucide-react'
+import { CheckCheckIcon, Package } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -65,10 +65,18 @@ function ExpertSection() {
                   <div className='flex items-center text-sm md:text-base mt-3 font-medium text-muted-foreground'>
                     <CheckCheckIcon className='mr-2 text-green-500' /> Get unlimited revisions
                   </div>
-                  <Link href={'https://wa.me/3197005034911'}  
-                  className='flex items-center md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-800 font-bold rounded-xl w-[170px] px-5 py-3 mt-10'>
-                    <MessageCircleIcon className='mr-1' /> GET HELP
-                  </Link>
+                  <div className='flex items-center gap-3 mt-10'>
+                    <Link href={'/Order'}
+                      className='flex items-center md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-200
+                       font-semibold rounded-xl w-[170px] px-5 py-3 border-[2px] border-zinc-900 dark:border-zinc-100 '>
+                      <Package className='mr-1' /> Order Now
+                    </Link>
+
+                    <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank" rel="noopener noreferrer" className='bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-200 flex font-semibold items-center py-3 px-6 rounded-xl md:hover:scale-105 md:scale-100 scale-90 hover:scale-95 transition ease-in duration-200 delay-200 border-[2px] border-green-600'>
+                      <Image className='mr-2' src={'/imgs/whatsapp.png'} width={25} height={25} alt='whatsapp'></Image> Whatsapp Now
+                    </Link>
+
+                  </div>
                   <div className='text-muted-foreground text-sm ml-4 pt-2'>It's <span className='font-bold'>100%</span> Confidential</div>
                 </TabsContent>
               ))}
